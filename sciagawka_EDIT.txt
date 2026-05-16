@@ -1,0 +1,40 @@
+Python jest językiem TYPOWANYM DYNAMICZNIE.
+Oznacza to, że podczas przypisywania wartości do zmiennej nie musimy deklarować typu danych (Python sam zarządzi miejscem w pamięci).
+Pod jedną zmienną możemy podstawiać różne typy danych.
+
+liczba = 4
+liczba = 'cztery'
+
+FUNKCJE WBUDOWANE:
+    -> print() – Wyświetl zawartości w konsoli
+    -> type() – Sprawdź typ danych
+    -> pow(a, b) – Potęgowanie a do potęgi b
+    -> str(a) – Zamiana na typ danych NAPIS/CIĄG ZNAKÓW (str)
+    -> int(a) – Zamiana na typ danych LICZBA CAŁKOWITA (int)
+        Jeśli chcesz zamienić NAPIS na LICZBĘ, to musi się on składać wyłącznie z CYFR. W innym wypadku wyświetli się błąd.
+    -> float(a) - Zamiana wartości na LICZBĘ ZMIENNOPRZECINKOWĄ
+        Jeśli chcesz zamienić NAPIS na float, to musi się on składać wyłącznie z CYFR lub może zawierać KROPKĘ
+            np. ze str = '123.12' można przejść na int za pośrednictwem float
+            str -> float -> int
+    -> round(number) – Zaokrągla domyślnie do jedności
+        round(number, precision) – Zaokrąglenie number/liczby zmiennoprzeciwkowej do (precision/dokładność) liczby po przecinku
+            -> number – Argument pozycyjny – potrzebny go podać, aby podana funkcja zadziałała
+            -> precision – Argument opcjonalny – ma wartość domyślną, można, ale nie trzeba go podawać, np: round(number, 2) – zaokrągli do 2 miejsc o przecinku
+    -> len(iterable) – Zwraca długość obiektu ITEROWALNEGO (czyli takiego, z których da się wyodrębnić konkretny element lub kilka elementów)
+            np. obiektem iterowalnym jest STRING.
+    -> bool() – Konwersja danych na typ logiczny
+
+1. TYPY DANYCH W PYTHONIE:
+    -> Numeryczne
+        -> Integers (int): Liczba całkowita, np. 2 lub -2. Liczby całkowite mogą być dowolnie duże (lub małe) i mogą przyjmować wartości ujemne
+        -> Floats (float): Liczba zmiennoprzecinkowa (z ułamkiem), np. 2.5
+
+    -> Teksty
+        -> Strings (str): Teksty, zawsze zapisywane w cudzysłowie, np. "Dwa" lub "2.5". Każda treść umieszczona w cudzysłowie jest traktowana jako tekst
+                -> Metody stringów (nie mylić z FUNKCJAMI numerycznymi) – metoda jest wywoływana na konkretnym obiekcie/instancji (dla int nie ma takiej METODY, wyświetli  błąd)
+                    -> upper
+                    -> lower
+                    -> title
+
+    -> Wartości logiczne
+        -> Booleans (bool): Wartości logiczne, czyli prawda (True) lub fałsz (False). Muszą zaczynać się wielką literą
