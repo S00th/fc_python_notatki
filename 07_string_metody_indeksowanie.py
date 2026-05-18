@@ -203,6 +203,8 @@ print(os.getcwd().split("\\")) # Zwróć string ze ścieżki
 # UWAGA! Pojedynczy \ służy do tworzenia znaków specjalnych (np. \n lub \t)
 # Aby powyższy kod zadziałał, musimy jakby stworzyć znak specjalny \ (DOPYTAĆ !!!)
 
+# split() w połączeniu z input() pozwala też na wyciągnięcie kilku danych od użytkownika
+# num_1, num_2 = input('Podaj dwie liczby (użyj , pomiędzy podanymi liczbami): ').split(',')
 
 
 ####### join() – Złączenie kolekcji typu LISTA w pojedynczy STRING !!!!!!!!!!!!!!
