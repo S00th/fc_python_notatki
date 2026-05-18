@@ -23,6 +23,8 @@ FUNKCJE WBUDOWANE:
     -> len(iterable) – Zwraca długość obiektu ITEROWALNEGO (czyli takiego, z których da się wyodrębnić konkretny element lub kilka elementów)
             np. obiektem iterowalnym jest STRING.
     -> bool() – Konwersja danych na typ logiczny
+    -> input() – Pobierz wartość od użytkownika z konsoli. Zawsze zwraca STRING, dlatego czasem trzeba dokonać konwersji na int() lub float().
+                Docelowo nie używamy tej funkcji. Dane będziemy pobierali z innych źródeł, np. źródłem może być interface
 
 1. TYPY DANYCH W PYTHONIE:
     -> Numeryczne
