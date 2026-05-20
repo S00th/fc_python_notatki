@@ -25,7 +25,7 @@ user_age = int(input('Podaj wiek swój wiek: ')) # input() zawsze zwraca STRING,
 
 if user_age >= 18: # Warunek zawsze zwraca BULL
 	print('Jesteś pełnoletni.')
-print('Dalsza część  niezależna od kodu.')
+print('Dalsza część niezależna od kodu.')
 
 
 
@@ -225,7 +225,7 @@ if age2 >= 18: # Najpierw sprawdza wiek (tutaj następuje rozgałęzienie)
     if has_drivers_license2: # Jeśli wiek jest >= 18, to sprawdza, czy masz prawo jazdy?
         print(f'Jesteś pełnoletni i posiadasz prawo jazdy, więc możesz prowadzić samochód.')
     else: # Jeśli nie masz prawa jazdy, to:
-        print(f'Jesteś pełnoletni, więc możesz zrobić prawa jazy.')
+        print(f'Jesteś pełnoletni, więc możesz zrobić prawo jazy.')
 else: # Jeśli jesteś za młody, to:
     print(f'Jesteś za młody, aby mieć prawo jazdy')
 
@@ -259,3 +259,18 @@ if not var: # Można zapisać w taki sposób
 
 if var is None:
     print('Var jest puste')  # jednak bezpieczniej jest zapisać w taki sposób.
+
+
+
+### Operator trójargumentowy (ang. TERNARY OPERATOR)
+# znany również jako wyrażenie warunkowe, to sposób na zapisanie prostej instrukcji if-else w jednej, zwięzłej linijce kodu.
+
+# -> Zadanie – zakupy
+    # Użytkownik podaje cenę produktu.
+    # Za pomocą TERNARY OPERATOR przypisz do zmiennej status:
+    # "Drogi", jeśli cena > 100,
+    # "Tani", jeśli cena ≤ 100.
+
+product_price = int(input('Podaj cenę produkty. '))
+
+print('Tani') if product_price <= 100 else print('Drogi')
