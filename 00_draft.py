@@ -14,23 +14,20 @@ print()
 #     Jeśli ma 18 lub więcej → może obejrzeć dowolny film.
 
 # age_cinema = int(input('Podaj swój wiek. '))
-# zgoda_rodzica = True
 #
-# if 0 < age_cinema <= 12:
-#     elif zgoda_rodzica:
-#         print(f'Masz {age_cinema}. Czy masz zgodę rodzica?')
-# else < age_cinema <=:
-#     print(f'Nie masz zgody rodziców. Nie możesz bejrzećtego dilmu')
-#
-# print(f'Masz {age_cinema} Możesz obejrzeć tylko bajkę')
-#
-# if age2 >= 18: # Najpierw sprawdza wiek (tutaj następuje rozgałęzienie)
-#     if has_drivers_license2: # Jeśli wiek jest >= 18, to sprawdza, czy masz prawo jazdy?
-#         print(f'Jesteś pełnoletni i posiadasz prawo jazdy, więc możesz prowadzić samochód.')
-#     else: # Jeśli nie masz prawa jazdy, to:
-#         print(f'Jesteś pełnoletni, więc możesz zrobić prawa jazy.')
-# else: # Jeśli jesteś za młody, to:
-#     print(f'Jesteś za młody, aby mieć prawo jazdy')
+# if 0 <= age_cinema < 12:
+#     print(f'Możesz obejrzeć tylko bajkę.')
+# elif 12 <= age_cinema <=17:
+#     parental_consent = input(f'Czy masz zgodę rodzica? (odpowiedz tak lub nie) ') # czy wpisywanie input w tym miejscu jest ok?
+#     if parental_consent == 'tak':
+#         print('Może wejść na film.')
+#     else:
+#         print(f'Możesz obejrzeć tylko bajkę.')
+# elif age_cinema >= 18:
+#     print(f'Może obejrzeć dowolny film.')
+# else:
+#     print('Podana liczba jest mniejsza niż ZERO.')
+
 
 print()
 print('--------------------------------------------------------------------')
@@ -94,64 +91,82 @@ print()
     # Jeśli rybka → "Pamiętaj o czystej wodzie".
     # W innym przypadku → "Nie znam takiego zwierzaka".
 
-pet = str(input('Jakie masz zwierzę? Czy jest to: pies, kot czy rybka? '))
+# pet = input('Jakie masz zwierzę? Czy jest to: pies, kot czy rybka? ')
+#
+# if pet == 'pies': # Co zrobić, żeby można było wpisać: pies, Pies lub PIES?
+#     walk = input('Czy lubi spacery? (odpowiedz tak lub nie) ')
+#     if walk == 'tak':
+#         print('Twój PIES musi być bardzo szczęśliwy!')
+#     else:
+#         print('Pies potrzebuje ruchu!')
+# elif pet == 'kot':
+#     print('Głąszcz go kiedy tylko możesz.')
+# elif pet == 'rybka':
+#     print('Pamiętaj o czystej wodzie.')
+# else:
+#     print('Nie znam takiego zwierzaka.')
 
 
+# Wersja rozbudowana
 
-
-if pet == 'pies' or 'Pies' or 'PIES':
-    walk = str(input('Czy lubi spacery? (odpowiedz tak lub nie) '))
-    if walk == 'tak':
-        print('Twój PIES musi być bardzo szczęśliwy!')
-    else:
-        print('Pies potrzebuje ruchu!')
-elif pet == 'kot' or 'Kot' or 'KOT':
-    pat = str(input('Czy lubi drapanie i spanie? (odpowiedz tak lub nie) '))
-    if pat == 'tak':
-        print('Twój KOT musi być bardzo szczęśliwy!')
-    else:
-        print('Głąszcz go kiedy tylko możesz.')
-elif pet == 'rybka' or 'Rybka' or 'RYBKA':
-    water = str(input('Czy lubi drapanie i spanie? (odpowiedz tak lub nie) '))
-    if water == 'tak':
-        print('Twoja RYBKA musi być bardzo szczęśliwa!')
-    else:
-        print('Pamiętaj o czystej wodzie.')
-else:
-    print('Nie znam takiego zwierzaka.')
+# pet = input('Jakie masz zwierzę? Czy jest to: pies, kot czy rybka? ')
+#
+# if pet == 'pies':
+#     walk = input('Czy lubi spacery? (odpowiedz tak lub nie) ')
+#     if walk == 'tak':
+#         print('Twój PIES musi być bardzo szczęśliwy!')
+#     else:
+#         print('Pies potrzebuje ruchu!')
+# elif pet == 'kot':
+#     pat = input('Czy lubi drapanie i spanie? (odpowiedz tak lub nie) ')
+#     if pat == 'tak':
+#         print('Twój KOT musi być bardzo szczęśliwy!')
+#     else:
+#         print('Głąszcz go kiedy tylko możesz.')
+# elif pet == 'rybka':
+#     water = input('Często zmeiniasz jej wodę (odpowiedz tak lub nie) ')
+#     if water == 'tak':
+#         print('Twoja RYBKA musi być bardzo szczęśliwa!')
+#     else:
+#         print('Pamiętaj o czystej wodzie.')
+# else:
+#     print('Nie znam takiego zwierzaka.')
 
 print()
 print('--------------------------------------------------------------------')
 print()
 
-print('ZADANIE ')
+print('ZADANIE 5 – Zakupy.')
 print()
+
+# Operator trójargumentowy (ang. ternary operator), znany również jako wyrażenie warunkowe,
+# to sposób na zapisanie prostej instrukcji if-else w jednej, zwięzłej linijce kodu.
 
 # -> Zadanie 5 – zakupy
     # Użytkownik podaje cenę produktu.
-    # Za pomocą ternary operator przypisz do zmiennej status:
+    # Za pomocą TERNARY OPERATOR przypisz do zmiennej status:
     # "Drogi", jeśli cena > 100,
     # "Tani", jeśli cena ≤ 100.
+
+# product_price = int(input('Podaj cenę produkty. '))
+#
+# print('Tani') if product_price <= 100 else print('Drogi')
 
 
 print()
 print('--------------------------------------------------------------------')
 print()
 
-print('ZADANIE ')
+print('ZADANIE 6 – Sprawdź poprawność wpisanego hasła.')
 print()
 
-# =========================
-# ZADANIE 1
-# =========================
-
-# Użytkownik wpisuje hasło
+# Użytkownik wpisuje hasło.
 #
-# Program ma sprawdzić:
-# - czy hasło ma minimum 8 znaków
-# - czy pierwszy znak NIE jest cyfrą
-# - czy w haśle znajduje się znak "!" lub "?"
-# - czy hasło nie zaczyna się i nie kończy tą samą literą
+# Program ma sprawdzić: # mam problem ze zrozumieniem wymagań (Hasło: ma się składać z 8 znaków; zaczynać od literki; zawierać "!" i "?"; zaczynać i kończyć tym samym znakiem.)
+# – czy hasło ma minimum 8 znaków
+# – czy pierwszy znak NIE jest cyfrą
+# – czy w haśle znajduje się znak "!" lub "?"
+# – czy hasło nie zaczyna się i nie kończy tą samą literą
 #
 # Jeśli wszystkie warunki są spełnione:
 # -> wypisz "Hasło poprawne"
@@ -159,17 +174,31 @@ print()
 # W przeciwnym razie:
 # -> wypisz konkretny powód błędu
 
+# password = input('Podaj hasło: ')
+# correct_password = True
+#
+# if len(password) < 8:
+#     print('Hasło MUSI mieć conajmniej 8 znaków.')
+#     correct_password = False
+# if not password[0].isdigit(): # lub not password[0].isdigit()
+#     print('Pierwszy znak hasła MUSI być cyfrą.')
+#     correct_password = False
+# if '!' not in password and '?' not in password:
+#     print('Hasło musi zawierać znak ! lub ?.')
+#     correct_password = False
+# if password[0] == password[-1]:
+#     print('Hasło NIE może zaczyna się i kończy tą samą literą.')
+#     correct_password = False
+# if correct_password:
+#     print('Hasło jest poprawne.')
+
 
 print()
 print('--------------------------------------------------------------------')
 print()
 
-print('ZADANIE ')
+print('ZADANIE 7 – Sprawdź poprawność wpisanego tekstu.')
 print()
-
-# =========================
-# ZADANIE 2
-# =========================
 
 # Użytkownik wpisuje dowolny tekst
 #
@@ -186,6 +215,28 @@ print()
 #
 # Dodatkowe utrudnienie:
 # Program powinien działać również dla tekstów o parzystej długości tekstu
+
+text = input('Wpisz dowolny tekst: ')
+correct_text = True
+
+if text[0] == '@':
+    print('Tekst musi zaczynać się od @.')
+    correct_text = False
+if text[-1].isdigit():
+    print('Tekst musi kończyć się liczbą.')
+    correct_text = False
+if int(len(text)) // 2:
+    print('Pierwszy znak hasła MUSI być cyfrą.')
+    correct_text = False
+if correct_text:
+    print('Wiadomość zaakceptowana.')
+
+
+napis_lenght = len(napis)
+napis_lenght_halved = napis_lenght // 2 # Znalezienie indeksu środkowego
+
+print(f"To jest połowa zadania: {napis[:napis_lenght_halved]}")
+print(f"To jest druga połowa zadania: {napis[napis_lenght_halved:]}")
 
 
 print()
@@ -215,3 +266,4 @@ print()
 #
 # W przeciwnym razie:
 # -> wypisz konkretny powód błędu
+
