@@ -1,7 +1,6 @@
 ####### PĘTLA WHILE
 # Dobrą praktyką programistyczną jest pisanie kodu w taki sposób, aby wymagał od nas jak najmniejszego nakładu pracy.
 # Bez potrzeb powtarzania go czy zmieniania w wielu miejscach.
-# Michał ???
 
 # Do tej pory kod wykonywał się linijka po linijce (wyjątkiem były instrukcje warunkowe).
 # Pętle wykonują pewien fragment kodu określoną ilość czasu/razy.
