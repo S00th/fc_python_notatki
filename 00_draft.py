@@ -176,7 +176,7 @@ print()
 
 # password = input('Podaj hasło: ')
 # correct_password = True
-#
+
 # if len(password) < 8:
 #     print('Hasło MUSI mieć conajmniej 8 znaków.')
 #     correct_password = False
@@ -187,11 +187,10 @@ print()
 #     print('Hasło musi zawierać znak ! lub ?.')
 #     correct_password = False
 # if password[0] == password[-1]:
-#     print('Hasło NIE może zaczyna się i kończy tą samą literą.')
+#     print('Hasło NIE może zaczyna się i kończy tym samym znakiem.')
 #     correct_password = False
 # if correct_password:
 #     print('Hasło jest poprawne.')
-
 
 print()
 print('--------------------------------------------------------------------')
@@ -216,39 +215,28 @@ print()
 # Dodatkowe utrudnienie:
 # Program powinien działać również dla tekstów o parzystej długości tekstu
 
-text = input('Wpisz dowolny tekst: ')
-correct_text = True
-
-if text[0] == '@':
-    print('Tekst musi zaczynać się od @.')
-    correct_text = False
-if text[-1].isdigit():
-    print('Tekst musi kończyć się liczbą.')
-    correct_text = False
-if int(len(text)) // 2:
-    print('Pierwszy znak hasła MUSI być cyfrą.')
-    correct_text = False
-if correct_text:
-    print('Wiadomość zaakceptowana.')
-
-
-napis_lenght = len(napis)
-napis_lenght_halved = napis_lenght // 2 # Znalezienie indeksu środkowego
-
-print(f"To jest połowa zadania: {napis[:napis_lenght_halved]}")
-print(f"To jest druga połowa zadania: {napis[napis_lenght_halved:]}")
-
+# text = input('Wpisz dowolny tekst: ')
+# center = len(text) // 2
+# correct_text = True
+#
+# if text[0] != '@':
+#     print('Tekst MUSI zaczynać się od @.')
+#     correct_text = False
+# if text[-1].isalpha():
+#     print('Tekst MUSI kończyć się liczbą.')
+#     correct_text = False
+# if text[center] != 'x':
+#     print('Środkowym znakiem tekstu MUSI być X.')
+#     correct_text = False
+# if correct_text:
+#     print('Wiadomość zaakceptowana.')
 
 print()
 print('--------------------------------------------------------------------')
 print()
 
-print('ZADANIE ')
+print('ZADANIE 8 – Sprawdź poprawność nicku.')
 print()
-
-# =========================
-# ZADANIE 3
-# =========================
 
 # Użytkownik wpisuje nick w formacie:
 #
@@ -267,3 +255,21 @@ print()
 # W przeciwnym razie:
 # -> wypisz konkretny powód błędu
 
+nick = input('Wpisz NICK w formacie imię#123: ')
+index_nick = nick.find("#")
+correct_nick = True
+
+if nick.count('#') != 1:
+    print('Nick MISI zawierać dokładnie jeden znak #.')
+    correct_nick = False
+if len(nick[:index_nick]) >= 3:
+    print('Przed # MUSZĄ się znaleźć przynajmniej 3 znaki.')
+    correct_nick = False
+if nick[index_nick+1:].isdigit():
+    print('Po # mogą się znaleźć TYLKO cyfry.')
+    correct_nick = False
+if len(nick[index_nick+1:]) == 3:
+    print('Po # MUSZĄ się znaleźć dokładnie 3 cyfry.')
+    correct_nick = False
+if correct_nick:
+    print('Nick poprawny.')
