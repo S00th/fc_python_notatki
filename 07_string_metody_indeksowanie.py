@@ -71,6 +71,7 @@ print(f'Index, którego nie ma w napisie {jakis_napis} to {jakis_napis[1000]}') 
 jakis_inny_napis = 'Język Python można wykorzystać do modelowania sieci neuronowych'
 
 print(jakis_inny_napis[0:5]) # Weź litery od indeksu 0 do indeksu 5 [0:5], ale bez 5 (piąty znak indeksu jest wyłączona), krok (brak)
+print(jakis_inny_napis[0+1:5-1]) # Weź litery od indeksu 1 (0+1) do indeksu 4 (5-1), ale bez 5 (piąty znak indeksu jest wyłączona), krok (brak)
 print(jakis_inny_napis[:5]) # Jak powyżej, bo start_indeks domyślnie 0 (czyli od początku do 5, ale bez 5)
 print(jakis_inny_napis[14:30:2]) # Weź litery od indeksu 14 do 30, bez 30, co druga literę.
 print(jakis_inny_napis[-11:]) # Weż wszystkie litery od 11 od końca do końca
@@ -82,7 +83,7 @@ print(jakis_inny_napis[5::-1]) # UWAGA! Prosząc o wyraz zapisany od tyłu, wpis
 print(jakis_inny_napis[30: 100]) # Wypisze tyle, ile jest.
 print(jakis_inny_napis[1_000: 10_000]) # Nic nie wypisze, bo przedział całkiem poza zakresem.
 
-# Jeżeli chcemy sprawdzić parzystość jakiejś zmiennej, to robimy to: zmienna % 2 == 0
+# Sprawdzanie parzystość jakiejś zmiennej (czy liczba jest podzielna przez 2): zmienna % 2 == 0
 
 ### ĆWICZENIE – Udowodnij, że słowo oko jest palindromem a słowo koparka nim nie jest
 
