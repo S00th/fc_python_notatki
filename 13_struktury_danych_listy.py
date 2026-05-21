@@ -8,13 +8,31 @@
 # Zrozumienie ich działania jest niezbędne, aby przejść od prostego pisania składni do prawdziwego rozwiązywania problemów programistycznych.
 #
 # Podstawowe struktury wbudowane:
-# – Listy (list): to kontener przechowujący WIELE WARTOŚCI/ELEMENTÓW? (nawet różnych typów), w którym kolejność ma znaczenie.
+#
+# – Listy [list]: to kontener przechowujący WIELE WARTOŚCI/ELEMENTÓW? (nawet różnych typów), w którym kolejność ma znaczenie.
+#   W nawiasach kwadratowych []
 #   Wartości są uporządkowane i MOŻNA ZMIENIĆ ich zawartość. LISTA jest przechowywana jako jedna wartość, która może być przypisana do zmiennej.
+#
 # – Krotki (tuple): Podobne do list, ale ICH ZAWARTOŚĆ JEST NIEZMIENNA (stała) po utworzeniu.
-# – Zbiory (set): Przechowują UNIKALNE WARTOŚCI, co jest przydatne np. przy eliminowaniu duplikatów.
-# – Słowniki (dict): Przechowują DANE W PARACH KLUCZ-WARTOŚĆ. Pozwalają na bardzo szybkie odnajdywanie informacji na podstawie unikalnego klucza.
+#   Nie można modyfikować, dodawać, ani usuwać elementów wewnątrz krotki. Krotka musi być taka sama podczas trwania całego programu.
+#   W nawiasach () lub bez nawiasów (tak nie robimy). Mogą zawierać RÓŻNE wartości. Elementy krotki SĄ indeksowalne. Są iterowalne.
+#   Są przydatne, kiedy mamy formularz do lekarza (płeć: M / K) i wymagamy wybrania jednej z sugestii – blokujemy dodanie kolejnych opcji.
+#
+# – Zbiory {set}: Przechowują UNIKALNE WARTOŚCI (możemy mieć duplikaty wartości, ale każdy duplikat traktuje jak jeden), co jest przydatne np. przy eliminowaniu duplikatów.
+#   W nawiasach klamrowych {} lub set(). Mogą zawierać RÓŻNE wartości. Elementy zbioru NIE SĄ indexowalne.
+#   MOŻNA modyfikować, dodawać i usuwać elementów wewnątrz zbioru.
+#   Są przydatne, dla sklepów działające metodą dropów z eventami (kubki są unikalne, każdy inny). Przeszukiwanie po ZBIORACH jest szybszą operacją (niż np. listy).
+#
 
+Wszystkie 3 wczesniej przechowuja WARTOŚCI
 
+# – Słowniki {dict}: Przechowują DANE W PARACH KLUCZ-WARTOŚĆ. Klucz określa, czym jest dany element w słowniku.
+#   Pozwalają na bardzo szybkie odnajdywanie informacji na podstawie unikalnego klucza. Coś w rodzaju pęku kluczy.
+#   W nawiasach klamrowych {'imie': "Michał", "wiek": 12}. Elementy krotki SĄ indeksowalne – w nawiasie kwadratowym wpisujemy KLUCZ (tu wyświetli błąd) lub metodą słownik.get() ta metoda jest bezpieczniejsza.
+#   MOŻNA modyfikować, dodawać i usuwać elementy wewnątrz słownika (pamiętamy o unikalności wartości). Są iterowalne, ale w specyficzny sposób.
+#   Nie wysztsko moze być kluczem wewnatrz słownika
+!!! CO MOZE BYC / nie moze być KLUCZEM WEWNATRZ SŁOWNIKA? Pytanie na rozmowie kwalifikacyhnej?
+str jest hashowalny
 
 ####### LISTY
 #
@@ -95,7 +113,7 @@ print(random_list)
 random_list.remove('Ewa')
 print(random_list)
 # lub
-del random_list[0]
+del random_list[0] # działa tylko na listach
 print(random_list)
 
 
@@ -109,3 +127,6 @@ print(random_list)
 
 ####### ZBIORY
 #
+
+
+#######
