@@ -12,15 +12,15 @@
 
 
 
-### TWORZENIE krotek
+### TWORZENIE tupli
 
 tuple_1 = (12, True, 'Andrzej', 55.5) # Jasne deklarowanie jest bardzo ważne
 tuple_2 = 12, True, 'Andrzej', 55,5 # Taki zapis to też KROTKA, ale może być problematyczne, kiedy pomylimy KROPKĘ z PRZECINKIEM
-liczba = 55,5 # W tym momencie mamy KROTKĘ, zamiast INTEGERa.
+liczba = 55,5 # W tym momencie mamy TUPLE, zamiast FLOATa.
 tuple_3 = tuple((12, True, 'Andrzej', 55.5))
 
 
-### ODCZYTYWANIE z krotek
+### ODCZYTYWANIE z tupli
 
 print(type(tuple_1)) # Sprawdź TYP DANYCH elementu -> <class 'tuple'>
 print(tuple_1) # Wyświetl zawartości tuple
