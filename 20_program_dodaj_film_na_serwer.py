@@ -33,13 +33,3 @@
 #   4) Który slot miał najwięcej pustego miejsca oraz ile to było MB.
 
 
-dict = {'name': "Michał", 'sname': 'Kowalski', "age": 12, 'class': '1e'}
-
-for uczestnik in dict.keys():
-    print(uczestnik) # Taka ITERACJA także powoduje, że będziemy ITEROWAĆ wyłącznie po KLUCZACH naszego SŁOWNIKA – tu robi to świadomie.
-
-for uczestnik in dict.values():
-    print(uczestnik) # Taka ITERACJA także powoduje, że będziemy ITEROWAĆ wyłącznie po KLUCZACH naszego SŁOWNIKA – tu robi to świadomie.
-
-for key, value in dict.items():
-    print(f' Klucz: {key} + wartość: {value}') # ITERACJA po ITEMSach (czyli po KLUCZACH i WARTOŚCIACH) naszego SŁOWNIKA.
