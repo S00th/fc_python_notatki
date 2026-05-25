@@ -26,7 +26,8 @@ FUNKCJE WBUDOWANE:
     -> input() – Pobierz wartość od użytkownika z konsoli. Zawsze zwraca STRING, dlatego czasem trzeba dokonać konwersji na int() lub float().
                 Docelowo nie używamy tej funkcji. Dane będziemy pobierali z innych źródeł, np. źródłem może być interface
     -> id() zwraca unikalny, całkowitoliczbowy identyfikator obiektu. W praktyce jest to adres tego obiektu w pamięci komputera.
-            Każdy obiekt ma przypisane własne id w momencie jego tworzenia.
+            Każdy obiekt ma przypisane własne id w momencie jego tworzenia (id jest swego rodzaju "pseudo" liczbą/pozycją).
+            w praktyce, używamy jej jedynie do sprawdzenia, czy coś jest HASHOWALNE.
 
 1. TYPY DANYCH W PYTHONIE:
     -> Numeryczne

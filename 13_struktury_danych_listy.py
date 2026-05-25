@@ -1,45 +1,65 @@
-####### STRUKTURY DANYCH
+####### STRUKTURY DANYCH i LISTY
 #
-# STRUKTURY DANYCH to specjalne SPOSOBY ORGANIZOWANIA, PRZECHOWYWANIA i ZARZĄDZANIA INFORMACJAMI w programie,
+# STRUKTURY DANYCH to "kontenery" / specjalne SPOSOBY ORGANIZOWANIA, PRZECHOWYWANIA i ZARZĄDZANIA INFORMACJAMI w programie,
 # które pozwalają, na ich wydajne wykorzystywanie i przetwarzanie.
+# Podstawowe struktury danych w Pythonie to LISTY, KROTKI, ZBIORY oraz SŁOWNIKI. Każda z nich ma odmienną budowę i inne zastosowania.
 # Wszystkie struktury danych są ELEMENTAMI iterowalnymi, więc będziemy mogli na ich podstawie korzystać z pętli "for".
-# W liście mogą się znaleźć różne typy danych, np. uczestnicy = [12, True, 'Andrzej', 55.5].
-# W trakcie działania programu możemy DODAĆ do listy nowe elementy.
-# Zrozumienie ich działania jest niezbędne, aby przejść od prostego pisania składni do prawdziwego rozwiązywania problemów programistycznych.
-#
-# Podstawowe struktury wbudowane:
-#
-# – Listy [list]: to kontener przechowujący WIELE WARTOŚCI/ELEMENTÓW? (nawet różnych typów), w którym kolejność ma znaczenie.
-#   W nawiasach kwadratowych []
-#   Wartości są uporządkowane i MOŻNA ZMIENIĆ ich zawartość. LISTA jest przechowywana jako jedna wartość, która może być przypisana do zmiennej.
-#
-# – Krotki (tuple): Podobne do list, ale ICH ZAWARTOŚĆ JEST NIEZMIENNA (stała) po utworzeniu.
-#   Nie można modyfikować, dodawać, ani usuwać elementów wewnątrz krotki. Krotka musi być taka sama podczas trwania całego programu.
-#   W nawiasach () lub bez nawiasów (tak nie robimy). Mogą zawierać RÓŻNE wartości. Elementy krotki SĄ indeksowalne. Są iterowalne.
-#   Są przydatne, kiedy mamy formularz do lekarza (płeć: M / K) i wymagamy wybrania jednej z sugestii – blokujemy dodanie kolejnych opcji.
-#
-# – Zbiory {set}: Przechowują UNIKALNE WARTOŚCI (możemy mieć duplikaty wartości, ale każdy duplikat traktuje jak jeden), co jest przydatne np. przy eliminowaniu duplikatów.
-#   W nawiasach klamrowych {} lub set(). Mogą zawierać RÓŻNE wartości. Elementy zbioru NIE SĄ indexowalne.
-#   MOŻNA modyfikować, dodawać i usuwać elementów wewnątrz zbioru.
-#   Są przydatne, dla sklepów działające metodą dropów z eventami (kubki są unikalne, każdy inny). Przeszukiwanie po ZBIORACH jest szybszą operacją (niż np. listy).
-#
+# Zrozumienie działania struktur danych jest NIEZBĘDNE, aby przejść od prostego pisania składni do prawdziwego rozwiązywania problemów programistycznych.
+# Struktury danych możemy dzielić na STRUKTURY PROSTE i STRUKTURY ZŁOŻONE, ale też na ZMIENIALNE i NIEZMIENIALNE (HASHOWALNOŚĆ).
 
-Wszystkie 3 wczesniej przechowuja WARTOŚCI
+# ELEMENTY to pojedynczy obiekt (np. liczba, tekst) znajdujący się wewnątrz kontenera danych.
+# O ELEMETACH mówimy, gdy wrzucamy rzeczy do "worka" (zbioru) lub ustawiamy je w "kolejce" (liście).
+# O WARTOŚCIACH mówimy najczęściej wtedy, gdy dane są przypisane do konkretnych etykiet (kluczy w słowniku) lub nazw zmiennych.
 
-# – Słowniki {dict}: Przechowują DANE W PARACH KLUCZ-WARTOŚĆ. Klucz określa, czym jest dany element w słowniku.
-#   Pozwalają na bardzo szybkie odnajdywanie informacji na podstawie unikalnego klucza. Coś w rodzaju pęku kluczy.
-#   W nawiasach klamrowych {'imie': "Michał", "wiek": 12}. Elementy krotki SĄ indeksowalne – w nawiasie kwadratowym wpisujemy KLUCZ (tu wyświetli błąd) lub metodą słownik.get() ta metoda jest bezpieczniejsza.
-#   MOŻNA modyfikować, dodawać i usuwać elementy wewnątrz słownika (pamiętamy o unikalności wartości). Są iterowalne, ale w specyficzny sposób.
-#   Nie wysztsko moze być kluczem wewnatrz słownika
+# Podstawowe struktury wbudowane (struktury PŁASKIE – zawierające TYPY proste):
+
+# – Listy [list]: Przechowują UPORZĄDKOWANE kolekcje ELEMENTÓW (WARTOŚCI).
+#   MOŻEMY MODYFIKOWAĆ zawartość LISTY – możemy dodawać, zmieniać lub usuwać ELEMENTY.
+#   MAGĄ zawierać różne TYPY DANYCH, np. lista = [12, True, 'Andrzej', 55.5]
+#   Są strukturami INDEKSOWALNYMI. Każde kolejny element ma swoje unikalne miejsce.
+#   Są strukturami ITEROWALNTMI.
+#   LISTA jest przechowywana jako jedna wartość, która może być przypisana do ZMIENNEJ.
+#   ZAPIS – w nawiasach kwadratowych []
+
+# – Krotki (tuple): Przechowują UPORZĄDKOWANE kolekcje ELEMENTÓW (WARTOŚCI).
+#   NIE MOŻEMY modyfikować zawartości krotki – nie możemy dodawać, modyfikować, ani usuwać ELEMENTÓW.
+#   ZAWARTOŚĆ krotki JEST NIEZMIENNA (stała) od momentu utworzenia. Raz zadeklarowana krotka musi być taka sama przez cały czas trwania programu.
+#   MAGĄ zawierać różne TYPY DANYCH, np. krotka = (12, True, 'Andrzej', 55.5)
+#   Są strukturami INDEKSOWALNYMI.
+#   Są strukturami ITEROWALNYMI.
+#   ZAPIS – w nawiasach okrągłych () lub bez nawiasów (ale NIE ZAPISUJEMY ich w taki) lub tuple().
+#   Są przydatne np. w formularzach, w których wymagamy wybrania jednej z sugestii (np. płeć: M / K)
+#   tam, gdzie chcemy ZABLOKOWAĆ użytkownikowi możliwość DODANIA KOLEJNYCH OPCJI.
+
+#   Różnica między LISTĄ i KROTKĄ modyfikacji wartości znajdujących się w tych zbiorach danych (LISTĘ można modyfikować, a KROTKI nie).
+
+# – Zbiory {set}: Przechowują NIEUPORZĄDKOWANE kolekcje UNIKALNYCH ELEMENTÓW (DUPLIKATY, czyli dwie zmienne o takiej samej wartości są automatycznie usuwane).
+#   MOŻEMY MODYFIKOWAĆ zawartość LISTY – możemy dodawać, zmieniać lub usuwać ELEMENTY.
+#   MAGĄ zawierać różne TYPY DANYCH, np. lista = {12, True, 'Andrzej', 55.5}
+#   Mogą zawierać duplikaty wartości, ale każdy duplikat traktuje jak jedną WARTOŚĆ.
+#   NIE są strukturami INDEKSOWALNYMI. Nie jesteśmy w stanie określić, który element jest pierwszy, drugi itd. (worek z prezentami św. Mikołaja)
+#   ZAPIS w nawiasach klamrowych {} lub set().
+#   Są przydatne, kiedy nie interesuje nas liczba powtarzających się elementów, a jedynie unikalne wartości.
+#   Przeszukiwanie po ZBIORACH jest szybszą operacją niż przeszukiwanie np. listy.
+
+#   LISTY, TUPLE i ZBIORY są zbiorami danych, w których znajdują się tylko i wyłącznie ELEMENTY.
+#   LISTY i TUPLE są indeksowane, a ZBIORY nie.
+
+# – Słowniki {dict}: Przechowują DANE W PARACH KLUCZ-WARTOŚĆ. KLUCZ określa, czym jest dany ELEMENT w słowniku.
+#   Pozwalają na bardzo szybkie odnajdywanie informacji na podstawie unikalnego klucza. Są czymś w rodzaju pęku kluczy.
+#   Elementy krotki SĄ indeksowalne – w nawiasie kwadratowym wpisujemy KLUCZ (tu wyświetli błąd) lub metodą słownik.get() ta metoda jest bezpieczniejsza.
+#   Są iterowalne, ale w specyficzny sposób.
+#   MOŻNA modyfikować, dodawać i usuwać elementy wewnątrz słownika (pamiętając o unikalności wartości).
+#   ZAPIS nawiasach klamrowych {'imie': "Michał", "wiek": 12}.
+#   Wewnątrz słownika NIE WSZYSTKO MOŻE BYC KLUCZEM!!!
 !!! CO MOZE BYC / nie moze być KLUCZEM WEWNATRZ SŁOWNIKA? Pytanie na rozmowie kwalifikacyhnej?
 str jest hashowalny
 
-####### LISTY
-#
-# Listy definiujemy tak samo, jak zmienne, ale zbiór zmiennych dodajemy w NAWIASACH KWADRATOWYCH.
+####### LISTY [12, True, 'Andrzej', 55.5]
+# Listy definiujemy tak samo, jak ZMIENNE, ale LISTĘ (ZBIÓR zmiennych) dodajemy w NAWIASACH KWADRATOWYCH.
 # LISTA jest obiektem iterowalnym.
 
-uczestnicy = ['Marian', 'Jadwiga', 'Mariola', 'Andrzej', 'Richard']
+list = ['Marian', 'Jadwiga', 'Mariola', 'Andrzej', 'Richard']
 # Z punktu widzenia komputera, różnica między tym, co wyżej, a tym, co niżej jest ogromna.
 # Komputer wie, że zmienne wyżej są ze sobą połączone.
 uczestnik_1 = 'Marian'
@@ -48,33 +68,20 @@ uczestnik_3 = 'Mariola'
 uczestnik_4 = 'Andrzej'
 uczestnik_5 = 'Richard'
 
-# Lista może być pusta.
-lista_ocen = []
-print(lista_ocen)
+### TWORZENIE listy.
 
-# lista_ocen_2 = list() # To nie po Pythonowemu.
+list_1 = ['5', '4', '3', '2', '1']
+list_2 = [] # Lista może być pusta.
+list_3 = list() # Ten zapis jest nie po Pythonowemu.
 
 
 ### ODCZYTYWANIE z listy
 
-# Aby sprawdzić TYP DANYCH elementu:
-print(type(uczestnicy))
-
-
-# Struktury danych, które bedą strukturami indeksowalnymi bedą się indeksować od zera.
-# Każde element wewnątrz listy ma swój unikany indeks.
-
-# Aby dostać się do konkretnego ELEMENTU z listy:
-print(uczestnicy[0]) # Jeżeli wskażemy element spoza listy, wyświetli się BŁĄD.
-# print(uczestnicy[7]) # Jeżeli wskażemy element spoza listy, wyświetli się BŁĄD.
-
-# Aby dowiedzieć się, jaki INDEX ma konkretny ELEMENTU z listy:
-print(uczestnicy.index('Andrzej'))
-
-# Aby wyświetlić ZAKRES ELEMENTÓW z listy:
-print(uczestnicy[0:3])
-
-
+print(type(list_1)) # Sprawdź TYP DANYCH elementu -> <class 'list'>
+print(list_1[0]) # Wyświetl konkretnego ELEMENTU
+print(list_1.index('Andrzej')) # Pokaż INDEX konkretnego ELEMENTU
+print(list_1[0:3]) # Wyświetl ZAKRES ELEMENTÓW
+# print(list[7]) # Jeżeli wskażemy element spoza krotki, wyświetli się BŁĄD
 
 
 #### LISTA jest obiektem iterowalnym, więc możemy na jej podstawie korzystać z pętli "for".
@@ -83,8 +90,7 @@ for uczestnik in uczestnicy:
     print(uczestnik)
 
 
-
-### Funkcja .append() – DODAWANIE element do listy na końcu listy.
+### Funkcja .append() – DODAWANIE elementu do listy NA KOŃCU listy.
 
 random_list = [12, True, 'Andrzej', 55.5]
 
@@ -92,12 +98,10 @@ random_list.append('Aga') # Dodaj element na końcu listy.
 print(random_list)
 
 
+### Funkcja .insert() – DODAWANIE elementu do listy JAKO KONKRETNY INDEX.
 
-### Funkcja .insert() – DODAWANIE element do listy na końcu listy jako konkretny index.
-
-random_list.insert(1, 'Aga') # Dodaj element jako konkretny index.
+random_list.insert(1, 'Aga') # Dodaj element jako konkretny index (najpierw podajemy INDEX, a później ELEMENT).
 print(random_list)
-
 
 
 ### ZMIANA wartości na ELEMENCIE z listy na inną.
@@ -106,27 +110,44 @@ random_list[-1] = 'Ewa'
 print(random_list)
 
 
-
-
 ### Funkcja .remove() – USUWANIE elementu z listy.
 
 random_list.remove('Ewa')
 print(random_list)
 # lub
-del random_list[0] # działa tylko na listach
+del random_list[0] # Metoda del działa tylko na listach
 print(random_list)
 
 
 
-####### TUPLE
+###### HASHOWALNOŚĆ danych.
+# Struktury danych możemy dzielić na STRUKTURY PROSTE i STRUKTURY ZŁOŻONE, ale też na ZMIENIALNE i NIEZMIENIALNE.
+
+name = 'Michał'
+print(id(name)) # Wyświetli np. 1992162399840
+
+name = 'Andrzej'
+print(id(name)) # Wyświetli np. 1992162889856
+
+# Wyświetlone zostały inna wartość, co oznacza, że gdy wyświetlimy wartość zmiennej,
+# to tak na prawe nie zmieniamy jej wartości, a USUWAMY starą zmienną i TWORZYMY nową.
+# Dzieje się tak też w przypadku INTEGERów.
+
+lista = ['Adam', 'Michał']
+print(id(lista))
+
+lista[0] = 'Ewa'
+print(id(lista))
+
+# Natomiast, kiedy zmieniamy element w LISTACH, to będziemy modyfikować element – mówimy, że listy są MUTOWALNE.
+# Oznacza to, że możesz swobodnie zmieniać, dodawać lub usuwać ich elementy bez konieczności tworzenia nowego obiektu i w tym samym miejscu w pamięci.
+
+# Wewnątrz SŁOWNIKÓW nie wszystko może być KLUCZEM – możemy definiować jako KLUCZE, tylko niektóre obiekty.
+# Klucze MUSZĄ być niezmienne (ang. immutable) i HASZOWALNE, aby słownik mógł poprawnie i trwale obliczać ich skróty (HASZE).
+# Np. STRING jets HASHOWALNY / NIEMUTOWALNY.
+# Kluczami NIE MOGĄ być żadne obiekty MUTOWALNE (zmienne), takie jak:
+# LISTY ['a', 'b']
+# ZBIORY {1, 2, 3}
+# SŁOWNIKI {'wiek': 30}
 #
-
-####### SŁOWNIKI
-#
-
-
-####### ZBIORY
-#
-
-
-#######
+# Pytanie podczas rekrutacji: Co może myć kluczem wewnątrz SŁOWNIKA?
