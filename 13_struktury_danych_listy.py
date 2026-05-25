@@ -45,15 +45,24 @@
 #   LISTY, TUPLE i ZBIORY są zbiorami danych, w których znajdują się tylko i wyłącznie ELEMENTY.
 #   LISTY i TUPLE są indeksowane, a ZBIORY nie.
 
-# – Słowniki {dict}: Przechowują DANE W PARACH KLUCZ-WARTOŚĆ. KLUCZ określa, czym jest dany ELEMENT w słowniku.
+# – Słowniki {dict}: Przechowują UPORZĄDKOWANE kolekcje w PARACH KLUCZ-WARTOŚĆ. KLUCZ określa, czym jest dany ELEMENT w słowniku.
+#   MOŻEMY MODYFIKOWAĆ zawartość LISTY – możemy dodawać, zmieniać lub usuwać ELEMENTY (pamiętając o unikalności wartości).
 #   Pozwalają na bardzo szybkie odnajdywanie informacji na podstawie unikalnego klucza. Są czymś w rodzaju pęku kluczy.
-#   Elementy krotki SĄ indeksowalne – w nawiasie kwadratowym wpisujemy KLUCZ (tu wyświetli błąd) lub metodą słownik.get() ta metoda jest bezpieczniejsza.
-#   Są iterowalne, ale w specyficzny sposób.
-#   MOŻNA modyfikować, dodawać i usuwać elementy wewnątrz słownika (pamiętając o unikalności wartości).
-#   ZAPIS nawiasach klamrowych {'imie': "Michał", "wiek": 12}.
+#   Są strukturami INDEKSOWALNEMI, ale w specyficzny sposób.
+#   Są strukturami ITEROWALNEMI, ale w specyficzny sposób.
+#   ZAPIS – w nawiasach klamrowych {}, w których znajdują się pary KLUCZ-WARTOŚĆ {'imie': "Michał", "wiek": 12}.
 #   Wewnątrz słownika NIE WSZYSTKO MOŻE BYC KLUCZEM!!!
-!!! CO MOZE BYC / nie moze być KLUCZEM WEWNATRZ SŁOWNIKA? Pytanie na rozmowie kwalifikacyhnej?
-str jest hashowalny
+
+# Wewnątrz SŁOWNIKÓW nie wszystko może być KLUCZEM – możemy definiować jako KLUCZE, tylko niektóre obiekty.
+# Klucze MUSZĄ być niezmienne (ang. immutable) i HASZOWALNE, aby słownik mógł poprawnie i trwale obliczać ich skróty (HASZE).
+# Np. STRING jets HASHOWALNY / NIEMUTOWALNY.
+# Kluczami NIE MOGĄ być żadne obiekty MUTOWALNE (zmienne), takie jak:
+# LISTY ['a', 'b']
+# ZBIORY {1, 2, 3}
+# SŁOWNIKI {'wiek': 30}
+#
+# Pytanie podczas rekrutacji: CO MOŻE BYĆ KLUCZEM WEWNĄTRZ SŁOWNIKA?
+
 
 ####### LISTY [12, True, 'Andrzej', 55.5]
 # Listy definiujemy tak samo, jak ZMIENNE, ale LISTĘ (ZBIÓR zmiennych) dodajemy w NAWIASACH KWADRATOWYCH.
@@ -112,10 +121,10 @@ print(random_list)
 
 ### Funkcja .remove() – USUWANIE elementu z listy.
 
-random_list.remove('Ewa')
+random_list.remove('Ewa') # Używaj tej metody
 print(random_list)
 # lub
-del random_list[0] # Metoda del działa tylko na listach
+del random_list[0] # Metoda del działa tylko na LISTACH
 print(random_list)
 
 
