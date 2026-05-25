@@ -43,3 +43,4 @@ FUNKCJE WBUDOWANE:
 
     -> Wartości logiczne
         -> Booleans (bool): Wartości logiczne, czyli prawda (True) lub fałsz (False). Muszą zaczynać się wielką literą
+
