@@ -13,7 +13,7 @@
 ### TWORZENIE zbiorów
 
 set_1 = {12, True, 'Andrzej', 55.5}
-set_2 = set(12, True, 'Andrzej', 55.5)
+set_2 = set((12, True, 'Andrzej', 55.5))
 
 
 ### ODCZYTYWANIE zbiorów
@@ -29,21 +29,16 @@ for element in set_1: # Wyświetl zawartość zbioru. ZBIÓR jest obiektem itero
 
 set_1.add('Aga') # Dodaj element do zbioru.
 print(set_1)
-# UWAGA! Metoda .append() lub .insert() nie działa na zbiorach – działa tylko na listach.
+# UWAGA! Metoda .append() lub .insert() nie działa na ZBIORACH – działa tylko na LISTACH.
 
 
 ### Funkcja .remove() – USUWANIE elementu do zbioru.
 set_1.remove('Aga') # Dodaj element do zbioru (za każdym razem wyświetli elementy w innej kolejności).
 print(set_1)
-# UWAGA! Metoda del nie działa na zbiorach – działa tylko na listach.
+# UWAGA! Metoda del nie działa na ZBIORACH – działa tylko na LISTACH.
 
 
 ### ZMIANA wartości na ELEMENCIE z listy na inną.
 
 random_list[-1] = 'Ewa'
 print(random_list)
-
-
-
-
-
