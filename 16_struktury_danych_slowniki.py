@@ -7,10 +7,16 @@
 #   Są strukturami ITEROWALNEMI, ale w specyficzny sposób.
 #   ZAPIS – w nawiasach klamrowych {}, w których znajdują się pary KLUCZ-WARTOŚĆ {'imie': "Michał", "wiek": 12}.
 #   Wewnątrz słownika NIE WSZYSTKO MOŻE BYC KLUCZEM!!!
-!!! CO MOZE BYC / nie moze być KLUCZEM WEWNATRZ SŁOWNIKA? Pytanie na rozmowie kwalifikacyhnej?
-str jest hashowalny
 
-MAGĄ zawierać różne TYPY DANYCH, np. lista = [12, True, 'Andrzej', 55.5] ???
+# Wewnątrz SŁOWNIKÓW nie wszystko może być KLUCZEM – możemy definiować jako KLUCZE, tylko niektóre obiekty.
+# Klucze MUSZĄ być niezmienne (ang. immutable) i HASZOWALNE, aby słownik mógł poprawnie i trwale obliczać ich skróty (HASZE).
+# Np. STRING jets HASHOWALNY / NIEMUTOWALNY.
+# Kluczami NIE MOGĄ być żadne obiekty MUTOWALNE (zmienne), takie jak:
+# LISTY ['a', 'b']
+# ZBIORY {1, 2, 3}
+# SŁOWNIKI {'wiek': 30}
+#
+# Pytanie podczas rekrutacji: CO MOŻE BYĆ KLUCZEM WEWNĄTRZ SŁOWNIKA?
 
 
 
@@ -38,6 +44,7 @@ dict['waga'] = 55 # <nazwa słownika>['KLUCZ'] = WARTOŚĆ
 # KLUCZE znajdujące się wewnątrz struktury słownika muszą być kluczami UNIKALNYMI (nie może być 2 kluczy do tej samej sali).
 
 #dict[[1, 2, 3]] = oceny <- Nie jesteśmy w stanie dodać LISTY jako KLUCZA w SŁOWNIKU, ponieważ LISTA jest NIEHASHOWALNA.
+#dict[{1, 2, 3}] = oceny <- Nie jesteśmy w stanie dodać ZBIORU jako KLUCZA w SŁOWNIKU, ponieważ ZBIÓR jest NIEHASHOWALY.
 #dict['oceny] = [1, 2, 3] <- To jesteśmy w stanie zrobić – LISTA może być WARTOŚCIĄ w SŁOWNIKU.
 
 
@@ -59,15 +66,13 @@ for uczestnik in dict.keys(): # Zmienną w pętli for możemy nazwać w dowolny 
 for value in dict.values(): # ITERACJA wyłącznie po WARTOŚCIACH naszego SŁOWNIKA.
     print(value)
 
-for value in dict.items(): # ITERACJA po ITEMSach (czyli po KLUCZACH i WARTOŚCIACH) naszego SŁOWNIKA.
-    print(value)
-
 for key, value in dict.items(): # ITERACJA po ITEMSach (czyli po KLUCZACH i WARTOŚCIACH) naszego SŁOWNIKA.
     print(f' Klucz: {key} + wartość: {value}')
 
 
 ### Przykład STRUKTURY ZŁOŻONEJ
 # UWAGA! Jeśli chcielibyśmy stworzyć LISTĘ uczniów, będziemy musieli stworzyć strukturę złożoną – LISTĘ SŁOWNIKÓW.
+#
 # uczniowie = [
 #     {
 #         'imie': 'Anna',
