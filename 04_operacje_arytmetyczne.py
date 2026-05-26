@@ -17,6 +17,18 @@ print('pierwiastkowanie: ', a ** (1/b)) # Pierwiastkowanie (pierwiastek 3 stopni
 
 print('dzielenie: ', a / b) # Dzielenie. Zawsze zwraca float (liczbę zmiennoprzecinkową)
 print('dzielenie całkowite: ', a // b) # Dzielenie całkowite. Dla 10 // 3 da wynik 3, bo w 10 mieszczą się 3 trójki i reszta 1
-print('dzielenie modulo: ', a % b) # Dzielenie module: Reszta z dzielenia. Przydatne podczas sprawdzania parzystości liczby
+print('dzielenie modulo: ', a % b) # Dzielenie module: Reszta z dzielenia. Przydatne podczas sprawdzania parzystości liczby: print(a % 2 == 0)
 
 print('Iloczyn skalarny: ', a @ b) # Iloczyn skalarny. Warto zapamiętać planując pracę przy sieciach neuronowych
+
+
+### ĆWICZENIE – Czy liczba jest parzysta?
+
+a = int(input('Podaj liczbę: '))
+print(a % 2 == 0)
+
+# if a % 2:
+#     print('Liczba jest nieparzysta')
+# else:
+#     print('Liczba jest parzysta')
+

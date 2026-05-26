@@ -1,5 +1,20 @@
 ####### Konkatenacja (złączenie) stringów
 
+# KONKATENACJA to w języku Python operacja łączenia dwóch lub więcej ciągów znaków (typ String) w jeden dłuższy napis.
+# Tekst w Pythonie (oznaczany jako str) musi być zawsze zapisywany w cudzysłowach (pojedynczych lub podwójnych),
+# co pozwala interpreterowi odróżnić go od nazw zmiennych
+#
+# OPERATOR DODAWANIA (+)
+# Najprostsza metoda, która pozwala na bezpośrednie „zsumowanie” dwóch fragmentów tekstu.
+# Przykład: powitanie = 'Cześć' + ' ' + 'użytkowniku' spowoduje powstanie napisu "Cześć użytkowniku".
+#
+# Ważne zasady:
+# Różne typy danych: Nie można bezpośrednio połączyć tekstu (str) z liczbą (int) za pomocą operatora +.
+# Próba wykonania 'Tekst' + 404 spowoduje błąd. LICZBĘ należy najpierw zamienić na TEKST funkcją str.
+#
+# F-stringi: Nowoczesnym i bardzo czytelnym sposobem łączenia tekstów ze zmiennymi są tzw. f-stringi
+# (np. print(f'Twoje hasło to: {password}')), które automatycznie dbają o konwersję typów i są uważane za styl Pythonic.
+
 print('1'+'1') # Dla str PLUS działa jako operator KONKATENACJA (SKLEJENIE) – nie działa dla str + int, np. 1+'1')
 print(1+1) # Dla int PLUS działa jak operator DODAWANIA
 
@@ -20,6 +35,8 @@ print(full_text_numbers)
 full_text_f = f'Cześć! Man na imię {name} {last_name}. Mam {age} lat i {height} wzrostu.'
 print(full_text_f)
 
+print('Hello' + ' ' + 'World') # Łańcuchy znaków możemy łączyć za pomocą operatora +, przykładowo:
+print('Hello ' * 5) # Możemy też powtórzyć wybrany tekst kilkukrotnie za pomocą operatora * (tutaj wyświetlimy 'Hello' pięć razy)
 
 
 ####### Metody stringów – Pozwalają modyfikować tekst.

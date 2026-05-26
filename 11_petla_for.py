@@ -1,10 +1,12 @@
 ####### PĘTLA FOR
 #
-# Pętli FOR używamy tam, gdzie mamy do czynienia z pewnym OGRANICZONYM ZBIOREM, przez który chcemy przejść.
+# Pętli FOR używamy tam, gdzie mamy do czynienia z pewnym OGRANICZONYM ZBIOREM, przez który chcemy przejść,
+# lub gdy z góry znamy liczbę powtórzeń.
 # ZAKOŃCZY SIĘ w momencie, kiedy skończy się ZBIÓR DANYCH (kiedy zakończy się obiekt ITEROWALNY).
 # Przykładem obiektu iterowalnego jest zakres liczb lub STRING – ponieważ słowo możemy przeliterować.
 # bool, int i float nie są obiektami iterowalnymi.
 
+# Uwaga: instrukcje "continue" i "break" również działają w pętlach for! W pętli for również działa klauzula "else" pętli.
 
 ### SKŁADNIA
 #

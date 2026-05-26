@@ -1,5 +1,30 @@
 ####### INSTRUKCJE WARUNKOWE
+# #
+# INSTRUKCJA WARUNKOWA if warunkowo wykonuje blok kodu.
+# Podstawowa składnia (zwróć uwagę na wcięcie i dwukropek po warunku):
 #
+# if {warunek}:
+#   {kod do wykonania linia 1}
+#   {kod do wykonania linia 2}
+#   {kod do wykonania linia 3}
+#
+# Wcięcie sygnalizuje fragment bloku, który będzie wykonany, jeśli warunek będzie spełniony.
+
+### Warunek może być również wartością bezpośrednio logiczną:
+# a = True
+# b = False
+# c = a or b
+# if c:
+#     print("Warunek prawdziwy")
+#
+### Co w przypadku użycia łańcucha znaków?
+# c = "Przykładowy tekst"
+# if c:
+#     print("Ta linia zostanie wykonana")
+# c = ""
+# if c:
+#     print("To polecenie zostanie pominięte")
+
 # Do tej pory program wykonywał się od góry, do dołu.
 #
 # Podstawowe słowa kluczowe:
@@ -49,10 +74,15 @@ if user_age_3 / 3: # Lub if user_are_3 % 3 == 0:
     print('Podana liczba jest podzielna przez 3.')
 else:
     print('Podana liczba nie jest podzielna przez 3.')
+# lub
+if user_age_3 % 3:
+    print('Podana liczba nie jest podzielna przez 3.')
+else:
+    print('Podana liczba jest podzielna przez 3.')
 
 
 
-### ĆWICZENIE 4 – Liczba czy nie liczba?
+### ĆWICZENIE 4 – Liczba czy NIE liczba?
 # Pobierz od użytkownika liczbę.
 # Obsłuż sytuację, w której użytkownik pisze jakiś znak specjalny, albo literę. Uniknij błędu.
 
@@ -79,7 +109,7 @@ else:
 
 
 ### ĆWICZENIE 6 – Wiele warunków elif – Warunki ROZŁĄCZNE.
-# Sprawdzenie znaku liczby – 3 możliwości – jeden z 3 wariantów
+# Sprawdzenie znaku liczby – 3 możliwości – MOŻLIWY JEST TYLKO JEDEN Z 3 WARIANTÓW.
 # W danym momencie może zajść tylko jedna z 3 możliwości (liczba jest dodatnia, ujemna lub róan zero).
 # Warunki są ROZŁĄCZNE – tylko jedna spośród wielu możliwości może być w danym momencie spełniona.
 
@@ -96,6 +126,7 @@ else:
 
 ### ĆWICZENIE 7 – Warunki ODDZIELNE.
 # Warunki ODDZIELNE – Zachodzą w momencie, kiedy jakaś opcja spełni w danym momencie więcej niż jeden warunek.
+# Inaczej mówiąc, MOŻLIWA JEST DOWOLNA LICZBA WARIANTÓW.
 
 number_different = float(input('Podaj liczbę: '))
 
@@ -178,15 +209,18 @@ else:
 
 
 
-### UPROSZCZENIE dotyczące przedziałów liczbowych.
-# Uproszczenie bez AND dotyczy tylko przedziałów liczbowych,
-# jeżeli dana liczba ma się mieścić pomiędzy jedną a drugą.
+### CIĄG WARUNKÓW i UPROSZCZENIE dotyczące przedziałów liczbowych.
+# Ciąg warunków jest sprawdzany DO MOMENTU, AŻ KTÓRYŚ WARUNEK ZOSTANIE SPEŁNIONY.
+# Przykładowo, jeśli spełniony będzie wiek > 0 and wiek < 10, to kolejne warunki (elif) nie będą rozpatrywane.
+#
+# Uproszczenie bez AND dotyczy tylko przedziałów liczbowych.
+# Jeżeli dana liczba ma się mieścić pomiędzy jedną a drugą.
 # Jeżeli poniżej 10 lat to dziecko.
 # Jeżeli 11-17 lat to nastolatek.
 # Jeżeli 18-40 lat to dorosły.
 # Jeżeli 41+ lat to senior.
 
-wiek = int(input('Podaj wiek? '))
+wiek = int(input('Podaj wiek: '))
 
 # Zapis z AND
 if wiek > 0 and wiek < 10:
@@ -214,8 +248,23 @@ else:
 
 
 
-### ZAGNIEŻDŻENIA.
-# Jeżeli mamy sekwencję pytań i następne pytanie zależy od poprzedniej odpowiedzi.
+### ZAGNIEŻDŻONE warunki.
+# Jeżeli mamy SEKWENCJĘ WARUNKÓW/PYTAŃ i następne pytanie ZALEŻY OD POPRZEDNIEJ ODPOWIEDZI.
+
+liczba = int(input('Podaj liczbę: '))
+
+if liczba > 0: # WARUNEK 1 – Czy liczba jest większa od 0? Jeśli TAK, to przejdź wiersz niżej.
+    if liczba == 5: # Dodatkowo (WARUNEK 2) – Czy liczba jest równa 5? Jeśli jest równa 5...
+        print('To jest 5') # ...wyświetl.
+    else: # W przeciwnym razie (jeśli NIE jest równa 5)...
+        print('Nie podałeś 5') # ...wyświetl.
+    if liczba == 100: # Dodatkowo (WARUNEK 3) – Czy liczba jest równa 100? Jeśli jest równa 100...
+        print('To jest 100') # ...wyświetl.
+    else: # W przeciwnym razie (jeśli NIE jest równa 100)...
+        print('Nie podałeś 100') # ...wyświetl.
+else: # W przeciwnym razie (jeśli NIE jest równa 0)...
+    print('Nie podałeś liczby większej niz 0') # ...wyświetl.
+
 
 age2 = int(input('Ile masz lat ? '))
 has_drivers_license2 = False
