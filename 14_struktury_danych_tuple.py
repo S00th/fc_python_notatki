@@ -31,3 +31,32 @@ print(tuple_1[0:3]) # Wyświetl ZAKRES ELEMENTÓW
 
 for element in krotka_1: # Wyświetl zawartość tupli. TUPLA jest obiektem iterowalnym, więc możemy na nim korzystać z pętli "for"
     print(element)
+
+
+
+####### Czy tupla może myć KLUCZEM w SŁOWNIKU?
+
+list = ['Adam', 15, 15.5, True]
+tuple = ('Adam', 15, 15.5, True)
+set = {'Adam', 15, 15.5, True}
+dict = {'name': 'Ewa', 'age': 20 }
+
+print(list)
+print(type(list))
+print()
+
+print(tuple)
+print(type(tuple))
+print()
+
+print(set)
+print(type(set))
+print()
+
+print(dict)
+print(type(dict))
+print()
+
+dict2 = {('Adam', 15, 15.5, True): 'Ewa', 'age': 20 }
+print(dict2)
+print(type(dict2))
