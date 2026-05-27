@@ -10,7 +10,7 @@
 
 # Wewnątrz SŁOWNIKÓW nie wszystko może być KLUCZEM – możemy definiować jako KLUCZE, tylko niektóre obiekty.
 # Klucze MUSZĄ być niezmienne (ang. immutable) i HASZOWALNE, aby słownik mógł poprawnie i trwale obliczać ich skróty (HASZE).
-# Np. STRING jets HASHOWALNY / NIEMUTOWALNY.
+# Np. STRING jest HASHOWALNY / NIEMUTOWALNY.
 # Kluczami NIE MOGĄ być żadne obiekty MUTOWALNE (zmienne), takie jak:
 # LISTY ['a', 'b']
 # ZBIORY {1, 2, 3}

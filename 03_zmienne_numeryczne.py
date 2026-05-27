@@ -1,6 +1,6 @@
 ####### TYPY ZMIENNYCH
 
-# Zmienne (Variables) można wyobrazić sobie jako pudełka, w których przechowywane sę różne informacje.
+# ZMIENNE (Variables) można wyobrazić sobie jako pudełka, w których przechowywane sę różne informacje.
 # Umożliwiają one zapisanie danych (np. liczb lub tekstu), nadać im nazwę i wracać do nich w dalszej części wykonywanego programu.
 # Zrozumienie zmiennych to fundament, na którym zbudujesz całą swoją wiedzę o programowaniu.
 
@@ -8,6 +8,7 @@
 # po prawej stronie znajduje się jej WARTOŚĆ.
 # nazwa = wartość
 # Nazwa zmiennej MOŻE składać się z dużych i małych liter alfabetu łacińskiego, cyfr, oraz znaku "_".
+# UWAGA! WARTOŚĆ wpisana przez użytkownika sama w sobie PRZECHOWUJE WARTOŚĆ LOGICZNĄ.
 
 # Nazwa ZMIENNEJ nie może:
     # zawierać SPACJI

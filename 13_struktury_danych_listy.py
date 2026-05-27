@@ -31,7 +31,7 @@
 #   Są przydatne np. w formularzach, w których wymagamy wybrania jednej z sugestii (np. płeć: M / K)
 #   tam, gdzie chcemy ZABLOKOWAĆ użytkownikowi możliwość DODANIA KOLEJNYCH OPCJI.
 
-#   Różnica między LISTĄ i KROTKĄ modyfikacji wartości znajdujących się w tych zbiorach danych (LISTĘ można modyfikować, a KROTKI nie).
+#   Różnica między LISTĄ i KROTKĄ modyfikacji wartości znajdujących się w tych zbiorach danych (LISTĘ można modyfikować, a TUPLI nie).
 
 # – Zbiory {set}: Przechowują NIEUPORZĄDKOWANE kolekcje UNIKALNYCH ELEMENTÓW (DUPLIKATY, czyli dwie zmienne o takiej samej wartości są automatycznie usuwane).
 #   MOŻEMY MODYFIKOWAĆ zawartość LISTY – możemy dodawać, zmieniać lub usuwać ELEMENTY.
@@ -54,8 +54,12 @@
 #   Wewnątrz słownika NIE WSZYSTKO MOŻE BYC KLUCZEM!!!
 
 # Wewnątrz SŁOWNIKÓW nie wszystko może być KLUCZEM – możemy definiować jako KLUCZE, tylko niektóre obiekty.
-# Klucze MUSZĄ być niezmienne (ang. immutable) i HASZOWALNE, aby słownik mógł poprawnie i trwale obliczać ich skróty (HASZE).
-# Np. STRING jets HASHOWALNY / NIEMUTOWALNY.
+# Klucze MUSZĄ być NIEZMIENNE (ang. IMMUTABLE) i HASZOWALNE, aby słownik mógł poprawnie i trwale obliczać ich skróty (HASZE).
+# Różnica między niemutowalnością, a hashowalnością wynika z ich roli w zarządzaniu danymi:
+# niemutowalność dotyczy tego, czy obiekt można zmienić,
+# natomiast hashowalność określa, czy obiekt może być użyty jako unikalny identyfikator w strukturach takich jak słowniki.
+#
+# Np. STRING jest HASHOWALNY / NIEMUTOWALNY.
 # Kluczami NIE MOGĄ być żadne obiekty MUTOWALNE (zmienne), takie jak:
 # LISTY ['a', 'b']
 # ZBIORY {1, 2, 3}
