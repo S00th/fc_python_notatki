@@ -1,7 +1,7 @@
 ####### PĘTLA FOR
 #
 # Pętli FOR używamy tam, gdzie mamy do czynienia z pewnym OGRANICZONYM ZBIOREM, przez który chcemy przejść,
-# lub gdy z góry znamy liczbę powtórzeń.
+# lub gdy Z GÓRY ZNAMY LICZBĘ POWTÓRZEŃ.
 # ZAKOŃCZY SIĘ w momencie, kiedy skończy się ZBIÓR DANYCH (kiedy zakończy się obiekt ITEROWALNY).
 # Przykładem obiektu iterowalnego jest zakres liczb lub STRING – ponieważ słowo możemy przeliterować.
 # bool, int i float nie są obiektami iterowalnymi.

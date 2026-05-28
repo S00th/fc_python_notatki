@@ -325,8 +325,8 @@ print(word1.isdigit()) # True, bo składa się z cyfr
 print(word2.isdigit()) # False, bo składa się z liter alfabetu
 print(word3.isdigit()) # False, bo nie akceptuje .
 print(word4.isdigit()) # False, bo nie akceptuje znaków specjalnych
-print(word5.isdigit()) # True, bo rozpoznaje indeks górny i dolny
-print(word6.isdigit()) # False, bo nie e rozpoznaje ułamków zapisanych w formie ½
+print(word5.isdigit()) # True, bo rozpoznaje indeks górny ² i dolny ₂
+print(word6.isdigit()) # False, bo nie rozpoznaje ułamków zapisanych w formie ½ (Unicode)
 print(word7.isdigit()) # False, bo nie akceptuje liczb z innych systemów pisma np. 三 (japońskie 3).
 
 
@@ -343,8 +343,8 @@ print(word1.isnumeric()) # True, bo składa się z cyfr
 print(word2.isnumeric()) # False, bo składa się z liter alfabetu
 print(word3.isnumeric()) # False, bo nie akceptuje .
 print(word4.isnumeric()) # False, bo nie akceptuje znaków specjalnych
-print(word5.isnumeric()) # True, bo rozpoznaje indeks górny i dolny
-print(word6.isnumeric()) # True, bo rozpoznaje ułamki zapisane w formie ½
+print(word5.isnumeric()) # True, bo rozpoznaje indeks górny ² i dolny ₂
+print(word6.isnumeric()) # True, bo rozpoznaje ułamki zapisane w formie ½ (Unicode)
 print(word7.isnumeric()) # True, bo rozpoznaje liczb z innych systemów pisma np. 三 (japońskie 3).
 
 

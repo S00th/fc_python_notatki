@@ -18,11 +18,12 @@
 #     print("Warunek prawdziwy")
 #
 ### Co w przypadku użycia łańcucha znaków?
-# c = "Przykładowy tekst"
-# if c:
+#
+# tekst = "Przykładowy tekst"
+# if tekst:
 #     print("Ta linia zostanie wykonana")
-# c = ""
-# if c:
+# tekst = ""
+# if tekst:
 #     print("To polecenie zostanie pominięte")
 
 # Do tej pory program wykonywał się od góry, do dołu.
@@ -48,8 +49,8 @@
 
 user_age = int(input('Podaj wiek swój wiek: ')) # input() zawsze zwraca STRING, dlatego w tym przypadku trzeba dokonać konwersji.
 
-if user_age >= 18: # Warunek zawsze zwraca BULL
-    print('Jesteś pełnoletni.')
+if user_age >= 18:
+    print('Jesteś pełnoletni.') # Wcięcie decyduje o tym, jakie polecenia zostaną wykonane, kiedy nasze wyrażenie z wiersza nad wcięciem będzie prawdziwe.
 else:
     print(f'Nie jesteś pełnoletni')
 
