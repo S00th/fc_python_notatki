@@ -28,5 +28,5 @@ print(1, 2, 3) # Wpisując cyfry, nie musisz używać cudzysłowów
 
 
 
-# import sys # Sprawdź, jaka jest ścieżka Pythona, przy pomocy której uruchamiamy skrypt
-# print(sys.executable) # wyświetl ścieżkę do Pythona, którego używam, aby uruchomić skrypt
+import sys # Sprawdź, jaka jest ścieżka Pythona, przy pomocy której uruchamiamy skrypt
+print(sys.executable) # wyświetl ścieżkę do Pythona, którego używam, aby uruchomić skrypt

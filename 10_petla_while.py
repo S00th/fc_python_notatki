@@ -23,39 +23,11 @@
 # STRUKTURA pętli while (inny zapis)
 #
 # while <warunek1>:
-#     <kod znajdujący się po wcięciu, jets kodem, który jest wykonywany, dopóki warunek jest prawdziwy>
+#     <kod znajdujący się po wcięciu, jest kodem, który jest wykonywany, dopóki warunek jest prawdziwy>
 #     if <warunek2>: break # wyjście z pętli (pominięcie reszty)
 #     if <warunek3>: continue # przejście do góry pętli powrót do warunek1)
 # else:
 #     {kod wykonywany, jeśli pętli nie zakończyło break}
-
-
-
-### ĆWICZENIE
-#
-# Kalkulator, który sumuje koszt zakupów.
-# Poproś użytkownika o nazwę: produkty, niech poda liczbę sztuk oraz cenę za sztukę.
-# Po wprowadzeniu danych zapytaj użytkownika, czy chce zakończyć lub wprowadzić kolejny produkt.
-
-# Zmienna, która odpowiada za łączną wartość produktów, musi się znajdować na samej górze programu – przed pętlą "while".
-# Gdyby znajdowała się wewnątrz pętli, za każdym uruchomieniem pętli tworzylibyśmy nową zmienną z przypisaną wartością 0.
-
-suma = 0 # Sumę tą będziemy zwiększać podczas działania pętli.
-
-while True:
-    produkt = input('Podaj nazwę produktu: ')
-    ilosc = int(input('Podal liczbę sztuk: '))
-    cena = float(input('Podaj cenę za kilogram: '))
-
-    wartosc = ilosc * cena
-    suma += wartosc # Znaczy to tyle, co: suma = wartosc + suma
-
-    print(f'Produkt: {produkt}. Koszt: {wartosc} zł.')
-
-    odpowiedz = input('Wprowadź kolejny produkt [T] lub zakończ [N]: ')
-    if odpowiedz.upper() == 'N':
-        break
-print(f'Łączny koszta zakupów wynosi {suma} zł.') # Wyświetl sumę już poza pętlą
 
 
 
@@ -154,3 +126,31 @@ while True:
     else:
         print("Jesteś już w wieku emerytalnym")
         break
+
+
+
+### ĆWICZENIE
+#
+# Kalkulator, który sumuje koszt zakupów.
+# Poproś użytkownika o nazwę: produkty, niech poda liczbę sztuk oraz cenę za sztukę.
+# Po wprowadzeniu danych zapytaj użytkownika, czy chce zakończyć lub wprowadzić kolejny produkt.
+
+# Zmienna, która odpowiada za łączną wartość produktów, musi się znajdować na samej górze programu – przed pętlą "while".
+# Gdyby znajdowała się wewnątrz pętli, za każdym uruchomieniem pętli tworzylibyśmy nową zmienną z przypisaną wartością 0.
+
+suma = 0 # Sumę tą będziemy zwiększać podczas działania pętli.
+
+while True:
+    produkt = input('Podaj nazwę produktu: ')
+    ilosc = int(input('Podal liczbę sztuk: '))
+    cena = float(input('Podaj cenę za kilogram: '))
+
+    wartosc = ilosc * cena
+    suma += wartosc # Znaczy to tyle, co: suma = wartosc + suma
+
+    print(f'Produkt: {produkt}. Koszt: {wartosc} zł.')
+
+    odpowiedz = input('Wprowadź kolejny produkt [T] lub zakończ [N]: ')
+    if odpowiedz.upper() == 'N':
+        break
+print(f'Łączny koszta zakupów wynosi {suma} zł.') # Wyświetl sumę już poza pętlą

@@ -16,6 +16,7 @@ set_1 = {12, True, 'Andrzej', 55.5}
 set_2 = set((12, True, 'Andrzej', 55.5))
 
 
+
 ### ODCZYTYWANIE zbiorów
 
 print(set_1) # Wyświetl zawartość zbioru. UWAGA! Za każdym razem ELEMENTY zbioru zostaną wyświetlone w innej kolejności.
@@ -25,6 +26,7 @@ for element in set_1: # Wyświetl zawartość zbioru. ZBIÓR jest obiektem itero
     print(element)    # Operacja ta będzie szybsza na ZBIORACH niż na LISTACH.
 
 
+
 ### Funkcja .add() – DODAWANIE elementu do zbioru.
 
 set_1.add('Aga') # Dodaj element do zbioru.
@@ -32,10 +34,13 @@ print(set_1)
 # UWAGA! Metoda .append() lub .insert() nie działa na ZBIORACH – działa tylko na LISTACH.
 
 
+
 ### Funkcja .remove() – USUWANIE elementu do zbioru.
+
 set_1.remove('Aga') # Dodaj element do zbioru (za każdym razem wyświetli elementy w innej kolejności).
 print(set_1)
 # UWAGA! Metoda del nie działa na ZBIORACH – działa tylko na LISTACH.
+
 
 
 ### ZMIANA wartości na ELEMENCIE z listy na inną.
