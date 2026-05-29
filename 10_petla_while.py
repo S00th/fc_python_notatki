@@ -30,6 +30,36 @@
 #     {kod wykonywany, jeśli pętli nie zakończyło break}
 
 
+### ĆWICZENIE – Przysiady
+# Planujesz zrobić 5 przysiadów.
+# Stwórz pętle, która będzie działałą do momentu, aż zrobisz 5 przysiadów.
+
+
+squats = 0 # Zaczynam ćwiczenie. W tym momencie zrobiłem ZERO przysiadów,
+            # ale w czasie trwania programu WARTOŚĆ zmiennej "squats" zostanie zmodyfikowana.
+
+while squats <= 5: # Dopóki nie wykonam 5 przysiadów...
+    print(squats) # wyświetl, który przysiad właśnie zrobiłem...
+    squats += 1 # dodaj koleje przysiad i wróć pierwszego wiersza kodu (zaczynającego się od "while")
+
+
+### ĆWICZENIE – Droga do sklepu
+# Użytkownik znajduje się w drodze do sklepu.
+# Zapytaj, czy już dodarł do sklepu.
+# Jeśli nie – niech jedzie dalej.
+# Jeśli tak – poinformuj go, że dotarł do sklepu.
+
+store = False
+
+while not store: # Dopóki nie dotrzesz do sklepu...
+    question = input('Czy dotarłeś do sklepu? [T/N] ') # Zadawaj pytanie, czy dotarłeś do sklepu.
+    if question.upper() == 'T': # Jeżeli WARUNEK zostanie spełniony (potwierdziłeś, że dotarłeś do sklepu)
+        print('Dotarłeś do sklepu') # Wyświetl komunikat...
+        store = True # i zmień warunek wejściowy na prawdziwy.
+    else:
+        print('Jedź dalej.') # W przeciwnym przypadku "Jedź dalej" i wróci do początku pętli.
+
+
 
 ### ĆWICZENIE
 #

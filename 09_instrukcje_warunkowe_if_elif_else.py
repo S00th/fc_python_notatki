@@ -1,6 +1,6 @@
 ####### INSTRUKCJE WARUNKOWE
-# #
-# INSTRUKCJA WARUNKOWA if warunkowo wykonuje blok kodu.
+#
+# INSTRUKCJA WARUNKOWA if warunkowo wykonuje blok kodu znajsujący się po dwukropku, w wierszach niżej, po zacięciu.
 # Podstawowa składnia (zwróć uwagę na wcięcie i dwukropek po warunku):
 #
 # if {warunek}:
@@ -19,7 +19,7 @@
 #
 ### Co w przypadku użycia łańcucha znaków?
 #
-# tekst = "Przykładowy tekst"
+# tekst = "Przykładowy tekst."
 # if tekst:
 #     print("Ta linia zostanie wykonana")
 # tekst = ""
@@ -128,7 +128,7 @@ else:
 
 
 
-####### Warunki ROZŁĄCZNE – możliwy jest TYLKO JEDEN Z WARIANTÓW (wiele warunków elif).
+####### Warunki ROZŁĄCZNE – możliwy jest TYLKO JEDEN Z WARIANTÓW (wiele warunków elif). !!!!!!!!!!!!!!!!!!
 
 ### ĆWICZENIE – wiele warunków elif
 # Sprawdzenie znaku liczby – 3 możliwości – MOŻLIWY JEST TYLKO JEDEN Z 3 WARIANTÓW.
@@ -144,7 +144,7 @@ elif num3x < 0:
 else:
     print('Podana liczba to ZERO.')
 
-# lub – DOPYTAĆ czy mogę użyć 2x elif i nie użyć else
+# lub – DOPYTAĆ czy mogę użyć 2x elif i nie użyć else !!!!!!!!!!!!!!!!!!
 
 if num3x < 0:
     print(f'Liczna {num3x} jest mniejsza od ZERA.')
@@ -292,7 +292,7 @@ else:
 # Pozwalają na tworzenie wielopoziomowej logiki, w której kolejny warunek jest SPRAWDZANY tylko wtedy, gdy poprzedni został spełniony.
 # Stasujemy, kiedy SEKWENCJĘ WARUNKÓW i następne pytanie ZALEŻY OD POPRZEDNIEJ ODPOWIEDZI.
 
-# Przykłąd – Wiek i prawo jazdy
+# Przykład – Wiek i prawo jazdy
 
 age2 = int(input('Ile masz lat ? '))
 has_drivers_license2 = True
@@ -305,7 +305,7 @@ if age2 >= 18: # WARUNEK 1 – Jeżeli masz 18 lat, to... przejdź wiersz niżej
 else: # W przeciwnym razie (jeśli NIE masz 18 lat)...
     print(f'Jesteś za młody. Możesz zrobić prawo jazdy za {18 - age2} lat.')
 
-# Przykład – LICZBĄ
+# Przykład – LICZBA
 
 liczba = int(input('Podaj liczbę: '))
 

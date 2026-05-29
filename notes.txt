@@ -1,49 +1,66 @@
 Python jest językiem TYPOWANYM DYNAMICZNIE.
-Oznacza to, że podczas przypisywania wartości do zmiennej nie musimy deklarować typu danych (Python sam zarządzi miejscem w pamięci).
+Oznacza to, że podczas przypisywania WARTOŚCI do ZMIENNEJ nie musimy deklarować TYPU DANYCH (Python sam zarządzi miejscem w pamięci).
 Pod jedną zmienną możemy podstawiać różne typy danych.
 
 liczba = 4
 liczba = 'cztery'
 
 FUNKCJE WBUDOWANE:
-    -> print() – Wyświetl zawartości w konsoli
-    -> type() – Sprawdź typ danych
-    -> pow(a, b) – Potęgowanie a do potęgi b
+    -> print() – Wyświetl zawartości w konsoli. WARTOŚCI zostaną wyświetlone w jednym wierszu, jeśli zostaną oddzielone przecinkami.
+    -> type() – Sprawdź typ zmiennej.
+    -> input() – Pobierz WARTOŚĆ od użytkownika z konsoli. Zawsze zwraca STRING, dlatego czasem trzeba dokonać konwersji na "int" lub "float".
+            To co wpisze użytkownik jako "input", zostanie przypisane do WARTOŚCI, a następnie np. może zostać wyświetlone za pomocą funkcji "print".
+            Docelowo nie będziemy używali tej funkcji. Dane będziemy pobierali z innych źródeł, np. źródłem może być interface.
+
     -> str(a) – Zamiana na typ danych NAPIS/CIĄG ZNAKÓW (str)
     -> int(a) – Zamiana na typ danych LICZBA CAŁKOWITA (int)
-        Jeśli chcesz zamienić NAPIS na LICZBĘ, to musi się on składać wyłącznie z CYFR. W innym wypadku wyświetli się błąd.
-    -> float(a) - Zamiana wartości na LICZBĘ ZMIENNOPRZECINKOWĄ
-        Jeśli chcesz zamienić NAPIS na float, to musi się on składać wyłącznie z CYFR lub może zawierać KROPKĘ
-            np. ze str = '123.12' można przejść na int za pośrednictwem float
-            str -> float -> int
+            Jeśli chcesz zamienić NAPIS (str) na LICZBĘ (int/float), to musi się on składać wyłącznie z CYFR. W innym wypadku wyświetli się błąd.
+    -> float(a) - Zamiana wartości na LICZBĘ ZMIENNOPRZECINKOWĄ (float)
+            Jeśli chcesz zamienić NAPIS (str) na float, to musi się on składać wyłącznie z CYFR lub może zawierać KROPKĘ (jest separatorem dziesiętnym)
+            np. ze str = '123.12' można przejść na int za pośrednictwem float – Konwersja: str -> float -> int
+    -> bool() – Konwersja danych na TYP LOGICZNY
+
+    -> len(iterable) – Zwraca długość obiektu ITEROWALNEGO (czyli takiego, z których da się wyodrębnić konkretny element lub kilka elementów).
+            Obiektem iterowalnym jest np. STRING.
     -> round(number) – Zaokrągla domyślnie do jedności, ale też pozwala zaokrąglić do X miejsc o przecinku.
-        round(number, precision) – Zaokrąglenie number (liczby zmiennoprzeciwkowej) do precision (dokładność) liczby po przecinku
-            -> number – Argument pozycyjny – potrzebny go podać, aby podana funkcja zadziałała
-            -> precision – Argument opcjonalny – ma wartość domyślną, można, ale nie trzeba go podawać, np: round(number, 2) – zaokrągli do 2 miejsc o przecinku
-    -> len(iterable) – Zwraca długość obiektu ITEROWALNEGO (czyli takiego, z których da się wyodrębnić konkretny element lub kilka elementów)
-            np. obiektem iterowalnym jest STRING.
-    -> bool() – Konwersja danych na typ logiczny
-    -> input() – Pobierz wartość od użytkownika z konsoli. Zawsze zwraca STRING, dlatego czasem trzeba dokonać konwersji na int() lub float().
-                Docelowo nie używamy tej funkcji. Dane będziemy pobierali z innych źródeł, np. źródłem może być interface
-    -> id() zwraca unikalny, całkowitoliczbowy identyfikator obiektu. W praktyce jest to adres tego obiektu w pamięci komputera.
-            Każdy obiekt ma przypisane własne id w momencie jego tworzenia (id jest swego rodzaju "pseudo" liczbą/pozycją).
-            w praktyce, używamy jej jedynie do sprawdzenia, czy coś jest HASHOWALNE.
-    -> isinstance(value, class) - sprawdza czy dana wartość jest danego typu (klasy) -> zwraca bool
+            round(number, precision) – Zaokrąglenie number (liczby zmiennoprzeciwkowej) do precision (dokładność) liczby po przecinku
+            -> number – Argument pozycyjny. Potrzebny, aby podana funkcja zadziałała.
+            -> precision – Argument opcjonalny. Ma wartość domyślną, można, ale nie trzeba go podawać, np: round(number, 2) – zaokrągli do 2 miejsc o przecinku.
+
+    -> isinstance(value, class) - Sprawdza czy dana wartość jest danego typu (klasy) -> zwraca bool np. insinstance(number, int):
     -> min(sequence) -> zwraca najmniejsza wartość z kolekcji
     -> max(sequence) -> zwraca największą wartość z kolekcji
+    -> sorted(collection) -> sortuje obiekt kolekcja -> zawsze zwraca listę
 
-1. TYPY DANYCH W PYTHONIE:
-    -> Numeryczne
-        -> Integers (int): Liczba całkowita, np. 2 lub -2. Liczby całkowite mogą być dowolnie duże (lub małe) i mogą przyjmować wartości ujemne
-        -> Floats (float): Liczba zmiennoprzecinkowa (z ułamkiem), np. 2.5
+    -> id() – Zwraca unikalny, całkowitoliczbowy identyfikator obiektu. W praktyce jest to adres tego obiektu w pamięci komputera.
+            Każdy obiekt ma przypisane własne id w momencie jego tworzenia (id jest swego rodzaju "pseudo" liczbą/pozycją).
+            w praktyce, używamy jej jedynie do sprawdzenia, czy coś jest HASHOWALNE.
 
-    -> Teksty
-        -> Strings (str): Teksty, zawsze zapisywane w cudzysłowie, np. "Dwa" lub "2.5". Każda treść umieszczona w cudzysłowie jest traktowana jako tekst
-                -> Metody stringów (nie mylić z FUNKCJAMI numerycznymi) – metoda jest wywoływana na konkretnym obiekcie/instancji (dla int nie ma takiej METODY, wyświetli  błąd)
-                    -> upper
-                    -> lower
-                    -> title
+    -> pow(a, b) – Potęgowanie a do potęgi b – NIE UŻYWAMY, ponieważ mamy operator **.
 
-    -> Wartości logiczne
-        -> Booleans (bool): Wartości logiczne, czyli prawda (True) lub fałsz (False). Muszą zaczynać się wielką literą
+TYPY DANYCH W PYTHONIE:
+    -> Numeryczne (typy proste)
+        -> Integers (int): LICZBA całkowita, np. 2 lub -2. Liczby całkowite mogą być dowolnie duże (lub małe) i mogą przyjmować wartości ujemne.
+        -> Floats (float): LICZBA zmiennoprzecinkowa (z ułamkiem), np. 2.5.
 
+    -> Teksty (typ prosty)
+        - Strings (str): TEKST, zawsze zapisywane w cudzysłowie (pojedynczym lub podwójnym), np. "Dwa" lub '2.5'.
+        Każda treść umieszczona w cudzysłowie jest traktowana jako TEKST/STRING.
+
+            -> Metody stringów (nie mylić z FUNKCJAMI numerycznymi) – metoda jest wywoływana na konkretnym obiekcie/instancji
+             (dla "int" nie ma takiej METODY – wyświetli błąd)
+                – .upper()
+                – .lower()
+                – .title()
+                – .capitalize()
+
+    -> Wartości logiczne (typy proste)
+        – Booleans (bool): Wartości logiczne, czyli prawda (True) lub fałsz (False). Muszą zaczynać się wielką literą
+
+    -> Struktury Danych (typ złożony)
+        – Listy [list]
+        – Krotki (tuple)
+        – Zbiory {set}
+        – Słowniki [dict]
+
+    -> None – Posiada swój własny, unikalny typ o nazwie "NoneType". Jest on oddzielony od LICZB, TEKSTÓW i WARTOŚCI LOGICZNYCH.

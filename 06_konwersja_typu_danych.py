@@ -28,14 +28,14 @@ float_to_str = int(float_like)
 print(float_like, type(float_like), float_to_str, type(float_to_str))
 
 # Konwersja str na float
-str_like = '123.45' # Jeśli chcesz zamienić NAPIS na float, to musi się on składać wyłącznie z CYFR lub może zawierać KROPKĘ
+str_like = '123.45' # Jeśli chcesz zamienić TEKST na float, to musi się on składać wyłącznie z CYFR lub może zawierać KROPKĘ
 str_to_float = float(str_like)
 print(str_like, type(str_like), str_to_float, type(str_to_float))
 
-# invalid_int_like = '123a' # Jeśli chcesz zamienić NAPIS na LICZBĘ, to musi się on składać wyłącznie z CYFR. W innym wypadku wyświetli się błąd.
-# from_invalid_str = int(invalid_int_like)
-# print(from_invalid_str, type(from_invalid_str))
+invalid_int_like = '123a' # Jeśli chcesz zamienić TEKST na LICZBĘ, to musi się on składać wyłącznie z CYFR. W innym wypadku wyświetli się błąd.
+from_invalid_str = int(invalid_int_like)
+print(from_invalid_str, type(from_invalid_str))
 
-# float_like_str = '123.12' # Jeśli chcesz zamienić NAPIS na float, to musi się on składać wyłącznie z CYFR i nie może zawierać KROPKI.
-# from_float_like = int(float_like_str)
-# print(from_float_like, type(from_float_like))
+float_like_str = '123.12' # Jeśli chcesz zamienić TEKST na float, to musi się on składać wyłącznie z CYFR i nie może zawierać KROPKI.
+from_float_like = int(float_like_str)
+print(from_float_like, type(from_float_like))

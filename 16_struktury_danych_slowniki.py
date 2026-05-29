@@ -52,10 +52,11 @@ dict['waga'] = 55 # <nazwa słownika>['KLUCZ'] = WARTOŚĆ
 
 dict.pop('name')
 # lub
-del dict['name'] # Tem sposób też zadziała, ale raczej go niw używamy
+del dict['name'] # Tem sposób też zadziała, ale raczej go nie używamy
 
 
-#### ITERACJA słownika – więc możemy na jej podstawie korzystać z pętli "for".
+#### ITERACJA słownika
+# Słowniki są iterowalne, więc możemy na nich korzystać z pętli "for".
 
 for uczestnik in dict.keys(): # Zmienną w pętli for możemy nazwać w dowolny sposób, ale róbmy to w sposób jasny.
     print(uczestnik) # ITERACJA wyłącznie po KLUCZACH naszego SŁOWNIKA – tu robi to świadomie.
