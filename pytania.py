@@ -1,0 +1,110 @@
+# ####### PYTANIA I WĄTPLIWOŚCI
+#
+### Przykład z materiałów z kursu – zapis ""
+#
+# tekst = "Przykładowy tekst."
+# if tekst:
+#     print("Ta linia zostanie wykonana")
+# tekst = ""
+# if tekst:
+#     print("To polecenie zostanie pominięte")
+
+
+
+# ####### Czy tupla może myć KLUCZEM w SŁOWNIKU?
+#
+# list = ['Adam', 15, 15.5, True]
+# tuple = ('Adam', 15, 15.5, True)
+# set = {'Adam', 15, 15.5, True}
+# dict = {'name': 'Ewa', 'age': 20 }
+#
+# print(list)
+# print(type(list))
+# print()
+#
+# print(tuple)
+# print(type(tuple))
+# print()
+#
+# print(set)
+# print(type(set))
+# print()
+#
+# print(dict)
+# print(type(dict))
+# print()
+#
+# dict2 = {('Adam', 15, 15.5, True): 'Ewa', 'age': 20 }
+# print(dict2)
+# print(type(dict2))
+
+
+
+####### ĆWICZENIE z instrukcjami warunkowymi
+# Przykład myślenia/kombinowania na ZDANIACH (pytanie-odpowiedź + zależności), a nie ZADANIACH matematycznych (pasjonat?).
+# Zadania matematyczne powodują, że muszę się skupić/cofnąć w myśleniu poziom wcześniej –
+# nie myślę nad rozwiązaniem problemu na zasadzie "jak to opisać kodem", tylko zanim do tego się zabiorę,
+# myślę "Na czym polegało, to działanie matematyczne" – a matematykę miałem w szkole średniej (skostninie wiedzy frustruje).
+# Oczywiście nie chodzi o to, że mam zamiar ignorować działania matematyczne,
+# po prostu, łatwiej mi zrozumieć PODSTAWY, kiedy operuje na ZDANIACH lub prostych działaniach matematycznych.
+# Kręcą mnie WYZWANIA LOGICZNE, ale nie zaawansowana matematyka.
+# Niżej przykład. Miałem problem ze zrozumieniem instrukcji zagnieżdżonych. Kiedy pomyślałem w taki sposób, "załapałem".
+
+# name = input('Jak masz na imię? ')
+#
+# if name.lower() == 'szymon':
+#     print(f'Cześć {name.capitalize()}! Miło znów cię widzieć.')
+#     gotowy = input('Czy jesteś gotowy do pracy? ')
+#     if gotowy.lower() == 'tak':
+#         print('To świetnie. Zabierajmy się do pracy')
+#     else:
+#         chory = input('Czy czujesz się chory? ')
+#         if chory.lower() == 'tak':
+#             print('Poproś przełożonego o urlop i udaj się do lekarza!')
+#         else:
+#             print('Jakoś dasz radę! Zabierajmy się do pracy.')
+# else:
+#     print(f'Cześć {name.capitalize()}. Miło mi się poznać.')
+
+
+
+### ĆWICZENIE – Przysiady
+# Przykład, który pomógł zrozumieć pętle "while".
+
+# squats = 0 # Zaczynam ćwiczenie. W tym momencie "zrobiłem" zero przysiadów,
+#             # ale w czasie trwania programu WARTOŚĆ zmiennej squats zostanie zmodyfikowana.
+#
+# while squats <= 5: # Dopóki nie wykonam 5 przysiadów...
+#     print(squats) # wyświetl, który przysiad właśnie zrobiłem...
+#     squats += 1 # dodaj koleje przysiad i wróć pierwszego wiersza kodu (zaczynającego się od "while")
+
+
+
+####### Wydaje mi się, że w żadnym momencie nie zostały wytłumaczone, a w pewnym momencie zaczęły być używane.
+
+# OPERATORY IDETYCZNOŚCIOWE
+# Określają, czy dwie zmienne przechowują ten sam obiekt. Mamy dwa operatory identycznościowe:
+# is
+# not is
+#
+# x = "ala ma kota"
+# y = "ala nie ma kota"
+# if x is not y:
+#     print("Obiekty x i y to nie te same obiekty")
+# x = y
+# if x is y:
+#     print("Obiekty x i y to  te same obiekty")
+#
+# # OPERATORY PRZYNALEŻNOŚCI
+# # Sprawdzają, czy dany element zawiera się w podzbiorze wartości danego obiektu. Mamy dwa takie operatory:
+# # in
+# # not in
+#
+# x = "ala ma kota"
+# if "ma" in x:
+#     print("wyraz 'ma' występuje w ciągu'",x,"'")
+# y = [2, 3, 4, 100]
+# if 4 in y:
+#     print("Liczba 4 występuje w zbiorze",y)
+# else:
+#     print("Liczba 4 nie występuje w zbiorze",y)
