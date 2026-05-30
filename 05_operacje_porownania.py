@@ -1,42 +1,23 @@
-####### OPERATOR PRZYPISANIA oraz OPERATORY LOGICZNE (operacje porównania)
-#
-# Kluczowe cechy ZMIENNYCH w Pythonie
-# – Każda ZMIENNA musi mieć swoją unikalną NAZWĘ oraz przypisaną do niej WARTOŚĆ.
-#   Nazwa (Name) i wartość (Value)
-#   Wartość przypisujemy za pomocą znaku równości (operator przypisania), na przykład: wiek = 25.
-#
-# – WIELKOŚĆ LITER (Case sensitivity): Python odróżnia małe i wielkie litery.
-#   Oznacza to, że zmienne o nazwach Zmienna, zmienna oraz ZMIENNA będą traktowane jako trzy zupełnie różne pudełka.
-#
-# – DYNAMICZNE TYPOWANIE (Dynamic typing)
-#   W przeciwieństwie do wielu innych języków, w Pythonie podczas przypisywania wartości do zmiennej (przed użyciem zmiennej)
-#   nie musisz deklarować typu danych (mówić komputerowi, czy w pudełku jest liczba, czy tekst).
-#   Python sam rozpozna typ danych na podstawie tego, co przypiszesz do ZMIENNEJ.
-#
-# – SŁOWA ZAREZERWOWANE (Keywords)
-#   Istnieją pewne słowa, których nie możecie użyć jako nazw zmiennych, ponieważ mają one specjalne znaczenie dla języka Python – np. print, if, class.
-#
-#  – WIELOKROTNE UŻYCIE
-#   Raz zdefiniowaną zmienną możesz wywoływać wielokrotnie, co pozwala uniknąć powtarzania tego samego kodu i ułatwia wprowadzanie zmian.
+####### OPERATORY PORÓWNANIA
 
-
-
-# OPERATORY PORÓNANIA służą do zestawiania ze sobą dwóch wartości w celu określenia relacji między nimi.
-# Zawsze zwracają wartość logiczną bool (Boolean), czyli zmienną logiczną True (prawda) lub False (fałsz).
+# OPERATORY PORÓWNANIA (comparison Operators) służą do sprawdzania RELACJI między dwiema WARTOŚCIAMI (np. LICZBAMI lub TEKSTAMI).
+# Zawsze zwracają wartość logiczną bool (boolean), czyli ZMIENNA LOGICZNĄ True (prawda) lub False (fałsz).
+# Wynikiem porównania ZMIENNYCH jest zawsze WARTOŚĆ typu bool.
 
 a = 10
 b = 5
 
-# Operatory porównania:
+# OPERATORY PORÓWNANIA
 
-print(a == b) # Zwraca True, jeśli obie wartości są IDENTYCZNE
-print(a != b) # Zwraca True, jeśli obie wartości są RÓŻNE
-# Użycie: == != między różnymi typami danych zwróci False, ponieważ LICZBA nie może być identyczna z TEKSTEM.
+print(a == b) # Zwraca True, jeżeli obie wartości są IDENTYCZNE
+print(a != b) # Zwraca True, jeżeli obie wartości są RÓŻNE
+# Użycie: == != między RÓŻNYMI TYPAMI DANYCH zwróci False, ponieważ LICZBA nie może być identyczna z TEKSTEM.
 
-print(a > b) # Zwraca True, jeśli lewa wartość jest WIĘKSZA od prawej
-print(a >= b) # Zwraca True, gdy lewa wartość jest WIĘKSZA lub równa prawej
-print(a < b) # Zwraca True, jeśli lewa wartość jest MNIEJSZA od prawej
-print(a <= b) # Zwraca True, gdy lewa wartość jest MNIEJSZA lub równa prawej
-# Użycie: > < >= <= między różnymi typami zmiennych wywoła TypeError
+print(a > b) # Zwraca True, jeżeli lewa wartość jest WIĘKSZA od prawej
+print(a >= b) # Zwraca True, jeżeli lewa wartość jest WIĘKSZA lub równa prawej
+print(a < b) # Zwraca True, jeżeli lewa wartość jest MNIEJSZA od prawej
+print(a <= b) # Zwraca True, jeżeli lewa wartość jest MNIEJSZA lub równa prawej
+# UWAGA! Użycie OPERATORÓW PORÓWNANIA między różnymi TYPAMI ZMIENNYCH wywoła TypeError.
+# Przykład 123 <= Adam
 
 print('adam' == 'Adam') # False – ponieważ wielkość liter ma znaczenie

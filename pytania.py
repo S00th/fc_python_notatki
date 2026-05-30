@@ -42,13 +42,13 @@
 
 ####### ĆWICZENIE z instrukcjami warunkowymi
 # Przykład myślenia/kombinowania na ZDANIACH (pytanie-odpowiedź + zależności), a nie ZADANIACH matematycznych (pasjonat?).
-# Zadania matematyczne powodują, że muszę się skupić/cofnąć w myśleniu poziom wcześniej –
+# Zadania matematyczne powodują, że muszę się skupić/cofnąć w myśleniu 2 poziomy wcześniej –
 # nie myślę nad rozwiązaniem problemu na zasadzie "jak to opisać kodem", tylko zanim do tego się zabiorę,
-# myślę "Na czym polegało, to działanie matematyczne" – a matematykę miałem w szkole średniej (skostninie wiedzy frustruje).
-# Oczywiście nie chodzi o to, że mam zamiar ignorować działania matematyczne,
+# tylko myślę "Na czym polegało, to działanie matematyczne" – a matematykę miałem w szkole średniej (skostniała wiedzy frustruje).
+# Oczywiście nie chodzi o to, że mam zamiar ignorować działania matematyczne w programowaniu (raczej się nie da),
 # po prostu, łatwiej mi zrozumieć PODSTAWY, kiedy operuje na ZDANIACH lub prostych działaniach matematycznych.
-# Kręcą mnie WYZWANIA LOGICZNE, ale nie zaawansowana matematyka.
-# Niżej przykład. Miałem problem ze zrozumieniem instrukcji zagnieżdżonych. Kiedy pomyślałem w taki sposób, "załapałem".
+# Lubie WYZWANIA LOGICZNE (planszówki), ale zaawansowana matematyka nie.
+# Niżej przykład. Miałem problem ze zrozumieniem instrukcji zagnieżdżonych. Kiedy pomyślałem w taki sposób jak niżej – "załapałem".
 
 # name = input('Jak masz na imię? ')
 #
@@ -80,7 +80,7 @@
 
 
 
-####### Wydaje mi się, że w żadnym momencie nie zostały wytłumaczone, a w pewnym momencie zaczęły być używane.
+####### Wydaje mi się, że nie zostały wytłumaczone, a w pewnym momencie zaczęły być używane.
 
 # OPERATORY IDETYCZNOŚCIOWE
 # Określają, czy dwie zmienne przechowują ten sam obiekt. Mamy dwa operatory identycznościowe:
@@ -108,3 +108,35 @@
 #     print("Liczba 4 występuje w zbiorze",y)
 # else:
 #     print("Liczba 4 nie występuje w zbiorze",y)
+
+
+###
+
+# Użytkownik wpisuje hasło.
+# Program ma sprawdzić:
+# – czy hasło ma minimum 8 znaków
+# – czy pierwszy znak NIE jest cyfrą
+# – czy w haśle znajduje się znak "!" lub "?"
+# – czy hasło nie zaczyna się i nie kończy tą samą literą
+#
+# Niejednoznaczność.
+#
+# Użytkownik wpisuje hasło.
+# Program ma sprawdzić czy spełnione są następujące warunki:
+# - hasło ma się składać z minimum 8 znaków
+# - hasło ma się zaczynać NIE-cyfrą
+# - hasło ma zawierać znaki "!" i "?"
+# - hasło NIE zaczyna się i kończyć tą samym literą
+
+# Dany jest moduł string.
+# Zbuduj funkcję do generowania haseł.
+# Funnkcja powinna przyjmować następujące wartości
+#     żądana długość hasła.
+#     czy zawrzeć znaki specjalne jeśli True to zawszyj, jeśli False, to nie zawieraj
+# Na końcu wymieszaj litery.
+#
+# Zbuduj program go generowania haseł oparty na podanym module string.
+# Powinien on:
+# - zapytać o długość hasła, które chce utworzyć
+# - dać możliwość wyboru czy w skład hasła mają wejść znaki specjalne
+# - na końcu ma wymieszać znaki/litery, z których składa się hasło

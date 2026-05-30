@@ -259,10 +259,3 @@
 # print()
 #
 #
-x = "ala ma kota"
-y = "ala nie ma kota"
-if x is not y:
-    print("Obiekty x i y to nie te same obiekty")
-x = y
-if x is y:
-    print("Obiekty x i y to  te same obiekty")

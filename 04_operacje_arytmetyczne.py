@@ -1,17 +1,19 @@
-####### Operacje arytmetyczne
-# Są to podstawowe działania matematyczne wykonywane na danych liczbowych takich jak int i float za pomocą  symboli zwanych operatorami arytmetycznymi.
-# Zawsze zwracają wartość numeryczną.
+####### OPERACJE ARYTMETYCZNE
+
+# OPERACJE ARYTMETYCZNE to podstawowe działania matematyczne wykonywane na danych liczbowych takich jak int i float.
+# Operacje arytmetyczne wykonywane są za pomocą symboli zwanych OPERATORAMI ARYTMETYCZNYMI.
+# OPERACJE ARYTMETYCZNE zawsze zwracają wartość numeryczną.
+
+## OPERATORY ARYTMETYCZNE
 
 a, b = 10, 3
-
-# Operatory arytmetyczne:
 
 print('dodawanie: ', a + b) # Dodawanie.
 print('odejmowanie: ', a - b) # Odejmowanie.
 print('mnożenie: ', a * b) # Mnożenie.
 print('potęgowanie: ', a ** b) # Potęgowanie (a do potęgi b).
-#lub
-print('potęgowanie: ', pow(a, b)) # Potęgowanie (a do potęgi b) przy pomocy wbudowanej FUNKCJI. NIE UŻYWAMY, ponieważ mamy operator **.
+# lub
+# print('potęgowanie: ', pow(a, b)) # Potęgowanie (a do potęgi b) przy pomocy wbudowanej FUNKCJI. NIE UŻYWAMY, ponieważ mamy operator **.
 
 print('pierwiastkowanie: ', a ** (1/b)) # Pierwiastkowanie (pierwiastek 3 stopnia z 10)
 
@@ -29,8 +31,20 @@ print(10 % 3 == 1) # Wyświetli True
 
 print('Iloczyn skalarny: ', a @ b) # Iloczyn skalarny. Warto zapamiętać planując pracę przy sieciach neuronowych
 
+print(10 / 2) # Wyświetli 5.0
+print(10 // 2) # Wyświetli 5
+print(10 % 2) # Wyświetli 0
+print()
+print(10 / 3) # Wyświetli 3.3333333333333335
+print(10 // 3) # Wyświetli 3
+print(10 % 3) # Wyświetli 1
 
-### ĆWICZENIE – Czy liczba jest parzysta?
+
+
+print('####### ####### ####### ĆWICZENIE – Czy liczba jest parzysta? ####### ####### #######')
+print()
+
+# Sprawdź, czy podana przez użytkownika liczba jest parzysta?
 
 number = int(input('Podaj liczbę: '))
 

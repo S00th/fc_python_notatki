@@ -323,12 +323,16 @@ else: # W przeciwnym razie (jeśli NIE jest większa 0)...
 
 
 
-### Ternary operation / Warunek w jednej linii.
-# Czyli "il else" w jednej linii
-# Będzie służył do przypisywania wartości warunkowo.
-# Składnia: wartość_jesli_true if <warunek> else wartość_jesli_false
+### Operator trójargumentowy (TERNARY OPERATOR) / Warunek w jednej linii.
+# Znany również jako WYRAŻENIE WARUNKOWE, to sposób na zapisanie prostej instrukcji if-else w jednej, zwięzłej linii kodu.
+# Służy do przypisywania wartości warunkowo.
+
+# SKŁADNIA
+# <wartość_jesli_true> if <warunek> else <wartość_jesli_false>
 
 num11 = 11
+
+# Taki kod można zapisać jak niżej:
 
 if num11 % 2 == 0:
     wynik = 'Parzysty'
@@ -336,10 +340,21 @@ else:
     wynik = 'Nieparzysty'
 print(wynik)
 
-# Inny sposób zapisu
+# lub w jednej linii:
 
 wynik = 'Parzysty' if num11 % 2 == 0 else 'Nieparzysty'
 print(wynik)
+
+
+### ZADANIE – Zakupy
+# Użytkownik podaje cenę produktu.
+# Za pomocą TERNARY OPERATOR przypisz do zmiennej status:
+# – "Drogi", jeśli cena > 100
+# – "Tani", jeśli cena ≤ 100.
+
+product_price = int(input('Podaj cenę produkty. '))
+print('Tani') if product_price <= 100 else print('Drogi')
+
 
 
 ### Warunek z NON
@@ -351,18 +366,3 @@ if not var: # Można zapisać w taki sposób
 
 if var is None:
     print('Var jest puste')  # jednak bezpieczniej jest zapisać w taki sposób.
-
-
-
-### Operator trójargumentowy (ang. TERNARY OPERATOR)
-# znany również jako wyrażenie warunkowe, to sposób na zapisanie prostej instrukcji if-else w jednej, zwięzłej linijce kodu.
-
-# -> Zadanie – zakupy
-    # Użytkownik podaje cenę produktu.
-    # Za pomocą TERNARY OPERATOR przypisz do zmiennej status:
-    # "Drogi", jeśli cena > 100,
-    # "Tani", jeśli cena ≤ 100.
-
-product_price = int(input('Podaj cenę produkty. '))
-
-print('Tani') if product_price <= 100 else print('Drogi')

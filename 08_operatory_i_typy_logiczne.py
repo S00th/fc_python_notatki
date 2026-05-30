@@ -1,4 +1,5 @@
-####### Typy logicznie i operatory logiczne
+####### TYPY LOGICZNE i OPERATORY LOGICZNE
+
 # Typ logiczny "bool" (boolean) to wbudowany typ danych, który reprezentuje wartości logicznych.
 # Przyjmuje jedną z dwóch wartości: True albo False.
 # – True: reprezentuje logiczną PRAWDĘ (oznaczaną za pomocą wartości 1)
