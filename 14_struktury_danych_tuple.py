@@ -1,14 +1,15 @@
 ####### STRUKTURY DANYCH – KROTKI (tuple)
 
 # – Krotki (tuple): Przechowują UPORZĄDKOWANE kolekcje ELEMENTÓW (WARTOŚCI).
-#   NIE MOŻEMY modyfikować zawartości krotki – nie możemy dodawać, modyfikować, ani usuwać ELEMENTÓW.
-#   ZAWARTOŚĆ krotki JEST NIEZMIENNA (stała) od momentu utworzenia. Raz zadeklarowana krotka musi być taka sama przez cały czas trwania programu.
+#   ZAWARTOŚĆ krotki JEST NIEZMIENNA/NIEMUTOWALNA (stała) od momentu utworzenia. Raz zadeklarowana krotka musi być taka sama przez cały czas trwania programu.
+#   NIE MOŻEMY modyfikować zawartości krotki: nie możemy dodawać, modyfikować, ani usuwać ELEMENTÓW.
 #   MAGĄ zawierać różne TYPY DANYCH, np. krotka = (12, True, 'Andrzej', 55.5)
 #   Są strukturami INDEKSOWALNYMI.
 #   Są strukturami ITEROWALNYMI.
 #   ZAPIS – w nawiasach okrągłych () lub bez nawiasów (ale NIE ZAPISUJEMY ich w taki) lub tuple().
 #   Są przydatne np. w formularzach, w których wymagamy wybrania jednej z sugestii (np. płeć: M / K)
 #   tam, gdzie chcemy ZABLOKOWAĆ użytkownikowi możliwość DODANIA KOLEJNYCH OPCJI.
+#   Wiersze w EXELu są tuplami???
 
 
 

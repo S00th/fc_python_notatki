@@ -58,9 +58,17 @@ TYPY DANYCH W PYTHONIE:
         – Booleans (bool): Wartości logiczne, czyli prawda (True) lub fałsz (False). Muszą zaczynać się wielką literą
 
     -> Struktury Danych (typ złożony)
-        – Listy [list]
-        – Krotki (tuple)
-        – Zbiory {set}
-        – Słowniki [dict]
+        – Listy [list]: list[0] / list[0:3] / list.index('Aga') / list.remove('Aga') / list.append('Aga') / list.insert(0, 'Aga') / list[0] = 'Ewa'
+            for element in list:
+
+        – Krotki (tuple): tuple[0] / tuple[0:3] / tuple.index('Aga')
+            for element in tuple:
+
+        – Zbiory {set}: set.remove('Aga') / set.add('Aga') / (set_1 - set_3) / (set_1 & set_3)
+            Nie możesz modyfikować elementu, ale możesz najpierw usunąć, a później dodać nowy.
+
+        – Słowniki [dict]: dict.pop('name') / dict.get('name') / dict['name'] = 'Aga'
+            for element in dict.keys(): / for value in dict.values() / for key, value in dict.items():
+                                                                            print(f' Klucz: {key} + wartość: {value}')
 
     -> None – Posiada swój własny, unikalny typ o nazwie "NoneType". Jest on oddzielony od LICZB, TEKSTÓW i WARTOŚCI LOGICZNYCH.

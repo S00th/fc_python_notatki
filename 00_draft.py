@@ -259,3 +259,6 @@
 # print()
 #
 #
+
+for litera in range(10)
+    print(litera)

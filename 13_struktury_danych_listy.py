@@ -1,6 +1,6 @@
 ####### STRUKTURY DANYCH i LISTY
 #
-# STRUKTURY DANYCH to "kontenery" / specjalne SPOSOBY ORGANIZOWANIA, PRZECHOWYWANIA i ZARZĄDZANIA INFORMACJAMI w programie,
+# STRUKTURY DANYCH to zbiory ZMIENNYCH / kontenery / specjalne SPOSOBY ORGANIZOWANIA, PRZECHOWYWANIA i ZARZĄDZANIA INFORMACJAMI w programie...
 # które pozwalają, na ich wydajne wykorzystywanie i przetwarzanie.
 # Podstawowe struktury danych w Pythonie to LISTY, KROTKI, ZBIORY oraz SŁOWNIKI. Każda z nich ma odmienną budowę i inne zastosowania.
 # Wszystkie struktury danych są ELEMENTAMI iterowalnymi, więc będziemy mogli na ich podstawie korzystać z pętli "for".
@@ -14,7 +14,7 @@
 # Podstawowe struktury wbudowane (struktury PŁASKIE – zawierające TYPY proste):
 
 # – Listy [list]: Przechowują UPORZĄDKOWANE kolekcje ELEMENTÓW (WARTOŚCI).
-#   MOŻEMY MODYFIKOWAĆ zawartość LISTY – możemy dodawać, zmieniać lub usuwać ELEMENTY.
+#   MOŻEMY MODYFIKOWAĆ zawartość LISTY: możemy dodawać, zmieniać lub usuwać ELEMENTY.
 #   MAGĄ zawierać różne TYPY DANYCH, np. lista = [12, True, 'Andrzej', 55.5]
 #   Są strukturami INDEKSOWALNYMI. Każde kolejny element ma swoje unikalne miejsce.
 #   Są strukturami ITEROWALNTMI.
@@ -22,7 +22,7 @@
 #   ZAPIS – w nawiasach kwadratowych []
 
 # – Krotki (tuple): Przechowują UPORZĄDKOWANE kolekcje ELEMENTÓW (WARTOŚCI).
-#   NIE MOŻEMY modyfikować zawartości krotki – nie możemy dodawać, modyfikować, ani usuwać ELEMENTÓW.
+#   NIE MOŻEMY modyfikować zawartości krotki: nie możemy dodawać, modyfikować, ani usuwać ELEMENTÓW.
 #   ZAWARTOŚĆ krotki JEST NIEZMIENNA (stała) od momentu utworzenia. Raz zadeklarowana krotka musi być taka sama przez cały czas trwania programu.
 #   MAGĄ zawierać różne TYPY DANYCH, np. krotka = (12, True, 'Andrzej', 55.5)
 #   Są strukturami INDEKSOWALNYMI.
@@ -34,7 +34,7 @@
 #   Różnica między LISTĄ i KROTKĄ modyfikacji wartości znajdujących się w tych zbiorach danych (LISTĘ można modyfikować, a TUPLI nie).
 
 # – Zbiory {set}: Przechowują NIEUPORZĄDKOWANE kolekcje UNIKALNYCH ELEMENTÓW (DUPLIKATY, czyli dwie zmienne o takiej samej wartości są automatycznie usuwane).
-#   MOŻEMY MODYFIKOWAĆ zawartość LISTY – możemy dodawać, zmieniać lub usuwać ELEMENTY.
+#   MOŻEMY usuwać i dodawać ELEMENTY ZBIORÓW, ale nie możemy ich modyfikować.
 #   MAGĄ zawierać różne TYPY DANYCH, np. lista = {12, True, 'Andrzej', 55.5}
 #   Mogą zawierać duplikaty wartości, ale każdy duplikat traktuje jak jedną WARTOŚĆ.
 #   NIE są strukturami INDEKSOWALNYMI. Nie jesteśmy w stanie określić, który element jest pierwszy, drugi itd. (worek z prezentami św. Mikołaja)
@@ -53,11 +53,10 @@
 #   ZAPIS – w nawiasach klamrowych {}, w których znajdują się pary KLUCZ-WARTOŚĆ {'imie': "Michał", "wiek": 12}.
 #   Wewnątrz słownika NIE WSZYSTKO MOŻE BYC KLUCZEM!!!
 
-# Wewnątrz SŁOWNIKÓW nie wszystko może być KLUCZEM – możemy definiować jako KLUCZE, tylko niektóre obiekty.
-# Klucze MUSZĄ być NIEZMIENNE (ang. IMMUTABLE) i HASZOWALNE, aby słownik mógł poprawnie i trwale obliczać ich skróty (HASZE).
-# Różnica między niemutowalnością, a hashowalnością wynika z ich roli w zarządzaniu danymi:
-# niemutowalność dotyczy tego, czy obiekt można zmienić,
-# natomiast hashowalność określa, czy obiekt może być użyty jako unikalny identyfikator w strukturach takich jak słowniki.
+#   Listy: indeksowane / edytowalne / duplikaty DOZWOLONE
+#   Tuple: indeksowane / NIE edytowalne / duplikaty DOZWOLONE
+#   Zbiory: NIE indeksowane / NIE edytowalne (ELEMENTY można usunąć lub dodać, ale nie zmienić) / BRAK duplikatów
+#   Słowniki: NIE indeksowane / edytowalne / BRAK duplikatów
 #
 # Np. STRING jest HASHOWALNY / NIEMUTOWALNY.
 # Kluczami NIE MOGĄ być żadne obiekty MUTOWALNE (zmienne), takie jak:
@@ -69,7 +68,7 @@
 
 
 ####### LISTY [12, True, 'Andrzej', 55.5]
-# Listy definiujemy tak samo, jak ZMIENNE, ale LISTĘ (ZBIÓR zmiennych) dodajemy w NAWIASACH KWADRATOWYCH.
+# LISTY definiujemy tak samo, jak ZMIENNE, ale LISTĘ dodajemy w NAWIASACH KWADRATOWYCH.
 # LISTA jest obiektem iterowalnym.
 
 list = ['Marian', 'Jadwiga', 'Mariola', 'Andrzej', 'Richard']
@@ -81,6 +80,7 @@ uczestnik_3 = 'Mariola'
 uczestnik_4 = 'Andrzej'
 uczestnik_5 = 'Richard'
 
+
 ### TWORZENIE listy.
 
 list_1 = ['5', '4', '3', '2', '1']
@@ -91,6 +91,7 @@ list_3 = list() # Ten zapis jest nie po Pythonowemu.
 ### ODCZYTYWANIE z listy
 
 print(type(list_1)) # Sprawdź TYP DANYCH elementu -> <class 'list'>
+print(list_1) # Wyświetl zawartości LISTY
 print(list_1[0]) # Wyświetl konkretnego ELEMENTU
 print(list_1.index('Andrzej')) # Pokaż INDEX konkretnego ELEMENTU
 print(list_1[0:3]) # Wyświetl ZAKRES ELEMENTÓW
@@ -103,7 +104,7 @@ for uczestnik in uczestnicy:
     print(uczestnik)
 
 
-### Funkcja .append() – DODAWANIE elementu do listy NA KOŃCU listy.
+### DODAWANIE elementu do listy NA KOŃCU listy – Funkcja .append()
 
 random_list = [12, True, 'Andrzej', 55.5]
 
@@ -111,7 +112,7 @@ random_list.append('Aga') # Dodaj element na końcu listy.
 print(random_list)
 
 
-### Funkcja .insert() – DODAWANIE elementu do listy JAKO KONKRETNY INDEX.
+### DODAWANIE elementu do listy JAKO KONKRETNY INDEX – Funkcja .insert()
 
 random_list.insert(1, 'Aga') # Dodaj element jako konkretny index (najpierw podajemy INDEX, a później ELEMENT).
 print(random_list)

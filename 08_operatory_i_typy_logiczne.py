@@ -96,6 +96,8 @@ x = y
 if x is y:
     print("Obiekty x i y to  te same obiekty")
 
+
+
 # OPERATORY PRZYNALEŻNOŚCI
 # Sprawdzają, czy dany element zawiera się w podzbiorze wartości danego obiektu. Mamy dwa takie operatory:
 # in
@@ -109,6 +111,7 @@ if 4 in y:
     print("Liczba 4 występuje w zbiorze",y)
 else:
     print("Liczba 4 nie występuje w zbiorze",y)
+
 
 
 # HIERARCHIA OPERATORÓW w Pythonie określa kolejność wykonywania poszczególne działania w wyrażeniu.

@@ -1,26 +1,64 @@
-####### PĘTLA WHILE
+####### ITERACJA, PĘTLE i PĘTLA WHILE
+#
 # Dobrą praktyką programistyczną jest pisanie kodu w taki sposób, aby wymagał od nas jak najmniejszego nakładu pracy.
-# Bez potrzeb powtarzania go czy zmieniania w wielu miejscach.
+# Kod należy pisać w taki sposób, aby nie było potrzeby powtarzania go lub zmieniania w wielu miejscach.
+# Do tej pory kod wykonywał się linijka po linijce (wyjątkiem były instrukcje warunkowe) w przypadku pętli będzie to wyglądało inaczej.
 
-# Do tej pory kod wykonywał się linijka po linijce (wyjątkiem były instrukcje warunkowe).
-# Pętle wykonują pewien fragment kodu OKREŚLONĄ ILOŚĆ CZASU/RAZY.
+# ITERACJA (powtórzenie) to proces wielokrotnego wykonywania określonej operacji lub bloku kodu...
+# w celu wykonania zadania do momentu spełnienia określonego warunku lub zadaną liczbę razy.
+# Proces ten jest niezbędny do automatyzacji powtarzalnych czynności.
 #
-# Pętla WHILE ("dokupi") wykonuje się do momentu, kiedy ZOSTANIE SPEŁNIONY podany przez nas wcześniej WARUNEK.
-# Pętla WHILE zakończy się, kiedy WARUNEK Z WYRAŻENIA PRAWDZIWEGO stanie się wyrażeniem FAŁSZYWYM.
-# UWAGA! Upewnij się, że kod wewnątrz while może zmienić warunek. Tak, by program nie wykonywał się w nieskończoność!
+# W języku Python ITERACJĘ realizuje się głównie za pomocą PĘTLI.
+# Inaczej mówiąc, PĘTLE wykonują pewien fragment kodu OKREŚLONĄ ILOŚĆ CZASU/RAZY.
+# Pozwalają uniknąć ręcznego przepisywania tych samych instrukcji.
 #
-# ITERACJA to proces wielokrotnego wykonywania tego samego bloku. Realizujemy ją w pętli "while" i "for".
-# Operator przypisania złożonego (Augmented assignment) += jest stosowany zamiast zapisu: licznik = licznik +1.
+# PĘTLA "while"– wykonuje się NIESKOŃCZONĄ ilość razy.
+# POWTARZA blok kodu tak długo, JAK DŁUGO DANY WARUNEK logiczny JEST PRAWDZIWY (True).
+# Inaczej mówiąc, pętla WHILE zakończy się, kiedy WARUNEK Z WYRAŻENIA PRAWDZIWEGO stanie się wyrażeniem FAŁSZYWYM.
+# Jest idealna w sytuacjach, gdy liczba powtórzeń nie jest znana przed uruchomieniem pętli.
+#
+# PĘTLA "for" – wykonuje się SKOŃCZONA/OKREŚLONĄ ilość razy.
+# Używana, GDY WIEMY, ILE RAZY dana OPERACJA MA ZOSTAĆ POWTÓRZONA lub gdy chcemy PRZEJŚĆ przez WSZYSTKIE ELEMENTY w ZBIORZE danych (w LIŚCIE lub SŁOWNIKU).
+# W programowaniu często stosuje się ją w konstrukcji "for in range", która pozwala na precyzyjne określenie liczby powtórzeń
+
+# DODATKOWE KOMENDY (komendy sterujące) – służą do precyzyjnego sterowania procesem ITERACJI:
+# Występują wyłącznie wewnątrz pętli (FOR oraz WHILE).
+#
+# BREAK
+# Pozwala na natychmiastowe PRZERWANIE PĘTLI i wyjście z niej, nawet jeśli warunek końcowy nie został jeszcze osiągnięty.
+# Interpreter przechodzi do wykonywania instrukcji znajdujących się bezpośrednio po bloku pętli.
+# Przydatny, gdy np. SZUKAMY KONKRETNEGO ELEMENTU na LIŚCIE i po jego znalezieniu NIE CHCEMY już sprawdzać pozostałych danych.
+#
+# CONTINUE
+# Powoduje POMINIĘCIE reszty INSTRUKCJI w bieżącej ITERACJI (powtórzeniu) i natychmiastowe przejście do kolejnej ITERACJI PĘTLI.
+# W przeciwieństwie do BREAK, PĘTLA nie jest przerywana na stałe
+# Program "przeskakuje" do kolejnego ELEMENTU lub SPRAWDZENIA WARUNKU PĘTLI, ignorując instrukcje, które znajdują się poniżej słowa CONTINUE w danej pętli.
+# Przydatna, gdy chcemy ZIGNOROWAĆ (odfiltrować) pewne konkretne przypadki, ale KONTYNUOWAĆ przetwarzanie pozostałych danych.
 
 
+### OPERATOR PRZYPISANIA ZŁOŻONEGO (augmented assignment)
+# Jest to sposób na skrócenie zapisu operacji matematycznej i jednoczesnego PRZYPISANIE WYNIKU operacji do zmiennej.
+# Zamiast wykonywać czynności w dwóch oddzielnych krokach (najpierw obliczenie, potem przypisanie nowej wartości do zmiennej)...
+# możesz to zrobić za pomocą jednego symbolu, co czyni kod bardziej zwięzłym i czytelnym
+# OPERATOR += (dodawanie i przypisanie) jest stosowany zamiast zapisu: licznik = licznik +1.
 
-# STRUKTURA
+# OPERATORY PRZYPISANIA ZŁOŻONEGO
+# Operatory te łączą standardowy OPERATOR PRZYPISANIA (=) z OPERATORAMI ARYTMETYCZNYMI (+ - * / % **).
+# += Dodawanie i przypisanie: += b -> a = a + b
+# -= Odejmowanie i przypisanie: a -= b -> a = a - b
+# *= Mnożenie i przypisanie: a *= b -> a = a * b
+# /= Dzielenie i przypisanie: a /= b -> a = a / b
+# %= Reszta z dzielenia i przypisanie: a %= b -> a = a % b
+# **= Potęgowanie i przypisanie: a **= b -> a = a ** b
+
+
+# STRUKTURA pętli WHILE
 # while <warunek, który jest prawdziwy (wykonywany, dopóki jest prawdziwy)>:
 #     <blok kodu, który się powtarza>
 # print('Wyjście z pętli while.'))
 
 
-# STRUKTURA pętli while (inny zapis)
+# STRUKTURA pętli WHILE (inny zapis)
 #
 # while <warunek1>:
 #     <kod znajdujący się po wcięciu, jest kodem, który jest wykonywany, dopóki warunek jest prawdziwy>
@@ -28,6 +66,7 @@
 #     if <warunek3>: continue # przejście do góry pętli powrót do warunek1)
 # else:
 #     {kod wykonywany, jeśli pętli nie zakończyło break}
+
 
 
 ### ĆWICZENIE – Przysiady

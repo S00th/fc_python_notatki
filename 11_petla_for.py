@@ -1,12 +1,14 @@
-####### PĘTLA FOR
+####### PĘTLA "for"
 #
-# Pętli FOR używamy tam, gdzie mamy do czynienia z pewnym OGRANICZONYM ZBIOREM, przez który chcemy przejść,
-# lub gdy Z GÓRY ZNAMY LICZBĘ POWTÓRZEŃ.
+# PĘTLA "for" wykonuje się SKOŃCZONA/OKREŚLONĄ ilość razy.
+# Używana, gdy znamy LICZBĘ POWTÓRZEŃ danej OPERACJI lub gdy do czynienia z OGRANICZONYM ZBIOREM danych (LISTA lub SŁOWNIK).
 # ZAKOŃCZY SIĘ w momencie, kiedy skończy się ZBIÓR DANYCH (kiedy zakończy się obiekt ITEROWALNY).
-# Przykładem obiektu iterowalnego jest zakres liczb lub STRING – ponieważ słowo możemy przeliterować.
-# bool, int i float nie są obiektami iterowalnymi.
+# Przykładem obiektu ITEROWALNEGO jest ZAKRES LICZB lub STRING (ponieważ słowo możemy PRZEITEROWAĆ).
+# bool, int i float nie są obiektami ITEROWALNYMI.
+# W programowaniu często stosuje się PĘTLĘ FOR w konstrukcji "for in range", która pozwala na precyzyjne określenie liczby powtórzeń.
 
-# Uwaga: instrukcje "continue" i "break" również działają w pętlach for! W pętli for również działa klauzula "else" pętli.
+# Uwaga: instrukcje CONTINUE i BREAK również działają w pętlach "for".
+# W PĘTLI "for" również działa klauzula "else".
 
 ### SKŁADNIA
 #
@@ -15,7 +17,7 @@
 
 # for <- słowo kluczowe.
 # <tymczasowa_zmienna> <- żyje tylko w momencie pętli "for".
-# Kiedy będziemy ITEROWALI tą zmienną, to przy każdej kolejnej ITERACJI pętli "for" będzie przyjmowała wartość kolejnego elementu zbioru danych.
+# Kiedy będziemy ITEROWALI <tymczasowa_zmienna>, to przy każdej kolejnej ITERACJI pętli "for" będzie przyjmowała wartość kolejnego elementu zbioru danych.
 # in <- słowo kluczowe.
 # <obiekt_iterowalny> <- zmienna STRING, ZAKRES LICZB lub STRUKTURA DANYCH.
 

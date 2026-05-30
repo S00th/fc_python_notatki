@@ -24,7 +24,14 @@
 
 ### TWORZENIE słowników
 
-dict = {'name': "Michał", 'sname': 'Kowalski', "age": 12, 'class': '1e'}
+dict = {'name': 'Adam', 's_name': 'Kowalski', 'age': 12, 'class': '1e'}
+# inny zapis
+dict= {
+    'name': 'Adam',
+    's_name': 'Kowalski',
+    'age': 12,
+    'class': '1e'
+}
 
 
 ### ODCZYTYWANIE ze słownika
@@ -69,6 +76,19 @@ for value in dict.values(): # ITERACJA wyłącznie po WARTOŚCIACH naszego SŁOW
 
 for key, value in dict.items(): # ITERACJA po ITEMSach (czyli po KLUCZACH i WARTOŚCIACH) naszego SŁOWNIKA.
     print(f' Klucz: {key} + wartość: {value}')
+
+
+
+####### ĆWICZENIE – Jak miał na elf z LotR?
+
+hero = {'Czarodziej': 'Gandalf', 'Elf': 'Legolas', 'Krasnolud': 'Gimli'}
+
+question = input('Jaka jest stolica Polski? ')
+if hero['Polska'] == question:
+    print('Brawo.')
+else:
+    print(f'Niestety nie jest to {question}. Chodziło o {hero['Czarodziej']}.')
+
 
 
 ### Przykład STRUKTURY ZŁOŻONEJ

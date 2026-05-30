@@ -1,22 +1,33 @@
 ####### KONKATENACJA (złączenie) stringów
 
-# KONKATENACJA to w języku Python operacja łączenia dwóch lub więcej ciągów znaków (typ String), w jeden dłuższy napis.
-# TEKST (str) w Pythonie musi być zawsze zapisywany w cudzysłowach (pojedynczych lub podwójnych),
-# pozwala to interpreterowi odróżnić go od nazw zmiennych.
-
-# OPERATOR DODAWANIA (+)
-# Najprostsza metoda, która pozwala na bezpośrednie "zsumowanie" dwóch fragmentów tekstu przy pomocy operatora +.
-# PRZYKŁAD:
-# powitanie = 'Cześć' + ' ' + 'użytkowniku.' spowoduje powstanie napisu "Cześć użytkowniku.".
-
-# WAŻNE ZASADY:
-# – Nie można bezpośrednio połączyć różnych typów danych np. TEKSTU (str) z LICZBĄ (int) za pomocą operatora +.
-#   Próba wykonania 'Tekst' + 404 spowoduje błąd. LICZBĘ należy najpierw zamienić na TEKST funkcją str().
+# DODAWANIE i KONKATENACJA – Czym się różnią?
 #
-# – F-string: Jets to nowoczesnym i bardzo czytelnym sposobem łączenia TEKSTU ze ZMIENNYMI (są tzw. f-stringi)
-#   Automatycznie dbają one o konwersję typów i są uważane za styl PYTHONIC.
-#   PRZYKŁAD:
-#   print(f'Twoje hasło to: {password}.'))
+# DODAWANIE to operacja matematyczna wykonywana na TYPACH NUMERYCZNYCH.
+# Dodawanie dotyczy przede wszystkim LICZB CAŁKOWITYCH (int) oraz LICZB ZMIENNOPRZECINKOWYCH (float).
+# Odbywa się przy pomocy operatora +
+# Przykład:
+print(2 + 2) # Wyświetli 4
+
+# KONKATENACJA to operacja łączenia dwóch lub więcej fragmentów TESTU (string) w jeden ciąg znaków.
+# TEKST (str) musi być zawsze zapisywany w cudzysłowach (pojedynczych lub podwójnych),
+# pozwala to interpreterowi odróżnić go od nazw zmiennych.
+# Odbywa się przy pomocy operatora +
+# Przykład:
+print('Cześć' + 'użytkowniku') # Wyświetli Cześćużytkowniku
+print('Cześć','użytkowniku')# Wyświetli Cześću żytkowniku
+
+# W Pythonie główna różnica między DODAWANIEM, a KONKATENACJĄ polega na TYPIE DANYCH,
+# na których przeprowadzana jest operacja przy użyciu operatora +
+# To, jak Python zinterpretuje ten symbol, zależy od tego, czy pracujemy na liczbach, czy na tekście.
+# Ten sam operator, czyli + da zupełnie inne rezultaty dla LICZB (wynik matematyczny) i dla TEKSTU (dłuższy napis).
+# Nie można bezpośrednio połączyć różnych typów danych np. TEKSTU (str) z LICZBĄ (int) za pomocą operatora +.
+# Próba wykonania 'Tekst' + 404 spowoduje błąd. LICZBĘ należy najpierw zamienić na TEKST funkcją str().
+#
+# F-STRING
+# Jest to nowoczesnym i bardzo czytelnym sposób łączenia TEKSTU ze ZMIENNĄ.
+# Automatycznie dba o konwersję typów i jest uważany za styl PYTHONIC.
+# Przykład:
+print(f'Twoje hasło to: {password}.'))
 
 print('1'+'1') # Dla str + str operator + działa jako operator KONKATENACJA (SKLEJENIE). – nie działa dla str + int, np. 1+'1')
 print(1+1) # Dla int + int operator + działa jak operator DODAWANIA.
@@ -42,10 +53,20 @@ print('Hello' + ' ' + 'World') # Łańcuchy znaków możemy łączyć za pomocą
 print('Hello ' * 5) # Możemy też powtórzyć wybrany tekst kilkukrotnie za pomocą operatora * (tutaj wyświetlimy 'Hello' pięć razy)
 
 
-####### Metody stringów – Pozwalają modyfikować tekst.
+####### METODY STRINGÓW – Pozwalają modyfikować TEKST.
+#
 # Na razie przyjmujemy, że FUNKCJE i METODY różnią się jedynie składnią.
-# Wywołanie FUNKCJI (FUNKCJA wywołuje lub zwraca). Zapis FUNKCJI wygląda tak -> funkcja(argument1, argument2)
-# Wywołanie METODY. Zapis METODY wygląda tak -> object.metoda(argument1, argument2)
+# METODY są nierozerwalnie związane z konkretnym TYPEM DANYCH lub OBIEKTEM.
+# Wywołuje się je "na rzecz" konkretnego OBIEKTU, używając zapisu z kropką (np. nazwa_listy.append())
+# FUNKCJA nazywana jest METODA dlatego, że odnosi się do konkretnego ELEMENTU?(np listy), na której jest wywołana.
+#
+# Wywołanie FUNKCJI (FUNKCJA wywołuje lub zwraca)
+# Zapis FUNKCJI
+# funkcja(argument1, argument2)
+#
+# Wywołanie METODY
+# Zapis METODY
+# obiekt.metoda(argument1, argument2)
 
 
 
@@ -57,11 +78,11 @@ print('Hello ' * 5) # Możemy też powtórzyć wybrany tekst kilkukrotnie za pom
 # Każda litera w napisie ma swój INDEX (jak niżej).
 # INDEX, to adres litery w tekście (SPACJE też podlegają indeksowaniu).
 # Możemy indeksować od LEWEJ do PRAWEJ, ale też od PRAWEJ do LEWEJ.
-# Python jest językiem indeksowanym od ZERA, co znaczy, że pierwszy element STRINGU lub KOLEKCJI (od lewej) to ZERO.
+# Python jest językiem indeksowanym od ZERA, co znaczy, że pierwszy element STRINGA lub KOLEKCJI (od lewej) to ZERO.
 # Natomiast ostatni element (pierwszy od końca) to -1.
 # Jeżeli wskazany INDEX nie istnieje, to zostanie podniesiony błąd IndexError.
 # Jeżeli wskażemy nieistniejący lub częściowo nieistniejący ZAKRES, to nie dostaniemy błędu.
-# INDEX nie może być floatem (usi być integerem)
+# INDEX nie może być floatem (musi być integerem)
 
 #  D  W  A     S  Ł  O  W  A
 #  0  1  2  3  4  5  6  7  8    od LEWEJ > do PRAWEJ

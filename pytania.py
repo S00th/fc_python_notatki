@@ -11,6 +11,28 @@
 
 
 
+# # ####### RÓŻNICA między .isdigit, a .isnumeric.
+#
+# word1, word2, word3, word4, word5, word6, word7 = '2026', 'python', '3.14', '314&', '²', '½', '三'
+# print(word1.isdigit()) # True, bo składa się z cyfr
+# print(word2.isdigit()) # False, bo składa się z liter alfabetu
+# print(word3.isdigit()) # False, bo nie akceptuje .
+# print(word4.isdigit()) # False, bo nie akceptuje znaków specjalnych
+# print(word5.isdigit()) # True, bo rozpoznaje indeks górny ² i dolny ₂
+# print(word6.isdigit()) # False, bo nie rozpoznaje ułamków zapisanych w formie ½ (Unicode)
+# print(word7.isdigit()) # False, bo nie akceptuje liczb z innych systemów pisma np. 三 (japońskie 3).
+#
+# word1, word2, word3, word4, word5, word6, word7 = '2026', 'python', '3.14', '314&', '²', '½', '三'
+# print(word1.isnumeric()) # True, bo składa się z cyfr
+# print(word2.isnumeric()) # False, bo składa się z liter alfabetu
+# print(word3.isnumeric()) # False, bo nie akceptuje .
+# print(word4.isnumeric()) # False, bo nie akceptuje znaków specjalnych
+# print(word5.isnumeric()) # True, bo rozpoznaje indeks górny ² i dolny ₂
+# print(word6.isnumeric()) # True, bo rozpoznaje ułamki zapisane w formie ½ (Unicode)
+# print(word7.isnumeric()) # True, bo rozpoznaje liczb z innych systemów pisma np. 三 (japońskie 3).
+
+
+
 # ####### Czy tupla może myć KLUCZEM w SŁOWNIKU?
 #
 # list = ['Adam', 15, 15.5, True]
@@ -80,7 +102,7 @@
 
 
 
-####### Wydaje mi się, że nie zostały wytłumaczone, a w pewnym momencie zaczęły być używane.
+####### Czy było?
 
 # OPERATORY IDETYCZNOŚCIOWE
 # Określają, czy dwie zmienne przechowują ten sam obiekt. Mamy dwa operatory identycznościowe:
@@ -108,6 +130,7 @@
 #     print("Liczba 4 występuje w zbiorze",y)
 # else:
 #     print("Liczba 4 nie występuje w zbiorze",y)
+
 
 
 ###
