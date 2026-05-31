@@ -1,6 +1,22 @@
 ####### FUNKCJE
-#
 
+# FUNKCJE pozwalaja użyć wielorotnie tego samego fragmentu kodu. Jeżeli jakieśdziałania cały czas się powtarzają, nie musimy pisać tych samych instrukcji wielopkrotnie. Możemy stworzyćFUNKCJĘ, któa będzie czymśw rodzaju szablonu dla kodu.
+#
+# FUINKCJE zwiększają czytelność, zmniejszają ilość kodu oraz ułatwiają rozwiązanie skomplikowanych problemów
+#
+#
+# SKŁADNIA
+#
+# def <naza_funkcji>():
+#     kod
+#
+# Kiedy FUNKCJA jest zdefiniowana (posiada nazwę) oraz zostały dodane jakieś instukcje jezcze nic sięnie dziaje.
+# Aby funkcja zadziałała (aby funkcje zostały wywołane) musimy odnieśćsię do FUNKCJI przez jej nazwę.
+#
+# WAŻNE aby FUNKCJĘ stworzyć przed jej WYWOŁANIEM
+#
+# nazwa # w tym momencie jest to zmienna
+# nazwa() # w tym momencie jest to funkcja
 
 # paradygmat proceduralny =========================================
 

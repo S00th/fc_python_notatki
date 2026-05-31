@@ -81,24 +81,23 @@ else:
 # 2. Dzięki .capitalize() wyświetlony wyraz zawsze będzie zaczynał się od wielkiej litery.
 
 
-### ĆWICZENIE 3 – Czy liczba X jest podzielna przez 3?
+### ĆWICZENIE – Czy liczba X jest podzielna przez 3?
 # – Pobierz od użytkownika liczbę.
 # – Sprawdź, czy jest podzielna przez trzy i wyświetl odpowiednie komunikaty.
 
 number = int(input('Podaj liczbę: '))
 
-if number % 3 == 0:  # WARUNEK mówi: jeżeli NUMBER podzielony przez 3 NIE MA reszty z dzielenia (reszta wynosi 0), to będzie to PRAWDA.
+if number % 3 == 0:  # WARUNEK mówi: Jeżeli NUMBER jest podzielony przez 3 – NIE MA reszty z dzielenia (reszta wynosi 0), to będzie to PRAWDA.
     print(f'Liczba {number} jest podzielna przez 3.') # W związku z tym wyświetl "Liczba JEST podzielna przez 3".
 else:
     print(f'Liczba {number} nie jest podzielna przez 3')
 
 # inny zapis
 
-if number % 3:  # WARUNEK mówi: jeżeli NUMBER podzielony przez 3 MA resztę z dzielenia (reszta wynosi 1), to będzie to FAŁSZ.
+if number % 3:  # WARUNEK mówi: Jeżeli NUMBER podzielony jest przez 3 – MA resztę z dzielenia (reszta wynosi 1), to będzie to FAŁSZ.
     print(f'Liczba {number} nie jest podzielna przez 3') # W związku z tym wyświetl "Liczba NIE JEST podzielna przez 3".
 else:
     print(f'Liczba {number} jest podzielna przez 3.')
-
 
 
 ### ĆWICZENIE – Liczba czy NIE liczba?
@@ -113,7 +112,6 @@ else:
     print('Nie podałeś liczby.')
 
 
-
 ### ĆWICZENIE – Porównaj dwie liczby.
 # Przy pomocy funkcji wbudowanej input pobierz od użytkownika 2 liczby – W JEDNEJ LINII.
 # Liczby oddziel od siebie przecinkiem.
@@ -125,6 +123,27 @@ if int(num_1) == int(num_2):
     print(f'Liczby {num_1} i {num_2} są równe')
 else:
     print(f'Liczby {num_1} i {num_2} są różne.')
+
+
+### ĆWICZENIE – Jak masz na imię?
+
+name = input('Jak masz na imię? ')
+
+if name == '':
+    print('Nic nie wpisałeś.')
+else:
+    print(f'Miło mi cię poznać {name.title()}.')
+
+
+
+### ĆWICZENIE – Czy ten samochód jest na sprzedaż (przykład z bool)
+
+for_sale = True
+
+if for_sale:
+    print('Ten samochód jest na sprzedaż.')
+else:
+    print('Ten samochód NIE jest na sprzedaż? ')
 
 
 
@@ -155,8 +174,34 @@ elif num3x == 0:
 
 
 
+### PRZYKŁAD – Ile masz lat? z "elif"
+
+age_born = float(input('Ile masz lat? '))
+
+if age_born >=18:
+    print('Jesteś pełnoletni.')
+elif age_born <= 0:
+    print('Jeszcze się nie urodziłeś!')
+else:
+    print('Nie jesteś pełnoletni.')
+
+age_born = float(input('Ile masz lat? '))
+
+if age_born >= 120: # Musimy wprowadzić zmianę w stosunku do poprzedniego przykładu. Ten WARUNEK musi być wyżej niż >= 18.
+    print('Prawdopodobnie już nie żyjesz')
+elif age_born >=18:
+    print('Jesteś pełnoletni.')
+elif age_born <= 0:
+    print('Jeszcze się nie urodziłeś!')
+else:
+    print('Nie jesteś pełnoletni.')
+
+
+
 ####### Warunki ODDZIELNE – kiedy możliwa jest DOWOLNA LICZBA WARIANTÓW (wiele warunków if).
-#
+
+
+
 #### ĆWICZENIE
 # Warunki ODDZIELNE – Zachodzą w momencie, kiedy jakaś opcja spełni w danym momencie więcej niż jeden warunek.
 

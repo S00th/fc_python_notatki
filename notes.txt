@@ -11,6 +11,12 @@ FUNKCJE WBUDOWANE:
     -> input() – Pobierz WARTOŚĆ od użytkownika z konsoli. Zawsze zwraca STRING, dlatego czasem trzeba dokonać konwersji na "int" lub "float".
             To co wpisze użytkownik jako "input", zostanie przypisane do WARTOŚCI, a następnie np. może zostać wyświetlone za pomocą funkcji "print".
             Docelowo nie będziemy używali tej funkcji. Dane będziemy pobierali z innych źródeł, np. źródłem może być interface.
+    -> len(iterable) – Zwraca długość obiektu ITEROWALNEGO (czyli takiego, z których da się wyodrębnić konkretny element lub kilka elementów).
+            Obiektem iterowalnym jest np. STRING.
+    -> round(number) – Zaokrągla domyślnie do jedności, ale też pozwala zaokrąglić do X miejsc o przecinku.
+            round(number, precision) – Zaokrąglenie number (liczby zmiennoprzeciwkowej) do precision (dokładność) liczby po przecinku
+            -> number – Argument pozycyjny. Potrzebny, aby podana funkcja zadziałała.
+            -> precision – Argument opcjonalny. Ma wartość domyślną, można, ale nie trzeba go podawać, np: round(number, 2) – zaokrągli do 2 miejsc o przecinku.
 
     -> str(a) – Zamiana na typ danych NAPIS/CIĄG ZNAKÓW (str)
     -> int(a) – Zamiana na typ danych LICZBA CAŁKOWITA (int)
@@ -20,17 +26,11 @@ FUNKCJE WBUDOWANE:
             np. ze str = '123.12' można przejść na int za pośrednictwem float – Konwersja: str -> float -> int
     -> bool() – Konwersja danych na TYP LOGICZNY
 
-    -> len(iterable) – Zwraca długość obiektu ITEROWALNEGO (czyli takiego, z których da się wyodrębnić konkretny element lub kilka elementów).
-            Obiektem iterowalnym jest np. STRING.
-    -> round(number) – Zaokrągla domyślnie do jedności, ale też pozwala zaokrąglić do X miejsc o przecinku.
-            round(number, precision) – Zaokrąglenie number (liczby zmiennoprzeciwkowej) do precision (dokładność) liczby po przecinku
-            -> number – Argument pozycyjny. Potrzebny, aby podana funkcja zadziałała.
-            -> precision – Argument opcjonalny. Ma wartość domyślną, można, ale nie trzeba go podawać, np: round(number, 2) – zaokrągli do 2 miejsc o przecinku.
-
-    -> isinstance(value, class) - Sprawdza czy dana wartość jest danego typu (klasy) -> zwraca bool np. insinstance(number, int):
-    -> min(sequence) -> zwraca najmniejsza wartość z kolekcji
-    -> max(sequence) -> zwraca największą wartość z kolekcji
-    -> sorted(collection) -> sortuje obiekt kolekcja -> zawsze zwraca listę
+    -> isinstance(value, class) - Sprawdza czy dana WARTOŚĆ jest danego typu (klasy) -> zwraca bool np. insinstance(number, int):
+    -> min(sequence) -> zwraca najmniejsza wartość z KOLEKCJI
+    -> max(sequence) -> zwraca największą wartość z KOLEKCJI
+    -> sorted(collection) -> sortuje obiekt KOLEKCJI -> zawsze zwraca LISTĘ (wg. ASCI)
+    -> reversed(collection) -> sortuje obiekt KOLEKCJI w odwrotnej kolejności -> zawsze zwraca LISTĘ
 
     -> id() – Zwraca unikalny, całkowitoliczbowy identyfikator obiektu. W praktyce jest to adres tego obiektu w pamięci komputera.
             Każdy obiekt ma przypisane własne id w momencie jego tworzenia (id jest swego rodzaju "pseudo" liczbą/pozycją).
@@ -47,12 +47,14 @@ TYPY DANYCH W PYTHONIE:
         - Strings (str): TEKST, zawsze zapisywane w cudzysłowie (pojedynczym lub podwójnym), np. "Dwa" lub '2.5'.
         Każda treść umieszczona w cudzysłowie jest traktowana jako TEKST/STRING.
 
-            -> Metody stringów (nie mylić z FUNKCJAMI numerycznymi) – metoda jest wywoływana na konkretnym obiekcie/instancji
-             (dla "int" nie ma takiej METODY – wyświetli błąd)
-                – .upper()
-                – .lower()
-                – .title()
-                – .capitalize()
+            -> METODY stringów (nie mylić z FUNKCJAMI numerycznymi) – metoda jest wywoływana na konkretnym obiekcie/instancji
+                Dla "int" nie ma takich METODY – wyświetli błąd
+            – Najczęściej wykorzystywane METODY stringów to:
+                .split(',') – zwraca listę str / .strip() – usuń białe znaki / .lstrip() / .rstrip() /
+                .replace('a', 'b') / '.'.join() / .startswith() / .endswith()
+                .upper() / .lower() / .title() / .capitalize() / .isaplha() / .isdigit() / isnumeric() – ½ + 三
+            – Żadziej wykorzystywane: strip() /
+                .find() – zwraca index / .index() – zwraca index lub BŁĄD / .count() – zwraca liczbę wystąpień /
 
     -> Wartości logiczne (typy proste)
         – Booleans (bool): Wartości logiczne, czyli prawda (True) lub fałsz (False). Muszą zaczynać się wielką literą

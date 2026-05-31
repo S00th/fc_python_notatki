@@ -12,7 +12,7 @@
 # Inaczej mówiąc, PĘTLE wykonują pewien fragment kodu OKREŚLONĄ ILOŚĆ CZASU/RAZY.
 # Pozwalają uniknąć ręcznego przepisywania tych samych instrukcji.
 #
-# PĘTLA "while"– wykonuje się NIESKOŃCZONĄ ilość razy.
+# PĘTLA "while"– wykonuje się, DOPÓKI twierdzenie JEST PRAWDZIWE (może NIESKOŃCZONĄ ilość razy).
 # POWTARZA blok kodu tak długo, JAK DŁUGO DANY WARUNEK logiczny JEST PRAWDZIWY (True).
 # Inaczej mówiąc, pętla WHILE zakończy się, kiedy WARUNEK Z WYRAŻENIA PRAWDZIWEGO stanie się wyrażeniem FAŁSZYWYM.
 # Jest idealna w sytuacjach, gdy liczba powtórzeń nie jest znana przed uruchomieniem pętli.
@@ -79,7 +79,16 @@ squats = 0 # Zaczynam ćwiczenie. W tym momencie zrobiłem ZERO przysiadów,
 
 while squats <= 5: # Dopóki nie wykonam 5 przysiadów...
     print(squats) # wyświetl, który przysiad właśnie zrobiłem...
-    squats += 1 # dodaj koleje przysiad i wróć pierwszego wiersza kodu (zaczynającego się od "while")
+    squats += 1 # dodaj koleje przysiad i wróć do pierwszego wiersza kodu (zaczynającego się od "while")
+
+
+### ĆWICZENIE – Miejsca w busie.
+
+bus_chairs = 0
+while bus_chairs <= 20: # Jeżeli liczba wolnych miejsc (bus_chairs) jest mniejsze niż 20, to wejdź do busa.
+    passenger = int(input('Ile osób weszło do busa? ')) # Pobierz informację, ile osób weszło do busa tym razem?
+    bus_chairs += passenger # Powiększ zmienną "bus_chairs" o liczbę osób, które weszły (passenger)
+    print(f'W busie siedzi już {bus_chairs} osób.') # Wyświetl, ile osób znajduje się aktualnie w busie.
 
 
 ### ĆWICZENIE – Droga do sklepu
@@ -89,7 +98,6 @@ while squats <= 5: # Dopóki nie wykonam 5 przysiadów...
 # Jeśli tak – poinformuj go, że dotarł do sklepu.
 
 store = False
-
 while not store: # Dopóki nie dotrzesz do sklepu...
     question = input('Czy dotarłeś do sklepu? [T/N] ') # Zadawaj pytanie, czy dotarłeś do sklepu.
     if question.upper() == 'T': # Jeżeli WARUNEK zostanie spełniony (potwierdziłeś, że dotarłeś do sklepu)

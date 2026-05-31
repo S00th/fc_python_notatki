@@ -17,10 +17,17 @@
 
 # for <- słowo kluczowe.
 # <tymczasowa_zmienna> <- żyje tylko w momencie pętli "for".
-# Kiedy będziemy ITEROWALI <tymczasowa_zmienna>, to przy każdej kolejnej ITERACJI pętli "for" będzie przyjmowała wartość kolejnego elementu zbioru danych.
+# Podczas ITEROWANIA <obiekt_iterowalny>, to przy każdej kolejnej ITERACJI pętli <tymczasowa_zmienna> będzie przyjmowała wartość kolejnego elementu zbioru danych.
 # in <- słowo kluczowe.
 # <obiekt_iterowalny> <- zmienna STRING, ZAKRES LICZB lub STRUKTURA DANYCH.
 
+
+for num in range(5): # range(5) zwraca nam wartości od 0 do 4, a num będzie przechowywał te wartości po kolei.
+    print(num) # Program przeszedł przez wszystkie wartości i je wyświetlił.
+
+# Kiedy chce wyświetlić jakiś komunikat konkretną ilość razy
+for _ in range(5):
+    print('Cześć. ')
 
 
 # ĆWICZENIE 1 – Przez jakie liczby jest podzielna podana liczba?

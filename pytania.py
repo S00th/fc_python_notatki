@@ -1,11 +1,11 @@
 # ####### PYTANIA I WĄTPLIWOŚCI
 #
-### Przykład z materiałów z kursu – zapis ""
+# Przykład z materiałów z kursu – zapis ""
 #
 # tekst = "Przykładowy tekst."
 # if tekst:
 #     print("Ta linia zostanie wykonana")
-# tekst = ""
+# tekst = "" # Chodzi o ten zapis. Czy traktuje go po prostu, jak bym nic nie napisal?
 # if tekst:
 #     print("To polecenie zostanie pominięte")
 
@@ -21,6 +21,8 @@
 # print(word5.isdigit()) # True, bo rozpoznaje indeks górny ² i dolny ₂
 # print(word6.isdigit()) # False, bo nie rozpoznaje ułamków zapisanych w formie ½ (Unicode)
 # print(word7.isdigit()) # False, bo nie akceptuje liczb z innych systemów pisma np. 三 (japońskie 3).
+#
+# print() # Czy można w ten sposób dodawać odstęp między wierszami? Jest inny sposób?
 #
 # word1, word2, word3, word4, word5, word6, word7 = '2026', 'python', '3.14', '314&', '²', '½', '三'
 # print(word1.isnumeric()) # True, bo składa się z cyfr
@@ -62,15 +64,30 @@
 
 
 
+#### Czy mogę użyć 2x elif i nie użyć else?
+
+# num3x = float(input('Podaj liczbę: '))
+#
+# if num3x > 0:
+#     print(f'Liczba {num3x} jest większa od zera.')
+# elif num3x < 0:
+#     print(f'Liczba {num3x} jest mniejsza zera.')
+# else:
+#     print('Podana liczba to ZERO.')
+#
+# # lub
+#
+# if num3x < 0:
+#     print(f'Liczna {num3x} jest mniejsza od ZERA.')
+# elif num3x > 0:
+#     print(f'Liczba {num3x} jest większa od ZERA.')
+# elif num3x == 0:
+#     print('Podana liczba to ZERO.')
+
+
+
 ####### ĆWICZENIE z instrukcjami warunkowymi
 # Przykład myślenia/kombinowania na ZDANIACH (pytanie-odpowiedź + zależności), a nie ZADANIACH matematycznych (pasjonat?).
-# Zadania matematyczne powodują, że muszę się skupić/cofnąć w myśleniu 2 poziomy wcześniej –
-# nie myślę nad rozwiązaniem problemu na zasadzie "jak to opisać kodem", tylko zanim do tego się zabiorę,
-# tylko myślę "Na czym polegało, to działanie matematyczne" – a matematykę miałem w szkole średniej (skostniała wiedzy frustruje).
-# Oczywiście nie chodzi o to, że mam zamiar ignorować działania matematyczne w programowaniu (raczej się nie da),
-# po prostu, łatwiej mi zrozumieć PODSTAWY, kiedy operuje na ZDANIACH lub prostych działaniach matematycznych.
-# Lubie WYZWANIA LOGICZNE (planszówki), ale zaawansowana matematyka nie.
-# Niżej przykład. Miałem problem ze zrozumieniem instrukcji zagnieżdżonych. Kiedy pomyślałem w taki sposób jak niżej – "załapałem".
 
 # name = input('Jak masz na imię? ')
 #
@@ -90,8 +107,7 @@
 
 
 
-### ĆWICZENIE – Przysiady
-# Przykład, który pomógł zrozumieć pętle "while".
+####### ĆWICZENIE z pętlą while
 
 # squats = 0 # Zaczynam ćwiczenie. W tym momencie "zrobiłem" zero przysiadów,
 #             # ale w czasie trwania programu WARTOŚĆ zmiennej squats zostanie zmodyfikowana.
@@ -108,58 +124,28 @@
 # Określają, czy dwie zmienne przechowują ten sam obiekt. Mamy dwa operatory identycznościowe:
 # is
 # not is
-#
-# x = "ala ma kota"
-# y = "ala nie ma kota"
-# if x is not y:
-#     print("Obiekty x i y to nie te same obiekty")
-# x = y
-# if x is y:
-#     print("Obiekty x i y to  te same obiekty")
-#
-# # OPERATORY PRZYNALEŻNOŚCI
-# # Sprawdzają, czy dany element zawiera się w podzbiorze wartości danego obiektu. Mamy dwa takie operatory:
-# # in
-# # not in
-#
-# x = "ala ma kota"
-# if "ma" in x:
-#     print("wyraz 'ma' występuje w ciągu'",x,"'")
-# y = [2, 3, 4, 100]
-# if 4 in y:
-#     print("Liczba 4 występuje w zbiorze",y)
-# else:
-#     print("Liczba 4 nie występuje w zbiorze",y)
+
+x = "ala ma kota"
+y = "ala nie ma kota"
+x = y
+if x is not y:
+    print("Obiekty x i y to nie te same obiekty")
+if x is y:
+    print("Obiekty x i y to  te same obiekty")
+
+# OPERATORY PRZYNALEŻNOŚCI
+# Sprawdzają, czy dany element zawiera się w podzbiorze wartości danego obiektu. Mamy dwa takie operatory:
+# in
+# not in
+
+x = "ala ma kota"
+if "ma" in x:
+    print("wyraz 'ma' występuje w ciągu'",x,"'")
+y = [2, 3, 4, 100]
+if 4 in y:
+    print("Liczba 4 występuje w zbiorze",y)
+else:
+    print("Liczba 4 nie występuje w zbiorze",y)
 
 
 
-###
-
-# Użytkownik wpisuje hasło.
-# Program ma sprawdzić:
-# – czy hasło ma minimum 8 znaków
-# – czy pierwszy znak NIE jest cyfrą
-# – czy w haśle znajduje się znak "!" lub "?"
-# – czy hasło nie zaczyna się i nie kończy tą samą literą
-#
-# Niejednoznaczność.
-#
-# Użytkownik wpisuje hasło.
-# Program ma sprawdzić czy spełnione są następujące warunki:
-# - hasło ma się składać z minimum 8 znaków
-# - hasło ma się zaczynać NIE-cyfrą
-# - hasło ma zawierać znaki "!" i "?"
-# - hasło NIE zaczyna się i kończyć tą samym literą
-
-# Dany jest moduł string.
-# Zbuduj funkcję do generowania haseł.
-# Funnkcja powinna przyjmować następujące wartości
-#     żądana długość hasła.
-#     czy zawrzeć znaki specjalne jeśli True to zawszyj, jeśli False, to nie zawieraj
-# Na końcu wymieszaj litery.
-#
-# Zbuduj program go generowania haseł oparty na podanym module string.
-# Powinien on:
-# - zapytać o długość hasła, które chce utworzyć
-# - dać możliwość wyboru czy w skład hasła mają wejść znaki specjalne
-# - na końcu ma wymieszać znaki/litery, z których składa się hasło

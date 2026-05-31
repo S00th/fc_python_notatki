@@ -103,22 +103,28 @@ print(f'Index, którego nie ma w napisie {jakis_napis} to {jakis_napis[1000]}') 
 
 
 ####### SLICING – to wycinanie fragmentu/kilku znaków ze STRINGA
-
-# Składnia/Syntax -> iterable[start_index: stop_index: step]
-# Gdzie: start_index – included – domyślnie 0
+#
+# SKŁADNIA
+# iterable[start_index: stop_index: step] / zmienna[start:end:step]
+#
+# Gdzie: start_index – included – domyślnie index 0
 # Gdzie: stop_index – excluded – domyślnie ostatni
-# Gdzie: step – domyślnie 1 (1 oznacza "Weź każdą literę (po kolei)", 2 "Weź co drugą literę (po kolei)", a -1 "Weź każdą literę (w odwróconej kolejności)").
+# Gdzie: step – domyślnie 1 – 1 oznacza "Weź każdą literę (po kolei)", 2 "Weź co drugą literę (po kolei)", a -1 "Weź każdą literę (w odwróconej kolejności)".
 
 jakis_inny_napis = 'Język Python można wykorzystać do modelowania sieci neuronowych'
 
 print(jakis_inny_napis[0:5]) # Weź litery od indeksu 0 do indeksu 5 [0:5], ale bez 5 (piąty znak indeksu jest wyłączona), krok (brak)
-print(jakis_inny_napis[0+1:5-1]) # Weź litery od indeksu 1 (0+1) do indeksu 4 (5-1), ale bez 5 (piąty znak indeksu jest wyłączona), krok (brak)
 print(jakis_inny_napis[:5]) # Jak powyżej, bo start_indeks domyślnie 0 (czyli od początku do 5, ale bez 5)
+print(jakis_inny_napis[0+1:5-1]) # Weź litery od indeksu 1 (0+1) do indeksu 4 (5-1), ale bez 5 (piąty znak indeksu jest wyłączona), krok (brak)
 print(jakis_inny_napis[14:30:2]) # Weź litery od indeksu 14 do 30, bez 30, co druga literę.
-print(jakis_inny_napis[-11:]) # Weż wszystkie litery od 11 od końca do końca
-print(jakis_inny_napis[-11::2]) # Weź wszystkie litery od 11 od końca do końca, co druga litera
+print(jakis_inny_napis[-11:]) # Weż wszystkie litery od -11 od końca do końca
+print(jakis_inny_napis[-11::2]) # Weź wszystkie litery od -11 od końca do końca, co druga litera
+print(jakis_inny_napis[::]) # Weź cały tekst – dokładnie jak print(jakis_inny_napis)
 print(jakis_inny_napis[::-1]) # Weź cały tekst od tyłu
-print(jakis_inny_napis[5::-1]) # UWAGA! Prosząc o wyraz zapisany od tyłu, wpisujemy przedział patrząc od tyłu – od 6 wyrazy do 0
+print(jakis_inny_napis[4::-1]) # UWAGA! Prosząc o wyraz zapisany od tyłu, wpisujemy przedział patrząc od tyłu (od 5 znaku do 0).
+
+file = 'raport_finansowy_2026_final.csv'
+print(f'Trzy ostatnie znaki przed kropką to: {file[file.find('.')-3:file.find('.')]}') # Weź 3 ostatnie znaki przed kropką.
 
 # Jeżeli wskażemy nieistniejący lub częściowo nieistniejący ZAKRES, to nie dostaniemy błędu.
 print(jakis_inny_napis[30: 100]) # Wypisze tyle, ile jest.
@@ -148,7 +154,7 @@ print(f"Długość napisu {jakis_inny_napis} to {len(jakis_inny_napis)}")
 
 napis = "Danusia jest fryzjerką i chodzi do technikum."
 napis_lenght = len(napis)
-napis_lenght_halved = napis_lenght // 2 # Znalezienie indeksu środkowego
+napis_lenght_halved = napis_lenght // 2 # Znalezienie indeksu środkowego, chcemy LICZBY całkowitej, więc stosujemy //
 
 print(f"To jest połowa zadania: {napis[:napis_lenght_halved]}")
 print(f"To jest druga połowa zadania: {napis[napis_lenght_halved:]}")
@@ -263,8 +269,10 @@ print(joined_string)
 
 
 
-####### find() - Zwraca INDEKS znaku, a jeśli nie znajdzie, wyświetli -1 (nie mylić z ostatnim indeksem).
+####### find() - Zwraca INDEKS znaku
 # Zwraca INTEGER (indeks jest zawsze liczbą całkowitą).
+# Jeżeli metoda nie znajdzie szukanego znaku lub ciągu znaków, zwraca wartość -1 (nie mylić z ostatnim indeksem).
+# Pozwala to na bezpieczne sprawdzenie wyniku bez przerywania działania programu (np. za pomocą instrukcji if).
 
 word = 'python'
 print(word.find('p')) # Znak występuje w słowie, więc poda indeks znaku – w tym przypadku 0
@@ -274,9 +282,15 @@ sentence = "python jest super"
 print(sentence.find('e')) # Zwraca tylko pierwsze wystąpienie literki e (w zdaniu znajdują się dwie literki 'e')
 print(sentence.find('es')) # Można też wskazać fragment tekstu, aby sprawdzić, gdzie się on zaczyna
 
+product_code = 'LAPTOP-DELL-2026-PRO'
+przerwa1 = product_code.find('-') # Zwróć index pierwszego wystąpienia znaku -
+przerwa2 = product_code.find('-', przerwa1 +1) # Zwróć index drugiego wystąpienia znaku -
+
 
 
 ####### index() – Wyszukaj. Działa jak find(), ale jeśli nie znajdzie, to podnosi BŁĄD
+# Jeżeli szukany element nie zostanie odnaleziony, metoda ta zgłasza błąd (wyjątek ValueError).
+# Powoduje to natychmiastowe zatrzymanie programu, chyba że programista zastosuje odpowiednią obsługę błędów (np. blok try-except).
 
 sentence = "python jest super"
 print(sentence.index('super'))
