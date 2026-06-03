@@ -38,6 +38,9 @@ dict= {
 
 print(type(dict)) # Sprawdź TYP DANYCH elementu -> <class 'list'>
 print(dict) # Wyświetl zawartość słownika.
+print(dict.keys()) # Wyświetl klucze.
+print(dict.values()) # Wyświetl wartości
+print(dict.items()) # Wyświetli się lista TUPLI: dict_items([('name', 'Adam'), ('s_name', 'Kowalski'), ('age', 12), ('class', '1e')])
 print(dict.get('name')) # Wyświetl konkretny ELEMENT słownika – BEZPIECZNIEJSZY SPOSÓB
 # print(dict['name']) # Wyświetl konkretny ELEMENT słownika (nie używamy tego sposobu) -> print(dic['KLUCZ'])
 # print(dic['rozmiar_buta']) # Jeżeli wskażesz element spoza słownika, wyświetli się BŁĄD
@@ -68,9 +71,6 @@ del dict['name'] # Tem sposób też zadziała, ale raczej go nie używamy
 for uczestnik in dict.keys(): # Zmienną w pętli for możemy nazwać w dowolny sposób, ale róbmy to w sposób jasny.
     print(uczestnik) # ITERACJA wyłącznie po KLUCZACH naszego SŁOWNIKA – tu robi to świadomie.
 
-# for uczestnik in dict: # Tu też będziemy ITEROWAĆ po KLUCZACH, ale chyba ktoś nie do końca wiedział, co robi.
-#     print(uczestnik)
-
 for value in dict.values(): # ITERACJA wyłącznie po WARTOŚCIACH naszego SŁOWNIKA.
     print(value)
 
@@ -79,15 +79,51 @@ for key, value in dict.items(): # ITERACJA po ITEMSach (czyli po KLUCZACH i WART
 
 
 
+####### ĆWICZENIE – Iteracja przez SŁOWNIK
+
+slownik = {1: 'Asia', 2: 'Basia', 3: 'Marta', 4: 'Danusia'}
+
+for val in slownik.values(): # Iteracja przez WARTOŚCI słownika
+    print(val)
+
+for key in slownik.keys(): # Iteracja przez KLUCZE słownika
+    print(key)
+
+for item in slownik.items(): # Iteracja przez KLUCZE i WARTOŚCI słownika
+    print(item) # wyświetli WARTOŚĆ słownika zamienioną na TUPLE (zbiory złożone) składających się z par KLUCZ i WARTOŚĆ
+
+for item in slownik.items(): # Iteracja przez KLUCZE i WARTOŚCI słownika
+    print(item[0], item[1]) # Wyświetli osobno jako INTERGER i TEKST
+    slownik[item[0]] = 'WIKTOR'
+
+
+for key, val in slownik.items(): # Iteracja przez KLUCZE i WARTOŚCI słownika
+    print(f'KEY: {key} VA: {val}')
+
+
+####### ĆWICZENIE – Zamień miejscami klucze i wartości
+
+dict = {'IMIE': 'Adam', 'NAZWISKO': 'Kowalski', 'WIEK': 12, 'KLASA': '1e'}
+
+new_dict = {}
+for item in dict.items():  # Iteracja przez KLUCZE i WARTOŚCI słownika
+    print(item[0], item[1])  # Wyświetli osobno jako INTERGER i TEKST
+    new_dict[item[1]] = item[2]
+
+print(dict)
+print(new_dict)
+
+
+
 ####### ĆWICZENIE – Jak miał na elf z LotR?
 
-hero = {'Czarodziej': 'Gandalf', 'Elf': 'Legolas', 'Krasnolud': 'Gimli'}
-
-question = input('Jaka jest stolica Polski? ')
-if hero['Polska'] == question:
-    print('Brawo.')
-else:
-    print(f'Niestety nie jest to {question}. Chodziło o {hero['Czarodziej']}.')
+# hero = {'Czarodziej': 'Gandalf', 'Elf': 'Legolas', 'Krasnolud': 'Gimli'}
+#
+# question = input('Jaka jest stolica Polski? ')
+# if hero['Polska'] == question:
+#     print('Brawo.')
+# else:
+#     print(f'Niestety nie jest to {question}. Chodziło o {hero['Czarodziej']}.')
 
 
 

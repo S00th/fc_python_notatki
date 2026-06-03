@@ -134,6 +134,26 @@ print(random_list)
 
 
 
+### Zwróć NAJMNIEJSZĄ wartość z KOLEKCJI – funkcja .min()
+
+przykladowa_lista = [1,2,3,15,74,24,54,1,86]
+print(min(przykladowa_lista)) # Wyświetli 1
+
+
+### Zwróć NAJMNIEJSZĄ wartość z KOLEKCJI – funkcja .min()
+
+przykladowa_lista = [1,2,3,15,74,24,54,1,86]
+print(max(przykladowa_lista)) # Wyświetli 86
+
+
+### Zwróć losowe liczby z przedziału.
+
+import random # Moduł umożliwia losowanie liczb z danego przedziału
+random_num = random.randint(0, 30)
+print(random_num)
+
+
+
 ###### HASHOWALNOŚĆ danych.
 # Struktury danych możemy dzielić na STRUKTURY PROSTE i STRUKTURY ZŁOŻONE, ale też na ZMIENIALNE i NIEZMIENIALNE.
 

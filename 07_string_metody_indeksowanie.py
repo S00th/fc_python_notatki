@@ -58,7 +58,7 @@ print('Hello ' * 5) # Możemy też powtórzyć wybrany tekst kilkukrotnie za pom
 # Na razie przyjmujemy, że FUNKCJE i METODY różnią się jedynie składnią.
 # METODY są nierozerwalnie związane z konkretnym TYPEM DANYCH lub OBIEKTEM.
 # Wywołuje się je "na rzecz" konkretnego OBIEKTU, używając zapisu z kropką (np. nazwa_listy.append())
-# FUNKCJA nazywana jest METODA dlatego, że odnosi się do konkretnego ELEMENTU?(np listy), na której jest wywołana.
+# FUNKCJA nazywana jest METODA dlatego, że odnosi się do konkretnego ELEMENTU (np. listy), na której jest wywołana.
 #
 # Wywołanie FUNKCJI (FUNKCJA wywołuje lub zwraca)
 # Zapis FUNKCJI
