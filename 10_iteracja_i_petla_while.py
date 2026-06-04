@@ -20,6 +20,9 @@
 # PĘTLA "for" – wykonuje się SKOŃCZONA/OKREŚLONĄ ilość razy.
 # Używana, GDY WIEMY, ILE RAZY dana OPERACJA MA ZOSTAĆ POWTÓRZONA lub gdy chcemy PRZEJŚĆ przez WSZYSTKIE ELEMENTY w ZBIORZE danych (w LIŚCIE lub SŁOWNIKU).
 # W programowaniu często stosuje się ją w konstrukcji "for in range", która pozwala na precyzyjne określenie liczby powtórzeń
+#
+# Obiekty iterowalne w Pythonie to: stringi, listy, tuple, zbiory, słowniki, obiekty (range)
+# Obiekty NIEiterowalne to: int, float, bool, None (NoneType)
 
 # DODATKOWE KOMENDY (komendy sterujące) – służą do precyzyjnego sterowania procesem ITERACJI:
 # Występują wyłącznie wewnątrz pętli (FOR oraz WHILE).

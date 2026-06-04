@@ -30,7 +30,40 @@ for _ in range(5):
     print('Cześć. ')
 
 
-# ĆWICZENIE 1 – Przez jakie liczby jest podzielna podana liczba?
+
+### ITERACJA przez listę
+#
+names = ['Asia', 'Dasia', 'Danusia']
+
+for name in names: # Pętla: sięga do listy, wyciąga pierwszy obiekt, drukuje go i wraca do listy. Robi tak az, skończą się obiekty w liście i wychodzi.
+    print(name)
+
+
+
+### ĆWICZENIE, dodaj 10 do każdej liczby w liście
+#
+numbers = [1, 2, 3]
+
+for number in numbers:
+    plus_10 = number+10
+    print(plus_10)
+
+
+
+#### ĆWICZENIE – Oblicz sumę liczb
+#
+# Oblicz sumę INTEGERÓW przy pomocy pętli "for".
+
+numbers = [1, 2, 3]
+
+sum = 0 # Początkowa suma wynosi zero
+for number in numbers:
+    sum += number # Dodawana jest pierwsza WARTOŚĆ z listy do SUMY, a następnie druga wartość, trzecia wartość i następuje wyjście z pętli.
+    print(sum)
+
+
+
+### ĆWICZENIE – Przez jakie liczby jest podzielna podana liczba?
 
 nasza_liczba = int(input('Podaj swoją liczbę: '))
 
@@ -45,7 +78,7 @@ for liczba in range(1, nasza_liczba):
 
 
 
-# ĆWICZENIE 2 – Iterowanie stringa.
+# ĆWICZENIE – Iterowanie stringa.
 
 for litera in 'abecadło':
    print(litera)

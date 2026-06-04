@@ -15,16 +15,17 @@ FUNKCJE WBUDOWANE:
             To co wpisze użytkownik jako "input", zostanie przypisane do WARTOŚCI, a następnie np. może zostać wyświetlone za pomocą funkcji "print".
             Docelowo nie będziemy używali tej funkcji. Dane będziemy pobierali z innych źródeł, np. źródłem może być interface.
     -> len(iterable) – Zwraca długość obiektu ITEROWALNEGO (czyli takiego, z których da się wyodrębnić konkretny element lub kilka elementów).
-            Obiektami iterowalnymi są: STRING, LISTA czy ZBIÓR.
+            Obiektami iterowalnymi są: STRINGI, LISTY, TUPLE, ZBIORY i SŁOWNIKI.
     -> round(number) – Zaokrągla domyślnie do jedności, ale też pozwala zaokrąglić do X miejsc o przecinku.
             round(number, precision) – Zaokrąglenie number (liczby zmiennoprzeciwkowej) do precision (dokładność) liczby po przecinku
             -> number – Argument pozycyjny. Potrzebny, aby podana funkcja zadziałała.
             -> precision – Argument opcjonalny. Ma wartość domyślną, można, ale nie trzeba go podawać, np: round(number, 2) – zaokrągli do 2 miejsc o przecinku.
 
+    -> sorted(collection) -> sortuje obiekt KOLEKCJI -> zawsze zwraca LISTĘ (w kolejności wg. ASCI)
+            sorted(iterable, /.., *.., key=none, reverse=False) # W argumencie "key" wpisujemy jakiej FUNKCJI chcemy użyć, żeby posortować.
+    -> reversed(collection) -> sortuje obiekt KOLEKCJI w odwrotnej kolejności -> zawsze zwraca LISTĘ
     -> min(sequence) -> zwraca najmniejsza wartość z KOLEKCJI
     -> max(sequence) -> zwraca największą wartość z KOLEKCJI
-    -> sorted(collection) -> sortuje obiekt KOLEKCJI -> zawsze zwraca LISTĘ (wg. ASCI)
-    -> reversed(collection) -> sortuje obiekt KOLEKCJI w odwrotnej kolejności -> zawsze zwraca LISTĘ
 
     -> str(a) – Zamiana na typ danych NAPIS/CIĄG ZNAKÓW (str)
     -> int(a) – Zamiana na typ danych LICZBA CAŁKOWITA (int)
@@ -75,10 +76,13 @@ TYPY DANYCH W PYTHONIE:
         – Słowniki [dict]: dict.get('name') – wyświetl ELEMENT słownika / dict.pop('name')  – usuwanie / dict.get('name')
             dict['name'] = 'Aga' – dodawanie i edycja (dodajac istniejący klucz edytuje wartość)
             Iteracja: for key in dict.keys(): / for value in dict.values() / for key, value in dict.items():
-                                                                                 print(f' Klucz: {key} + Wartość: {value}')
+                            print(key)              print(value)                print(f' Klucz: {key} + Wartość: {value}'))
 
     -> None – Posiada swój własny, unikalny typ o nazwie "NoneType". Jest on oddzielony od LICZB, TEKSTÓW i WARTOŚCI LOGICZNYCH.
 
+
+SŁOWA KLUCZOWE
+    – raise – Podnosimy BŁĄD. Można użyć w FUNKCJI np. raise TypeError('Liczba musi być całkowita.')
 
 MODUŁU
 

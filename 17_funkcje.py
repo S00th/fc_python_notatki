@@ -9,8 +9,8 @@
 def <nazwa_funkcji>():
     kod
 
-# W chwili kiedy FUNKCJA jest zdefiniowana (ma już nazwę) i zostały dodane jakieś INSTRUKCJE, jeszcze nic się nie dzieje.
-# Aby FUNKCJA zadziałała (została wywołana) musimy odnieść się do FUNKCJI przez jej nazwę.
+# W chwili kiedy FUNKCJA jest ZDEFINIOWANA (ma już nazwę) i zostały dodane jakieś INSTRUKCJE, jeszcze NIC SIĘ NEI DZIEJE.
+# Aby FUNKCJA zadziałała (została WYWOŁANA) musimy odnieść się do FUNKCJI przez jej nazwę.
 #
 # WAŻNE, aby FUNKCJĘ stworzyć przed jej WYWOŁANIEM
 #
@@ -135,8 +135,9 @@ print(area) # Wyświetli AgaAgaAgaAgaAgaAgaAgaAgaAgaAgaAgaAgaAgaAgaAgaAgaAgaAgaA
 
 # W takim przypadku musimy sprawdzić wartości wejściowe, czyli zWALIDOWAĆ dane wejściowe.
 # Tworząc FUNKCJĘ, zazwyczaj będziemy chcieli OTYPOWAĆ zmienne (jak niżej).
-# Typowanie wartości / Podpowiadanie typów (Type hinting) nie obliguje nas do niczego.
+# Typowanie wartości / Podpowiadanie typów (Type hinting) nie obliguje nas do niczego. To jedynie info dla nas, że tutaj powinien być np. INT.
 # Pozwalająca na jawne określenie, jakiego rodzaju dane powinny być przechowywane w zmiennych lub przetwarzane przez funkcje.
+# WAŻNE! Podpowiadanie TYPÓW jest dziś pożądaną praktyką.
 
 def calculate_area(edge_a: int | float, edge_b: int | float) -> float | None:
     # TYPOWANIE FUNKCJI: WARTOŚĆ edge_a - edge_b spodziewam się INT lub FLOAT, a FUNKCJA zwróci FLOAT lub None
@@ -255,16 +256,136 @@ print(len(list_num))
 
 
 
+### ĆWICZENIE – Liczba narcystyczna (liczba Armstronga)
+#
+# Napisz funkcję, która przyjmuje na wejściu liczbę naturalną i sprawdza, czy liczba jest narcystyczna.
+# Liczba narcystyczna to liczba naturalna, która jest równa sumie swoich cyfr podniesionych do potęgi równej liczbie cyfr w liczbie.
+# Inaczej
+# Liczba narcystyczna to liczba naturalna, której suma cyfr podniesionych do potęgi długości tej liczby, to wartość tej liczby,
+# np. 153 - 1³ + 5³ + 3³ to 153 – do potęgi trzeciej po są trzy cyfry (np: 153, 370, 1634).
+#  liczby naturalne, które są równe sumie swoich cyfr podniesionych do potęgi równej liczbie cyfr w liczbie.
+# wykładnik (eng. exponent)
+# number = str(153)
+# print(len(number)) # W ten sposób wyciągamy długość liczby. Długość liczby jest nam potrzebna do wykładnika potęgi.
+
+# W pierwszym FUNKCJI jedynie informujemy, że WARTOŚĆ znajdująca się tutaj powinna być typu INT (jest opcjonalne). Prawdziwa WALIDACJA odbywa się niżej.
+def liczba_narcystyczna(number: int) -> bool:
+    if not isinstance(number, int): # Tutaj odbywa się prawdziwa WALIDACJA wejścia. Jeżeli liczba nie jest INT, to chcemy wyjść z FUNKCJI i celowo podnieść BŁĄD.
+        raise TypeError('Liczba musi być całkowita.') # Podnosimy BŁĄD – tutaj jest tylko informacją o tym, że w samej funkcji (linia 264)
+    str_number = str(number)  # Przypisujemy zmienna, która nam się przyda do kilku rzeczy.
+    exponent = len(str_number) # Określamy exponent (wykładnik potęgi), aby mieć dynamicznie przypisany (zmienny) exponent.
+    cum_sum = 0 # Suma, która się kumuluje
+    for digit in str_number:
+        cum_sum += int(digit)**exponent
+    return cum_sum == number # Nie ma potrzeby pisać tutaj "if" ponieważ tutaj i tak otrzymujemy bool.
+
+number = int(input('Podaj liczbę: '))
+if liczba_narcystyczna(number):
+    print(f'Liczba {number} jest narcystyczna.')
+else:
+    print(f'Liczba {number} NIE jest narcystyczna.')
+
+
+
+####### W Pythonie można definiować FUNKCJE na różne sposoby.
+#
+# Najczęściej korzystamy z "def", w których będzie się wykonywała jakaś logika.
+# W przypadku bardzo prostej FUNKCJI, która nir wymaga kilku linii, możemy ją napisać w jednej linijce prz pomocy FUNKCJI ANONIMOWEJ lambda.
+# FUNKCJA ANONIMOWA / lambda jest rzadko używana, ale warto wiedzieć, że coś takiego istnieje.
+#
+# SKŁADNIA
+# lambda <argument_1>, <argument_2>: <co_ma_się_stać_z_argumentami>
+
+suma1 = lambda x, y: x + y
+
+# Jest to dokładnie to samo co:
+
+def suma2(x, y):
+    return x + y
+
+print(suma1(2, 3))
+print(suma2(2, 3))
+
+
+
+######## ĆWICZENIE – SORTOWANIE znaków w LIŚCIE
+
+# Każdy symbol ma swoją wartość numeryczną wg. tabeli ASCII.
+letters = ['a', 'Z', '?', 'w', 'B', 'y', 'a', '#']
+
+# W przypadku wyrazów brana jets pod uwagę pierwszy znak, jeśli byłby taki sam, to drugi.
+names = ['Basia', 'Danusia', 'Katarzyna', 'Ola', 'Małgorzata']
+
+sorted_letters = sorted(letters) # Funkcja "sorted" sortuje obiekt KOLEKCJI. Zawsze zwraca LISTĘ w kolejności wg. ASCII.
+print(sorted_letters)
+
+
+
+######## ĆWICZENIE – Posortuj LISTĘ imion wg. długości imienia
+#
+
+names = ['Katarzyna', 'Basia', 'Danusia', 'Ola', 'Małgorzata']
+
+print(sorted(names, key=len)) # W argumencie "key" wpisujemy jakiej FUNKCJI, która ma pomóc w porównywaniu.
+
+
+
+######## ĆWICZENIE – Posortuj LISTĘ tupli wg. wieku osób.
+# Lista w tupli jest przykładem OBIEKT DWU-WYMIAROWEGO.
+
+people = [('Basia', 23), ('Ania', 19), ('Kasia', 27), ('Ola', 21)]
+# inny zapis
+people = [
+    ('Basia', 23),
+    ('Ania', 19),
+    ('Kasia', 27),
+    ('Ola', 21)
+]
+
+# for wiek in people:
+#     print(wiek[1]) # Dla każdego elementu LISTY wyciągamy element 1.
+
+print(sorted(people, key=lambda x: x[-1])) # Gdzie x będzie każdym elementem wewnętrznym w LIŚCIE tupli. Tu wyciągamy ostatni element z każdej tupli.
+print(sorted(people, key=lambda x: x[-1], reverse=True)) # Gdybyśmy chcieli odwrócić kolejność LISTY, dodajemy "reverse=True".
+print(sorted(people, key=lambda x: x[-1])[::-1]) # Inny sposób odwracania kolejności LISTY. Zwraca listę w odwrotnej kolejności.
+
+
+
+####### MODÓŁ "import string"
+#
+import string # MODUŁ, który zwraca wszystkie znaki.
+
+print(string.ascii_letters) # Zwróci wszystkie litery: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+print(string.ascii_lowercase) # Zwróci wszystkie małę litery: abcdefghijklmnopqrstuvwxyz
+print(string.ascii_uppercase) # Zwróci wszystkie DUŻE litery: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+print(string.digits) # Zwróci wszystkie litery: 0123456789
+print(string.punctuation) # Zwróci wszystkie znaki specjalne: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 
 
 
 
 
-przykladowa_lista = [1, 2, 3, 15, 74, 24, 54, 1, 86, 5]
 
-print(f'min: {min(przykladowa_lista)}')
-print(f'max: {max(przykladowa_lista)}')
-print(f'dlugosc: {len(przykladowa_lista)}')
+####### ZADANIE DOMOWE
+#
+# Dany jest moduł "strip.
+# Zbuduj funkcję do generowania haseł.
+# Funkcja powinna przyjmować następujące argumenty:
+# – Żądana długość hasłą
+# – Czy zawrzeć znaki specjalne, jeśli True to zawrzyj, jeśli False to nie zawieraj
+# – No końcu wymieszaj litery.
+
+
+
+
+
+# napisz, która przyjmie dowolną liczbę elementów, wyodrębnij z niej liczby całkowite,
+# pogrupuj odpowiednio i zwróć liczby parzyste jakoś osobna lista i nieparzyste w osobnej liście,
+# zignoruj wejścia inne niz integer
+
+
+
+
 
 
 # # def calculate_rectangle_area(edge_a: int | float, edge_b: int | float) -> float | None:
