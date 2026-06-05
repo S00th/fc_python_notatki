@@ -63,7 +63,8 @@ TYPY DANYCH W PYTHONIE:
         – Booleans (bool): Wartości logiczne, czyli prawda (True) lub fałsz (False). Muszą zaczynać się wielką literą
 
     -> Struktury Danych (typ złożony) i ich METODY
-        – Listy [list]: list[0] / list[0:3] / list.index('Aga') / list.remove('Aga') / list.append('Aga') / list.insert(0, 'Aga') / list[0] = 'Ewa'
+        – Listy [list]: Tworzenie listy: <zmienna> = list(<wartość_1, <wartość<2>> / Inny przykład: all_letters = list(string.ascii)
+            list[0] / list[0:3] / list.index('Aga') / list.remove('Aga') / list.append('Aga') / list.insert(0, 'Aga') / list[0] = 'Ewa'
             for element in list:
 
         – Krotki (tuple): tuple[0] / tuple[0:3] / tuple.index('Aga')

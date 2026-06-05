@@ -371,9 +371,19 @@ print(string.punctuation) # Zwróci wszystkie znaki specjalne: !"#$%&'()*+,-./:;
 # Dany jest moduł "strip.
 # Zbuduj funkcję do generowania haseł.
 # Funkcja powinna przyjmować następujące argumenty:
-# – Żądana długość hasłą
-# – Czy zawrzeć znaki specjalne, jeśli True to zawrzyj, jeśli False to nie zawieraj
+# – Żądana długość hasłą (funkcja umożliwia podanie żądanej długości hasłą – w agrumentach).
+# – Czy zawrzeć znaki specjalne, jeśli True to zawrzyj, jeśli False to nie zawieraj.
 # – No końcu wymieszaj litery.
+# Otypuj argumenty, wartości zwracane. Dokonaj niezbędnej walidacji wejścia.
+
+
+### ĆWICZENIE wprowadzające
+def powitanie(name, age, is_married):
+    if is_married:
+        powitanie_tekst = (f'Witaj, {name}, masz {age} lat. Jesteś zamężna/żonaty.')
+    else:
+        powitanie_tekst = (f'Witaj, {name}, masz {age} lat. Nie jesteś zamężna/żonaty.')
+
 
 
 
