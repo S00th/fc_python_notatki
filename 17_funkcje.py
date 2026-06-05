@@ -1,5 +1,6 @@
 ####### FUNKCJE
 
+# FUNKCJA to wydzielony, nazwany fragment kodu, który wykonuje określone zadanie.
 # FUNKCJE piszemy po to, aby uniknąć powtarzania kodu. Nie musimy pisać tych samych instrukcji wielokrotnie.
 # Inaczej mówiąc, jeżeli jakieś działania cały czas się powtarzają, FUNKCJE pozwalają użyć wielokrotnie tego samego fragmentu kodu.
 # FUNKCJA będzie czymś w rodzaju szablonu dla kodu.
@@ -9,10 +10,10 @@
 def <nazwa_funkcji>():
     kod
 
-# W chwili kiedy FUNKCJA jest ZDEFINIOWANA (ma już nazwę) i zostały dodane jakieś INSTRUKCJE, jeszcze NIC SIĘ NEI DZIEJE.
+# W chwili kiedy FUNKCJA jest ZDEFINIOWANA (ma już nazwę) i zostały dodane jakieś INSTRUKCJE, jeszcze NIC SIĘ NIE DZIEJE.
 # Aby FUNKCJA zadziałała (została WYWOŁANA) musimy odnieść się do FUNKCJI przez jej nazwę.
-#
-# WAŻNE, aby FUNKCJĘ stworzyć przed jej WYWOŁANIEM
+# Żeby WYWOŁAĆ FUNKCJĘ, trzeba napisać jej nazwę, otworzyć i zamknąć nawias, a pomiędzy nawiasami wpisać wartości ARGUMENTÓW.
+# WAŻNE! FUNKCJĘ trzeba stworzyć przed WYWOŁANIEM funkcji
 #
 nazwa # w tym momencie jest to zmienna
 nazwa() # w tym momencie jest to funkcja
@@ -53,23 +54,25 @@ nazwa() # w tym momencie jest to funkcja
 
 # PARADYGMAT, ent funkcyjny =========================================
 
-
-
 ### SKŁADNIA
 # Argumentami (arg1, arg 2) będą dane, które będą potrzebne do wykonania obliczenia/zadania
 
-def func(arg1, arg2, ...):
+# Tutaj znajduje się DEFINICJA funkcji (czyli logika, która ma zajść).
+def func(arg1, arg2):
     function body # We WCIĘCIU mamy CIAŁO FUNKCJI...
     logic # oraz logikę, która zachodzi w FUNKCJI
 
+print(func(arg1, arg2)) # Tutaj znajduje się wywołanie funkcji
 
 
-### ZWRACANIE WARTOŚĆ FUNKCJI
+
+### WARTOŚĆ ZWRACANA / Zwracanie wartości FUNKCJI
 #
-# ZWRACANIE WARTOŚĆ to proces, w którym funkcja przesyła wynik swojej pracy z powrotem do miejsca,
-# z którego została wywołana (można powiedzieć, że przejmuje dane wejściowe, przetwarza je i zwraca dane wyjściowe).
+# ZWRACANIE WARTOŚĆ to proces, w którym funkcja PRZESYŁA WYNIK swojej pracy z powrotem do miejsca,
+# z którego została WYWOŁANA (inaczej mówiąc: FUNKCJA przejmuje dane WEJŚCIOWE, PRZETWARZA je i zwraca dane WYJŚCIOWE).
 # Wynik działania FUNKCJI nie „znika” po jej zakończeniu.
 # Wynik można np. przypisać do zmiennej i wykorzystać w dalszej części kodu, np. do kolejnych obliczeń lub jako warunek w instrukcji "if".
+# FUNKCJA może zwrócić jeden lub wiele obiektów (zwraca coś dzięki "return"), ale NIE musi nic zwracać.
 #
 # Wyobraź sobie, że prosisz małżonka (FUNKCJĘ) o zrobienie zakupów.
 # Dajesz mu listę zakupów i pieniądze (ARGUMENTY).
@@ -104,15 +107,18 @@ if area1 > area2:
 
 
 ### ĆWICZENIE 1 – Oblicz obwód prostokąta
+#
+# SCOPE to zmienne zdefiniowanych wewnątrz funkcji.
+# Są one widoczne tylko dla tej konkretnej funkcji i przestają istnieć po zakończeniu jej wykonywania.
 
 def obwod_prostokata1(a, b):
-    obwod = 2 * (a + b)
+    obwod = 2 * (a + b) # Zmienne a i b istnieją wewnątrz FUNKCJI, ale nie dysponujemy nimi na zewnątrz (znajdują się w tzw. SCOPEie FUNKCJI).
     return obwod
 
 # lub – krótszy zapis
 
 def obwod_prostokata2(a, b):
-    return 2 * (a + b) # Przypisanie WARTOŚCI następuje niżej
+    return 2 * (a + b) # Przypisanie WARTOŚCI następuje niżej (poza FUNKCJĄ)
 
 obwod1 = obwod_prostokata1(2, 2)
 obwod2 = obwod_prostokata1(2, 5)
@@ -121,6 +127,18 @@ obwod3 = obwod_prostokata1(2, 10)
 print(obwod1)
 print(obwod2)
 print(obwod3)
+
+### WAŻNE
+
+liczba = 10
+
+def dodaj(a, b):
+    return a + liczba
+
+result = dodaj(5, 7)
+
+print(result) # Wyświetli 15, ponieważ "liczba" została przypisana przed FUNKCJĄ na sztywno.
+                # "a" nie należy do SCOPE całego kodu, ale "liczba" może być w SCOPE FUNKCJI ("b" nie jest wykorzystywane).
 
 
 
@@ -362,10 +380,6 @@ print(string.digits) # Zwróci wszystkie litery: 0123456789
 print(string.punctuation) # Zwróci wszystkie znaki specjalne: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 
 
-
-
-
-
 ####### ZADANIE DOMOWE
 #
 # Dany jest moduł "strip.
@@ -377,154 +391,166 @@ print(string.punctuation) # Zwróci wszystkie znaki specjalne: !"#$%&'()*+,-./:;
 # Otypuj argumenty, wartości zwracane. Dokonaj niezbędnej walidacji wejścia.
 
 
-### ĆWICZENIE wprowadzające
-def powitanie(name, age, is_married):
-    if is_married:
-        powitanie_tekst = (f'Witaj, {name}, masz {age} lat. Jesteś zamężna/żonaty.')
-    else:
-        powitanie_tekst = (f'Witaj, {name}, masz {age} lat. Nie jesteś zamężna/żonaty.')
 
 
 
 
 
 
-# napisz, która przyjmie dowolną liczbę elementów, wyodrębnij z niej liczby całkowite,
-# pogrupuj odpowiednio i zwróć liczby parzyste jakoś osobna lista i nieparzyste w osobnej liście,
-# zignoruj wejścia inne niz integer
-
-
-
-
-
-
-# # def calculate_rectangle_area(edge_a: int | float, edge_b: int | float) -> float | None:
-# #
-# #     if not isinstance(edge_a, (int, float)) or (edge_b, (int, float)):
-# #         print('krawędz musi byc typu numerycznego')
-# #         return
-# #     pole = edge_a * edge_b
-# #     return pole
-# #
-# # result = calculate_rectangle_area(10, 30)
-# # print(result)
+### DOWOLNA liczba ARGUMENTÓW – *args
 #
+# def dodaj_trzy(num_1, num_2, num_3): # Nie dodajemy wielu argumentów w ten sposób.
+#     return num_1 + num_2 + num_3
 #
-# przykladowa_lista = [1, 2, 3, 15, 74, 24, 54, 1, 86, 5]
+# def dodaj_trzy(num_1, num_2, num_3): # Nie dodajemy wielu argumentów w ten sposób.
+#     return num_1 + num_2 + num_2
 #
-# print(f'min: {min(przykladowa_lista)}')
-# print(f'max: {max(przykladowa_lista)}')
-# print(f'dlugosc: {len(przykladowa_lista)}')
+# result = dodaj_trzy(1, 2)
 #
+# Jeżeli mamy z góry określoną liczbę argumentów POZYCYJNYCH, to wywołanie funkcji z inną ilością (mniejszą lub większą), spowoduje błąd.
+# ARGUMENT POZYCYJNY to taki argument, który nie ma wartości domyślnej.
 #
-# def paint_list_stats(list_in: list[int | float])
-#     return min(list_in), max(list_in), len(list_in)
+# "*" przed nazwą argumentu liczby pełni rolę OPERATORA PAKOWANIA ARGUMENTÓW POZYCYJNYCH (tzw. *args).
+# Pozwala on na wywołanie FUNKCJI z dowolną liczbą wartości przekazanych po przecinku.
+# Nie musisz z góry określać, czy będziesz dodawać dwie, trzy czy sto liczb.
+# Wszystkie wartości przekazane podczas wywołania FUNKCJI zostają SPAKOWANE do jednej struktury danych – TUPLI o nazwie "liczby".
+# Wewnątrz funkcji możesz operować na niej jak na zwykłej kolekcji danych.
+
+def dodaj_wiele(*liczby):
+    return sum(liczby)
+
+result = dodaj_wiele(1, 2, 3, 100, 200) # Mogę tutaj wpisać dowolną ilość wartości
+print(result)
+
+
+
+####### ROZPAKOWYWANIE
 #
-# # lub
+# SKŁADNIE – jest odwrotna niż przy przypisywaniu wartości
+# <wartość1>, <wartość2>, <wartość2> = <nazwa>
+
+# def rozpakuj(*names):
+#     return names
+
+names = ['Zosia', 'Ania', 'Kasia']
+name1, name2, name3 = names # W takim przypadku liczba zmiennych musi być dokładnie taka sama jak zmiennych w LIŚCIE.
+print(name1, name2, name3)
+
+names = ['Zosia', 'Ania', 'Kasia', 'Tomek']
+name1, name2, name3, _ = names # Dodany "_" to konwencja, która mówi "Wiemy, że coś tu jest, rozpakowujemy to, ale nie będziemy do tego zaglądali.
+print(name1, name2, name3)
+print(_) # DO "_" w tym przypadku jest przypisany "Tomek"
+
+names = ['Zosia', 'Ania', 'Kasia', 'Tomek', 'Janek', 'Leszek']
+name1, name2, name3, *_ = names # "*_" rozpakuje skumulowaną dynamiczną liczbę wartości w kolekcji
+print(name1, name2, name3) # Wyświetli: Zosia, Ania, Kasia i zignoruje wszystkie pozostałe imiona, które nas nie interesują.
+
+
+
+####### ARGUMENT POZYCYJNY i OPCJONALNY
 #
-# def func(przykladowa_lista):
-#     list_len = len(przykladowa_lista)
-#     min_value = min(przykladowa_lista)
-#     max_value = max(przykladowa_lista)
-#     return min_value, max_value, list_len
-# print(f'min: {min(przykladowa_lista)}')
-# print(f'max: {max(przykladowa_lista)}')
-# print(f'dlugosc: {len(przykladowa_lista)}')
-#
-#
-# def find_list_stats(list_in: list[int | float]) -> dict[str, int | float]:
-#     return {'min': min(list_in), 'max': max(list_in), 'len': len(list_in)}
-#
-# print(find_list_stats(przykladowa_lista))
+# Czasem chcemy podawać cześć argumentów jako zawsze inna, a cześć jako zawsze takie same.
+# ARGUMENT POZYCYJNY to taki argument, który NIE ma wartości domyślnej – jest sugestią (wartość domyślną wpisuje się w momencie definiowania funkcji).
+# ARGUMENT OPCJONALNY to taki argument, który ma wartość domyślną. Pozwalają zdefiniować FUNKCJĘ, aby niektóre parametry miały przypisaną wartość.
+#       Jeśli podczas wywoływania funkcji pominiesz ten argument, to Python automatycznie użyje przypisanej mu wartości.
+
+# Podczas definiowania FUNKCJI została wpisana WARTOŚĆ DOMYŚLNA dla "pi" (sugestia).
+# "radius" jest argumentem pozycyjnym, a "pi" argumentem opcjonalnym.
+def circle_area(radius: int | float, pi: float = 3.14):
+    print(f' {radius=}, {pi=}') # Tak zapis pomaga w debugowaniu. Zaciągnie WARTOŚCI i wyświetli: radius=2, pi=3.14
+    return pi * radius ** 2 # Gdybyśmy w tym miejscu zamiast "pi" wpisali 3.14, byłaby to wartość wpisana "na sztywno"
+
+circle_area1 = circle_area(2) # Mimo tego, że nie podaliśmy drugiego argumentu, FUNKCJA wykonała obliczenie
+circle_area2 = circle_area(2, 3.1425932) # Tutaj zostanie NADPISANA wartość ARGUMENTU OPCJONALNEGO (priorytetem jest to, co wpiszemy w WYWOŁANIU).
+
+print(circle_area1)
+print(circle_area2)
+
+# WAŻNA! Jeżeli używasz w FUNKCJI zarówno argumentó POZYCYJNYCH i OPCJONALNYCH, to w DEFINICJI FUNKCJI, argumenty POZYCYJNE muszą być pierwsze.
+def circle_area(pi: float = 3.14, radius: int | float): # WAŻNE! Taki zapis podniesie BŁĄD SKŁADNI.
+    print(f' {radius=}, {pi=}')
+    return pi * radius ** 2
 
 
-# random_num = random.randint(0, 30)
-# print(random_num)
 
-# utwórz listę 10 liczb pseudolosowych z przedziału od 0 do 100
+### ARGUMENT POZYCYJNY, *args i ARGUMENT OPCJONALNY
 
+def oblicz_wydatki(name: str, *wydatki, last_name: str = 'Nowak') -> float | int:
+    print(f'Witaj {name} {last_name}. ')
+    suma_wydatkow = sum(wydatki)
+    print(f'Twoje wydatki to {wydatki}')
+    return suma_wydatkow
 
-import random
-
-list_number = []
-
-for number in range(10):
-    list_number.append(random.randint(0, 25))
-    if number != number:
-
-        # napisz, która przyjmie dowolną liczbe elementów, wyodreąbnij z niej liczby całkowite,
-        # pogrupuj odpowiednio i zwróc liczby parzyste jakos osobna lista i niepatrzyste w osobnej liscie,
-        # zignoruj wejścia inne niz integer
-
-        # def slit_odds_even(*args: int | float):
-        #     even_numbers = []
-        #     odd_numbers = []
-        #     for arg in args:
-        #         if arg % 2 == 0:
-        #             even_numbers.append(arg)
-        #     for arg in args:
-        #         if arg % 2 == 1:
-        #            odd_numbers.append(arg)
-
-        # Etap 1
-        # def slit_odds_even(*args: int | float):
-        #     print(args)
-        #     print(type(args))
-        #
-        # slit_odds_even(1,2,3,4,5)
-
-        # Etap 2
-        # def slit_odds_even(*args: int | float):
-        #     for item in args:
-        #         print(item)
-        #         if item % 2 == 0:
-        #             print('Liczby są parzyste')
-        #                     else:
-        #             print
-        # slit_odds_even(1,2,3,4,5)
-
-        # Etap 3
-        # def slit_odds_even(*args):
-        #     even_numbers = []
-        #     odd_numbers = []
-        #     for item in args:
-        #         if item % 2 == 0:
-        #             even_numbers.append(item)
-        #         else:
-        #             odd_numbers.append(item)
-        #     print(even_numbers)
-        #     print(odd_numbers)
-        #
-        # slit_odds_even(1,2,3,4,5)
-
-        # Etap 4 a - zbłędem
-        # def slit_odds_even(*args):
-        #     even_numbers = []
-        #     odd_numbers = []
-        #     for item in args:
-        #         if item % 2 == 0:
-        #             even_numbers.append(item)
-        #         else:
-        #             odd_numbers.append(item)
-        #     print(even_numbers)
-        #     print(odd_numbers)
-        #
-        # slit_odds_even(1,2,3,4,5 '1,b,c,d,e,f,') # tutaj nie można sprawdzić napisu czy jets parzysty czy nie
-
-        # Etap 4 b
-        def slit_odds_even(*args):
-            even_numbers = []
-            odd_numbers = []
-            for item in args:
-                if not isinstance(item,
-                                  int):  # Jeżeli element args nie jets liczbą całkowitą to nie rób nic i przejdź do kolejnego elementu
-                    continue
-                if item % 2 == 0:
-                    even_numbers.append(item)
-                else:
-                    odd_numbers.append(item)
-            print(even_numbers)
-            print(odd_numbers)
+oblicz_wydatki('Aga', 1, 5, 10, 500) # Zostaną zaciągnięte odpowiednie wartości.
+oblicz_wydatki('Aga', 1, 5, 10, 500, last_name='Kowalska') # Na końcu musimy wskazać argument OPCJONALNY.
 
 
-        slit_odds_even(1, 2, 3, 4, 5, '1,b,c,d,e,f,', 3.14, True, None)  # tym zmiennych nie ma już znaczenia
+
+#### ĆWICZENIE
+# Napisz FUNKCJĘ, która przyjmie dowolną liczbę elementów.
+# Wyodrębnij z niej LICZBY CAŁKOWITE.
+# POGRUPUJ odpowiednio i zwróć LICZBY PARZYSTE i NIEPARZYSTE jako osobne LISTY.
+# Zignoruj wejścia inne niż INTEGER.
+
+# ETAP 1
+
+def split_odds_even(*args: int):
+    print(args) # Informacyjnie: sprawdzamy, czym są "args". Wyświetli nam zawartość args: (1, 2, 3, 4, 5)
+    print(type(args))  # Sprawdzamy typ danych: tuple
+
+split_odds_even(1, 2, 3, 4, 5)
+
+
+# ETAP 2
+
+def split_odds_even(*args: int):
+    even_numbers = [] # Tworzymy LISTĘ liczb parzystych, aby przechować liczby, które będziemy dodawać w pętli.
+    odd_numbers = [] # Tworzymy LISTĘ liczb nieparzystych
+    for item in args:
+        if item % 2 == 0: # Sprawdzanie parzystości liczby
+            even_numbers.append(item) # Dodajemy do LISTY liczby parzyste
+        else:
+            odd_numbers.append(item) # Dodajemy do LISTY liczby nieparzyste
+    print(even_numbers)
+    print(odd_numbers)
+
+split_odds_even(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+# W tym momencie FUNKCJA jeszcze nic nie zwraca.
+
+
+# ETAP 3
+
+def split_odds_even(*args: int):
+    even_numbers = []
+    odd_numbers = []
+    for item in args:
+        if not isinstance(item, int): # Jeżeli element args nie jest liczbą całkowitą, to nie rób nic i przejdź do kolejnego elementu.
+            continue
+        if item % 2 == 0:
+            even_numbers.append(item)
+        else:
+            odd_numbers.append(item)
+    print(even_numbers)
+    print(odd_numbers)
+
+split_odds_even(1, 2, 3, 4, 5, 6, 7, 8, 9, 'Aga') # Jeśli dodamy do listy stringa.
+
+
+# ETAP 4
+
+def split_odds_even(*args: int):
+    even_numbers = []
+    odd_numbers = []
+    for item in args:
+        if not isinstance(item, int): # Jeżeli element args nie jest liczbą całkowitą, to nie rón nic i przejdź do kolejnego elementu.
+            continue
+        if item % 2 == 0:
+            even_numbers.append(item)
+        else:
+            odd_numbers.append(item)
+    print(even_numbers)
+    print(odd_numbers)
+    return even_numbers, odd_numbers
+
+split_odds_even(1, 2, 3, 4, 5, 6, 7, 8, 9, 'Aga', 3.14) # Jeśli dodamy do listy stringa.

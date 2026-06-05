@@ -36,6 +36,7 @@ is_married = input('Czy jesteś zamężna/żonaty? [T/N] ')
 print(powitanie(name, age, is_married))
 
 
+
 ### ĆWICZENIE – Praca domowa – Generator HASEŁ
 #
 # Dany jest moduł "strip".
@@ -49,36 +50,15 @@ print(powitanie(name, age, is_married))
 import string # Definiujemy zestawy znaków globalnie (raz na początku)
 import random
 
-# WERSJA 1 – z powtarzającymi się znakami
-# def pass_gen(pass_len: int, spec_char: str):
-#     if spec_char.upper() == 'T':
-#         pass_range = pass_all_val_list
-#     else:
-#         pass_range = pass_not_all_val_list
-#     combined_char_in_password = random.choices(pass_range, k=pass_len) # Losuje powtarzające się znaki
-#     return ''.join(combined_char_in_password) # Połączenie w jedne string
-
-# WERSJA 2 – bez powtarzających się znaków
-# def pass_gen(pass_len: int, spec_char: str):
-#     if spec_char.upper() == 'T':
-#         pass_range = pass_all_val_list
-#     else:
-#         pass_range = pass_not_all_val_list
-#     combined_char_in_password = random.sample(pass_range, k=pass_len) # Losuje NIE powtarzające się znaki
-#     return ''.join(combined_char_in_password)
-
-# WERSJA 3 – Z pytaniem do użytkownika "czy znaki w haśle mają się powtarzać?
-# def pass_gen(pass_len: int, spec_char: str):
-#     if spec_char.upper() == 'T':
-#         pass_range = pass_all_val_list
-#     else:
-#         pass_range = pass_not_all_val_list
-#     if spec_char_repeated.upper() == 'T':
-#         combined_char_in_password = random.choices(pass_range, k=pass_len)
-#         return ''.join(combined_char_in_password)
-#     else:
-#         combined_char_in_password = random.sample(pass_range, k=pass_len)
-#         return ''.join(combined_char_in_password)
+def pass_gen(pass_len: int, spec_char: str):
+    if not isinstance(pass_len, int) or not isinstance(spec_char, str): # Mam problem z działającą WALIDACJĄ
+        raise TypeError('Podałeś nieprawidłowe dane wejściowe.')
+    if spec_char.upper() == 'T':
+        pass_range = pass_all_val_list
+    else:
+        pass_range = pass_not_all_val_list
+    combined_char_in_password = random.choices(pass_range, k=pass_len) # Losuje powtarzające się znaki (można BEZ: random.sample)
+    return ''.join(combined_char_in_password) # Połączenie w jedne string
 
 pass_all_val_list = list(string.ascii_letters + string.digits + string.punctuation) # Tworzę LISTĘ dla dwóch wariantów
 pass_not_all_val_list = list(string.ascii_letters + string.digits)
@@ -86,8 +66,7 @@ pass_not_all_val_list = list(string.ascii_letters + string.digits)
 # print(pass_not_all_val)
 
 pass_len = int(input('Z ilu znaków ma się składać hasło? '))
-spec_char = input('Czy chcesz aby w haśle znalazły się znaki specjalne? [T/N] ')
-spec_char_repeated = input('Czy chcesz aby znaki haśle się powtarzały? [T/N] ')
+spec_char = input('Czy chcesz, aby w haśle znalazły się znaki specjalne? [T/N] ')
 
 new_pass = pass_gen(pass_len, spec_char)
-print(f'Twoje nowe hasło to: "{new_pass}".')
+print(f'Twoje nowe hasło to: {new_pass}')
