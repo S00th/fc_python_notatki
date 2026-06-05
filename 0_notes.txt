@@ -54,7 +54,7 @@ TYPY DANYCH W PYTHONIE:
                 Dla "int" nie ma takich METODY – wyświetli błąd
             – Najczęściej wykorzystywane METODY stringów to:
                 .split(',') – zwraca listę str / .strip() – usuń białe znaki / .lstrip() / .rstrip() /
-                .replace('a', 'b') / '.'.join() / .startswith() / .endswith()
+                ''.join() – połącz w str (w '' podaj separator np. ',') / .replace('a', 'b') / .startswith() / .endswith()
                 .upper() / .lower() / .title() / .capitalize() / .isaplha() / .isdigit() / isnumeric() – ½ + 三
             – Żadziej wykorzystywane: strip() /
                 .find() – zwraca index / .index() – zwraca index lub BŁĄD / .count() – zwraca liczbę wystąpień /
