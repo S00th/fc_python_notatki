@@ -83,7 +83,7 @@ print(func(arg1, arg2)) # Tutaj znajduje się wywołanie funkcji
 def calculate_area(edge_a, edge_b):
     # FUNKCJA oblicza i ZWRACA wartość, ale nie WYŚWIETLA wartości
     area = edge_a * edge_b # area "żyje" w pamięci do tego momentu. Jeśli NIE wyjdziemy z FUNKCJI (użyjemy "return"), to WARTOŚĆ zostanie zapisana w pamięci)
-    return area # Tutaj ma miejsce jedynie funkcjonalność
+    return area # Tutaj ma miejsce jedynie funkcjonalność (ZWRACANA jest wartość funkcji)
 
 def display_area(edge_a, edge_b):
     # FUNKCJA oblicza i WYŚWIETLA wartość, ale bez słowa kluczowego return nie ZWRACA wartości

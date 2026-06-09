@@ -59,8 +59,8 @@ for ilosc_filmow in range(ilosc_filmow): # Zapis: range(ilosc_filmow), jest toż
         aktualna_wielkosc_slotu = ilosc_filmow # Zamykam slot...
         ilosc_slotow += 1 # i dodaje nowy film do poprzedniego.
 print()
-print(f'Ilość utworzonych slotów: {ilosc_slotow}')
 print(f'Całkowity rozmiar filmów: {suma_mb_filmow} MB')
+print(f'Ilość utworzonych slotów: {ilosc_slotow}')
 print(f'Pusta przestrzeń dyskowa: {ilosc_slotow * max_wielkosc_slotu - suma_mb_filmow} MB')
 print(f'Najlżejszy slot, to slot {najlzejszy_slot} z dostępną pojemnością {wielkosc_najlzejszego_slotu}')
 

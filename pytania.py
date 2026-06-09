@@ -24,10 +24,10 @@
 
 def powitanie(name: str, age: int, is_married: str):
     if is_married.upper() == 'T':
-        return f'Witaj, {name}, masz {age} lat. Jesteś zamężna/żonaty.'
-        # Mam problem z zapamiętaniem żeby dodać "return", że nie wywołuje WYNIKU DZIAŁANIA FUNKCJI tylko samą FUNKCJĘ.
+        return f'Cześć {name}. Masz {age} lat. Jesteś zamężna/żonaty.'
+        # Chwilowo miewam problem z zapamiętaniem dodawania "return" – że nie wywołuje WYNIKU DZIAŁANIA FUNKCJI tylko samą FUNKCJĘ.
     else:
-        return f'Witaj, {name}, masz {age} lat. Nie jesteś zamężna/żonaty.'
+        return f'Cześć {name}. Masz {age} lat. Nie jesteś zamężna/żonaty.'
 
 name = input('Jak masz na imię? ')
 age = input('Ile masz lat? ')
@@ -47,26 +47,26 @@ print(powitanie(name, age, is_married))
 # – No końcu wymieszaj litery.
 # Otypuj argumenty, wartości zwracane. Dokonaj niezbędnej walidacji wejścia.
 
-import string # Definiujemy zestawy znaków globalnie (raz na początku)
-import random
-
-def pass_gen(pass_len: int, spec_char: str):
-    if not isinstance(pass_len, int) or not isinstance(spec_char, str): # Mam problem z działającą WALIDACJĄ
-        raise TypeError('Podałeś nieprawidłowe dane wejściowe.')
-    if spec_char.upper() == 'T':
-        pass_range = pass_all_val_list
-    else:
-        pass_range = pass_not_all_val_list
-    combined_char_in_password = random.choices(pass_range, k=pass_len) # Losuje powtarzające się znaki (można BEZ: random.sample)
-    return ''.join(combined_char_in_password) # Połączenie w jedne string
-
-pass_all_val_list = list(string.ascii_letters + string.digits + string.punctuation) # Tworzę LISTĘ dla dwóch wariantów
-pass_not_all_val_list = list(string.ascii_letters + string.digits)
-# print(pass_all_val)
-# print(pass_not_all_val)
-
-pass_len = int(input('Z ilu znaków ma się składać hasło? '))
-spec_char = input('Czy chcesz, aby w haśle znalazły się znaki specjalne? [T/N] ')
-
-new_pass = pass_gen(pass_len, spec_char)
-print(f'Twoje nowe hasło to: {new_pass}')
+# import string # Definiujemy zestawy znaków globalnie (raz na początku)
+# import random
+#
+# def pass_gen(pass_len: int, spec_char: str):
+#     if not isinstance(pass_len, int) or not isinstance(spec_char, str): # Mam problem z działającą WALIDACJĄ
+#         raise TypeError('Podałeś nieprawidłowe dane wejściowe.')
+#     if spec_char.upper() == 'T':
+#         pass_range = pass_all_val_list
+#     else:
+#         pass_range = pass_not_all_val_list
+#     combined_char_in_password = random.choices(pass_range, k=pass_len) # Losuje powtarzające się znaki (można BEZ: random.sample)
+#     return ''.join(combined_char_in_password) # Połączenie w jedne string
+#
+# pass_all_val_list = list(string.ascii_letters + string.digits + string.punctuation) # Tworzę LISTĘ dla dwóch wariantów
+# pass_not_all_val_list = list(string.ascii_letters + string.digits)
+# # print(pass_all_val)
+# # print(pass_not_all_val)
+#
+# pass_len = int(input('Z ilu znaków ma się składać hasło? '))
+# spec_char = input('Czy chcesz, aby w haśle znalazły się znaki specjalne? [T/N] ')
+#
+# new_pass = pass_gen(pass_len, spec_char)
+# print(f'Twoje nowe hasło to: {new_pass}')
