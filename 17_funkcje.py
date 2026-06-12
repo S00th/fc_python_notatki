@@ -77,7 +77,7 @@ print(func(arg1, arg2)) # Tutaj znajduje się wywołanie funkcji
 # Wyobraź sobie, że prosisz małżonka (FUNKCJĘ) o zrobienie zakupów.
 # Dajesz mu listę zakupów i pieniądze (ARGUMENTY).
 # Małżonek (FUNKCJA) wykonuje pracę i przynosi Ci (ZWRACA) zakupy.
-# Możesz teraz schować je do lodówki (zapisać w ZMIENNEJ) lub
+# Możesz teraz schować je w lodówce (zapisać w ZMIENNEJ) lub
 # wykorzystać jako składnik obiadu (wykonać kolejną FUNKCJĘ).
 
 def calculate_area(edge_a, edge_b):
