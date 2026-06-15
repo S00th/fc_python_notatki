@@ -108,7 +108,7 @@ for uczestnik in uczestnicy:
 
 random_list = [12, True, 'Andrzej', 55.5]
 
-random_list.append('Aga') # Dodaj element na końcu listy.
+random_list.append('Aga') # .append dodaj element na końcu listy, ale sam w sobie niczego nie zwraca.
 print(random_list)
 
 

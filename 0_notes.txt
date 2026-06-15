@@ -91,11 +91,12 @@ MODUŁU będące częścią biblioteki standardowej języka Python.
         Pozwalają unikać pisania wszystkiego od zera i ułatwiają organizację kodu
 
     -> import random – MODUŁ umożliwia losowanie ZNAKÓW z danego przedziału.
+        – random.randint(a, b) # Losuje jedną (pseudo)losową liczbę całkowitą (a i b to początek i koniec zakresu)
+            – random.seed(<wartość>) # Ziarno losowe dla powtórzenia wyników losowania (powtórzenie wyniku losowania).
+                                     Wartością musi być dowolny INTEGER.
         – random.shuffle(x) / sample(x, k=len(x))
         – random.choices(<wartość>, k=30) # Losuje powtarzające się znaki
         – random.sample(<wartość>, k=30) # Losuje NIE powtarzające się znaki
-        – random_num = random.randint(0, 30)
-          print(random_num)
 
     -> import string – MODUŁ, który zwraca wszystkie ZMIENNE/ZNAKI określonego typu.
         – print(string.ascii_letters) # Zwróci wszystkie litery: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ

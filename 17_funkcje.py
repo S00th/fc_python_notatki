@@ -106,6 +106,12 @@ if area1 > area2:
 
 
 
+# WAŻNE!
+# Kiedy mamy stworzyć jakąś FUNKCJĘ, to najlepiej jest napisać program bez FUNKCJI,
+# następnie sprawdzić, czy działą, a jeśli działa to wrzucić FUNKCJĘ.
+
+
+
 ### ĆWICZENIE 1 – Oblicz obwód prostokąta
 #
 # SCOPE to zmienne zdefiniowanych wewnątrz funkcji.
@@ -124,7 +130,7 @@ obwod1 = obwod_prostokata1(2, 2)
 obwod2 = obwod_prostokata1(2, 5)
 obwod3 = obwod_prostokata1(2, 10)
 
-print(obwod1)
+print(obwod1) # Print używamy tylko do debugowania/sprawdzenia. Działająca funkcja coś ZWRACA.
 print(obwod2)
 print(obwod3)
 
@@ -155,7 +161,13 @@ print(area) # Wyświetli AgaAgaAgaAgaAgaAgaAgaAgaAgaAgaAgaAgaAgaAgaAgaAgaAgaAgaA
 # Tworząc FUNKCJĘ, zazwyczaj będziemy chcieli OTYPOWAĆ zmienne (jak niżej).
 # Typowanie wartości / Podpowiadanie typów (Type hinting) nie obliguje nas do niczego. To jedynie info dla nas, że tutaj powinien być np. INT.
 # Pozwalająca na jawne określenie, jakiego rodzaju dane powinny być przechowywane w zmiennych lub przetwarzane przez funkcje.
-# WAŻNE! Podpowiadanie TYPÓW jest dziś pożądaną praktyką.
+#
+# WAŻNE!
+# Podpowiadanie TYPÓW jest dziś pożądaną praktyką.
+
+# WAŻNE!
+# WALIDACJE / "raise Error", które mają zapobiec np. wykonywania pętli w nieskończoność,
+# podnosimy zawsze na początku FUNKCJI (wiersz pod jej zdefiniowaniem), po co coś robić, jeśli na starcie nie działa?
 
 def calculate_area(edge_a: int | float, edge_b: int | float) -> float | None:
     # TYPOWANIE FUNKCJI: WARTOŚĆ edge_a - edge_b spodziewam się INT lub FLOAT, a FUNKCJA zwróci FLOAT lub None

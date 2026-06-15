@@ -1,6 +1,6 @@
-####### PĘTLA "for"
+####### PĘTLA "for" (pętla ITERACYJNA)
 #
-# PĘTLA "for" wykonuje się SKOŃCZONA/OKREŚLONĄ ilość razy.
+# PĘTLA "for" (pętla ITERACYJNA) wykonuje się SKOŃCZONA/OKREŚLONĄ ilość razy.
 # Używana, gdy znamy LICZBĘ POWTÓRZEŃ danej OPERACJI lub gdy do czynienia z OGRANICZONYM ZBIOREM danych (LISTA lub SŁOWNIK).
 # ZAKOŃCZY SIĘ w momencie, kiedy skończy się ZBIÓR DANYCH (kiedy zakończy się obiekt ITEROWALNY).
 # Przykładem obiektu ITEROWALNEGO jest ZAKRES LICZB lub STRING (ponieważ słowo możemy PRZEITEROWAĆ).
@@ -9,6 +9,15 @@
 
 # Uwaga: instrukcje CONTINUE i BREAK również działają w pętlach "for".
 # W PĘTLI "for" również działa klauzula "else".
+
+# WAŻNE!
+# Podstawową różnicą ułatwiającą zapamiętanie obu konstrukcji jest to,
+# że pętla "while" działa tak długo, jak spełniony jest określony WARUNEK,
+# natomiast pętla "for" operuje na OBIEKCIE ITEROWALNYM.
+
+
+# WAŻNE! Aby przerwać uruchomioną, niekończącą się pętle, wciskamy ctrl + c.
+
 
 ### SKŁADNIA
 #

@@ -1,4 +1,4 @@
-####### ITERACJA, PĘTLE i PĘTLA WHILE
+####### ITERACJA, PĘTLE i PĘTLA WHILE (pętla WARUNKOWA)
 #
 # Dobrą praktyką programistyczną jest pisanie kodu w taki sposób, aby wymagał od nas jak najmniejszego nakładu pracy.
 # Kod należy pisać w taki sposób, aby nie było potrzeby powtarzania go lub zmieniania w wielu miejscach.
@@ -12,7 +12,7 @@
 # Inaczej mówiąc, PĘTLE wykonują pewien fragment kodu OKREŚLONĄ ILOŚĆ CZASU/RAZY.
 # Pozwalają uniknąć ręcznego przepisywania tych samych instrukcji.
 #
-# PĘTLA "while"– wykonuje się, DOPÓKI twierdzenie JEST PRAWDZIWE (może NIESKOŃCZONĄ ilość razy).
+# PĘTLA "while" (pętla WARUNKOWA) – wykonuje się, DOPÓKI twierdzenie JEST PRAWDZIWE (może NIESKOŃCZONĄ ilość razy).
 # POWTARZA blok kodu tak długo, JAK DŁUGO DANY WARUNEK logiczny JEST PRAWDZIWY (True).
 # Inaczej mówiąc, pętla WHILE zakończy się, kiedy WARUNEK Z WYRAŻENIA PRAWDZIWEGO stanie się wyrażeniem FAŁSZYWYM.
 # Jest idealna w sytuacjach, gdy liczba powtórzeń nie jest znana przed uruchomieniem pętli.
