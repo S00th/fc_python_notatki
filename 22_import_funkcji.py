@@ -63,6 +63,7 @@ print(my_dist) # MODUŁ zaimportowany w wierszu 18
 
 ### MODUŁ "datetime" do pracy z czasem – pobieranie elementów z DATY
 #
+# https://docs.python.org/3/library/datetime.html?utm_source=chatgpt.com#strftime-and-strptime-format-codes
 
 from datetime import datetime, date
 

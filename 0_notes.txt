@@ -23,6 +23,9 @@ FUNKCJE WBUDOWANE:
 
     -> sorted(collection) -> sortuje obiekt KOLEKCJI -> zawsze zwraca LISTĘ (w kolejności wg. ASCI)
             sorted(iterable, /.., *.., key=none, reverse=False) # W argumencie "key" wpisujemy jakiej FUNKCJI chcemy użyć, żeby posortować.
+
+    -> open(filepath, mode, encoding) -> służy do zapisu / odczytu pliku
+
     -> reversed(collection) -> sortuje obiekt KOLEKCJI w odwrotnej kolejności -> zawsze zwraca LISTĘ
     -> min(sequence) -> zwraca najmniejsza wartość z KOLEKCJI
     -> max(sequence) -> zwraca największą wartość z KOLEKCJI
@@ -104,3 +107,11 @@ MODUŁU będące częścią biblioteki standardowej języka Python.
         – print(string.ascii_uppercase) # Zwróci wszystkie DUŻE litery: ABCDEFGHIJKLMNOPQRSTUVWXYZ
         – print(string.digits) # Zwróci wszystkie litery: 0123456789
         – print(string.punctuation) # Zwróci wszystkie znaki specjalne: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+
+    -> import math
+
+    -> import datetime
+
+    -> import date
+
+

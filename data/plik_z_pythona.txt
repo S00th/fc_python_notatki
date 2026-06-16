@@ -1,0 +1,5 @@
+To jest PIERWSZA linia nowego pliku
+To jest DRUGA linia nowego pliku
+Jeszcze jedna linijka
+Jeszcze jedna linijka
+Jeszcze jedna linijkaJeszcze jedna linijka
