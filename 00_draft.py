@@ -1,28 +1,33 @@
-import random
-#
-# lista = []
-# max_len = 10 # Chcę 10 liczb w liście
-# start_range = 1
-# end_range = 20
-# while len(lista) < max_len: # Sprawdza, czy w LISTA (jej zawartość) jest mniejsza niż 10 (przy 10 skończy się wykonywać)
-#     random_num = random.randint(start_range,end_range)
-#     if random_num not in lista: # Zanim dodamy liczbę do LISTY, sprawdzamy, czy liczba jest już na LIŚCIE.
-#         lista.append(random_num) # w przeciwnym wypadku nie jest potrzebne.
-# print(lista)
-# print(len(lista))
+from datetime import datetime, date
+
+teraz = datetime.now()
+print(teraz) # Wyświetli datę i dokłądną godzinę: 2026-06-16 17:38:05.465284
+print(f'Godzina: {teraz.hour} / Minuta: {teraz.minute} / Sekunda: {teraz.second}') # Godzina: 17 / Minuta: 45 / Sekunda: 21
+
+dzisiaj = date.today()
+print(dzisiaj) # Wyświetli datę: 2026-06-16
+print(type(dzisiaj)) # <class 'datetime.date'>
+print(date.today().year) # Wyświetli: 2026
+print(f'Rok: {dzisiaj.year} / Miesiąc: {dzisiaj.month} / Dzień: {dzisiaj.day}') # Rok: 2026 / Miesiąc: 6 / Dzień: 16
 
 
+### Formatowanie DATY na własny użytek
 
-def get_random_numbers(start_range: int, end_range: int, out_len: int) -> list[int]:
-    if out_len > (end_range - start_range) + 1: # Aby zapobiec sytuacji, w której ZAKRES +1 jest większy niż DŁUGOŚĆ
-        raise ValueError(f'Out_len={out_len} is out of range')
-    numbers_list = []
-    while len(numbers_list) < out_len:
-        num = random.randint(start_range, end_range)
-        if num not in numbers_list:
-            numbers_list.append(num)
-    return numbers_list
-zmienna = get_random_numbers(1,20,5)
+date_string = dzisiaj.strftime('%d.%m.%Y') # Wyświetli: 16.06.2026. Formatuje i ZAMIENIA na STRING.
+# Gdzie: d – dzień, m – miesiąc, Y – rok.
+print(date_string)
+print(type(date_string)) # <class 'str'>
 
-print(zmienna)
-print(len(zmienna))
+# Zamiana TEKSTU na STRING
+
+text = '09-06-2026'
+to_datetime = datetime.strptime(text, '%d-%m-%Y')
+print(to_datetime) # Wyświetli: 2026-06-16 00:00:00
+print(type(to_datetime)) # Wyświetli: <class 'datetime.datetime'>
+
+
+# Operacje arytmetyczne na czasie
+
+from datetime import timedelta
+
+print(dzisiaj + timedelta(days=1)) # Wyświetli: 2026-06-17 – jutrzejszy dzień
