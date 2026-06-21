@@ -11,6 +11,16 @@ FUNKCJE WBUDOWANE:
     -> type() – Sprawdź typ zmiennej.
     -> isinstance(value, class) - Sprawdza czy dana WARTOŚĆ jest danego typu (klasy), np. insinstance(number, int) -> zwraca bool (True lub False)
 
+    -> open(filepath, mode, encoding) – łuży do zapisu / odczytu pliku
+        Najczęściej używane TRYBY funkcji open()
+        – 'r' (read) – Tryb ODCZYTU (domyślny)
+        – 'w' (write) – Tryb ZAPISU
+        – 'a' (append) – Tryb DOPISANIA.
+
+        with open('data/jakis_plik.txt', encoding='utf-8') as file: # Gdzie "file" to dowolny wyraz
+            content = file.read()
+            print (content)
+
     -> input() – Pobierz WARTOŚĆ od użytkownika z konsoli. Zawsze zwraca STRING, dlatego czasem trzeba dokonać konwersji na "int" lub "float".
             To co wpisze użytkownik jako "input", zostanie przypisane do WARTOŚCI, a następnie np. może zostać wyświetlone za pomocą funkcji "print".
             Docelowo nie będziemy używali tej funkcji. Dane będziemy pobierali z innych źródeł, np. źródłem może być interface.
@@ -108,10 +118,15 @@ MODUŁU będące częścią biblioteki standardowej języka Python.
         – print(string.digits) # Zwróci wszystkie litery: 0123456789
         – print(string.punctuation) # Zwróci wszystkie znaki specjalne: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 
-    -> import math
+    -> import math – MODUŁ,
 
-    -> import datetime
+    -> import datetime – MODUŁ,
+        now_str = datetime.now().strftime('%Y.%m.%d %H:%M:%S')
+            file.write(f'Aktualna data: {now_str}')
 
-    -> import date
+    -> import date – MODUŁ,
 
-
+    -> import os – MODUŁ,
+        FUNKCJE:
+        - os.getcwd – Zwróci aktualną ŚCIEŻKĘ ROBOCZĄ katalogu (Get current working directory)
+        – os.listdir – Zwróci LISTĘ NAZW plików z katalogu. Jako argument przyjmuje NAZWĘ katalogu.

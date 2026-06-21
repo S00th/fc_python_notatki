@@ -31,7 +31,7 @@ for i in range(0, 10, 2):
 print(numbers) # LISTA numbers jest zapełniona liczbami z zakresu [0, 2, 4, 6, 8].
 
 
-### SPOSÓB 2 – LIST COMPREHENSION / wyrażenie listowe
+### SPOSÓB 2 – LIST COMPREHENSION / wyrażenie listowe (jest to Pętla "for" zapisana w jednej linii)
 #
 # LIST COMPREHENSION to tak naprawdę pętla "for" zapisana w jednej linii.
 # Nie musimy inicjować LISTY ani nie musimy używać ".appnend", od razy wszystko dzieje się w jednej linijce.

@@ -86,7 +86,7 @@ print(date_string)
 print(type(date_string)) # <class 'str'>
 
 
-# Zamiana TEKSTU na STRING
+# Zamiana DATETIME na STRING
 
 text = '09-06-2026'
 to_datetime = datetime.strptime(text, '%d-%m-%Y')

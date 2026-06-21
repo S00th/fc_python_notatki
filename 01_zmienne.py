@@ -4,7 +4,7 @@
 # Umożliwiają one zapisanie danych (np. LICZB lub TEKSTU), nadać im nazwę, a także wracać do nich podczas wykonywanego programu.
 # Python jest językiem TYPOWANYM DYNAMICZNIE, co oznacza, że podczas przypisywania WARTOŚCI do ZMIENNEJ
 # nie musimy deklarować TYPU DANYCH (Python sam zarządzi miejscem w pamięci). Pod jedną zmienną możemy podstawiać różne typy danych.
-# Zrozumienie zmiennych to fundament, na którym zbudujesz całą swoją wiedzę o programowaniu.
+# W momencie, kiedy program kończy się wykonywać, ZMIENNA jest usuwana z pamięci (pamięć jest czyszczona).
 
 ### Kluczowe CECHY ZMIENNYCH w Pythonie
 
@@ -18,7 +18,7 @@
 
 # Nazwa ZMIENNEJ nie może:
 # – zawierać SPACJI
-# – zawierać znaków diakrytycznych: ą, ć, ę, ł, ń, ó, ś, ź, ż, np. polskich znaków – żółć
+# – zawierać znaków diakrytycznych (np. polskich znaków): ą, ć, ę, ł, ń, ó, ś, ź, ż
 # – zawierać znaków specjalnych: !, @, #, $, %, ^, &, *, (, ), -, +, =, {, }, [, ], |, \, :, ;, ", ', <, >, ,, ., ?, /, np. !Aga$
 # – zaczynać się od cyfry, np. 123_name
 # – być słowem kluczowym Pythona, ani nazwą funkcji wbudowanej, np. print, if, class
