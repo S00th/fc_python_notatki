@@ -7,7 +7,7 @@
 # Dane będziemy mogli zaczytywać nie tylko z PLIKÓW, ale też z BAZ DANYCH czy API.
 #
 ### ZACZYTYWANIE DANYCH
-# open(filepath, mode, encoding) -> FUNKCJA "open" służy do zapisu / odczytu pliku
+# open(filepath, mode, encoding) -> FUNKCJA "open" służy do ZAPISU / ODCZYTU pliku
 # Tryby...
 
 # filepath – ścieżka do pliku
@@ -175,6 +175,33 @@ print(os.getcwd()) # Zwróci aktualną ŚCIEŻKĘ ROBOCZĄ katalogu (Get current
 print(os.listdir('data')) # Zwróci LISTĘ NAZW plików z katalogu. Jako argument przyjmuje NAZWĘ katalogu.
 # Wyświetli: ['jakis_plik.txt', 'losowe.txt', 'losowe_120.txt', 'plik_z_pythona.txt']
 
+
+
+####### ĆWICZENIE – Tworzenie LISTY
+# LISTA zawiera elementy składające się z NAZWY PLIKÓW i ŚCIEŻKI do katalogu, w którym te pliki się znajdują.
+
+import os
+
+katalog = 'data'
+lista_nazwy_plikow_w_katalogu = os.listdir(katalog)
+
+### METODA 1 – Zapis w formie List Comprehension:
+# WAŻNE! List Comprehension automatycznie tworzy LISTĘ
+lista_sciezek_plikow_1 = [f'{katalog}/{nazwa_pliku}' for nazwa_pliku in lista_nazwy_plikow_w_katalogu]
+
+### METODA 2 – Zapis w formie pętli "for":
+# WAŻNE! W przeciwieństwie do List Comprehension pętla "for" NIE tworzy LISTY.
+# Musisz zainicjalizować pustą listę, a wewnątrz pętli użyć METODY .append(), aby dodawać do niej kolejne elementy.
+lista_sciezek_plikow_2 = []
+for nazwa_pliku in lista_nazwy_plikow_w_katalogu:
+    sciezka = f'{katalog}/{nazwa_pliku}'
+    lista_sciezek_plikow_2.append(sciezka)  # KROK 2: Dokładamy element do listy
+
+print(lista_sciezek_plikow_1)
+print(lista_sciezek_plikow_2)
+
+
+
 # Aby zwrócić PEŁNĄ ŚCIEŻKĘ PLIKÓW, znajdujących się w katalogu postępujemy jak niżej.
 
 ### ETAP 1 – Jak to działą?
@@ -182,16 +209,17 @@ print(os.listdir('data')) # Zwróci LISTĘ NAZW plików z katalogu. Jako argumen
 import os
 
 katalog = 'data' # Zwróci ŚCIEŻKĘ do katalogu, w którym znajdują się interesujące nas pliki.
-sciezka_katalogu = os.listdir(katalog) # Zwróci NAZWY plików znajdujących się w katalogu "data".
+lista_nazwy_plikow_w_katalogu = os.listdir(katalog) # Zwróci NAZWY plików znajdujących się w katalogu "data".
 # My natomiast chcemy otrzymać LISTĘ ŚCIEŻEK plików, a nie jedynie LISTĘ NAZW plików.
 # Następnie chcemy ZWRÓCIĆ (ZACZYTAĆ) ZAWARTOŚĆ każdego z plików.
-sciezka_plikow = [f'{katalog}/{nazwa_pliku}' for nazwa_pliku in sciezka_katalogu] # Zapis w formie List Comprehension,
-# gdzie "nazwa_pliku", to nazwy każdego pliku.
-# Przed każdą nazwy pliku (nazwa_pliku) chcę dodać ścieżkę do katalogu (katalog), a pomiędzy nimi dodać "/".
+lista_sciezek_plikow = [f'{katalog}/{nazwa_pliku}' for nazwa_pliku in lista_nazwy_plikow_w_katalogu] # Zapis w formie List Comprehension,
+# DLA każdego PLIKU z LISTY PLIKÓW znajdujących się w KATALOGU:
+# – Przed każdą NAZWĄ PLIKU dodaj ŚCIEŻKĘ do katalogu.
+# – Pomiędzy ŚCIEŻKĄ KATALOGU, a NAZWA PLIKU dodaj "/".
 # print(file_paths) # Wyświetli: ['data/jakis_plik.txt', 'data/losowe.txt', 'data/losowe_120.txt', 'data/plik_z_pythona.txt']
 zawartosc_plikow = []
 
-for sciezka_pliku in sciezka_plikow: # Iterujemy kolekcję ścieżek (nazw)
+for sciezka_pliku in lista_sciezek_plikow: # Iterujemy kolekcję ścieżek (nazw)
     with open(sciezka_pliku, encoding='utf-8') as f: # Otwieram każdy plik i dla każdego dodaję "file_paths"
         zawartosc = f.read() # Zaczytuje plik po pliku, a "zawartosc" dodaję do listy pustej "zawartosc_plikow"
         zawartosc_plikow.append(zawartosc) # ŁĄCZYMY i ZAPISUJEMY zawartość do jednego pliku.
@@ -220,3 +248,19 @@ print(files_content)
 #
 # Zaczytaj pliki z folderu "Data2" na takiej zasadzie, żeby otrzymać mapping,
 # gdzie kluczem będzie NAZWA pliku, a WARTOŚCIĄ, zawartość tego pliku (nie wrzucamy do LISTY).
+
+import os
+
+katalog = 'data'
+lista_nazwy_plikow_w_katalogu = os.listdir(katalog) # Lista nazw plików
+lista_sciezek_plikow = [f'{katalog}/{nazwa_pliku}' for nazwa_pliku in lista_nazwy_plikow_w_katalogu] # Lista ścieżek
+moj_slownik = {}
+
+for index in range(len(lista_nazwy_plikow_w_katalogu)): # Iteruj się po wszystkich plikach (indeksach) w katalogu (w LIŚCIE)
+    # len sprawdza, ile plików jest w katalogu, a pętla "for" działa tyle razy, ile jest plików w katalogu.
+    sciezka = lista_sciezek_plikow[index] # Zwróć ŚCIEŻKĘ pliku
+    nazwa = lista_nazwy_plikow_w_katalogu[index] # Zwróć NAZWĘ pliku
+    with open(sciezka, encoding='utf-8') as plik: # Otwórz i zazzytaj zawartość plików
+        moj_slownik[nazwa] = plik.read()
+
+print(moj_slownik)

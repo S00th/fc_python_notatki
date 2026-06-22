@@ -115,7 +115,7 @@ print(new_dict)
 
 
 
-####### ĆWICZENIE – Jak miał na elf z LotR?
+####### ĆWICZENIE – Jak miał na imię elf z LotR?
 
 # hero = {'Czarodziej': 'Gandalf', 'Elf': 'Legolas', 'Krasnolud': 'Gimli'}
 #
