@@ -59,6 +59,7 @@ while len(lista) < max_len: # Sprawdza, czy w LISTA (jej zawartość) jest mniej
 print(lista)
 print(len(lista))
 
+
 # ETAP 2 – Przygotowanie FUNKCJI
 
 def get_random_numbers(start_range: int, end_range: int, out_len: int) -> list[int]:
@@ -74,3 +75,6 @@ zmienna = get_random_numbers(1,20,5)
 
 print(zmienna)
 print(len(zmienna))
+
+
+

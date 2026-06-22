@@ -26,6 +26,7 @@
 # print(zawartosc_plikow)
 
 
+
 # for i in range(0, 20):
 #     if i % 3 == 0:
 #         numbers.append(i)
@@ -45,18 +46,6 @@
 #     print(f'KEY: {key} VA: {val}')
 #
 # dict['waga'] = 55 # <nazwa słownika>['KLUCZ'] = WARTOŚĆ
-
-# import os
-#
-# lista_nazwy_plikow_katalogu = os.listdir('data') # Zwróci LISTĘ NAZW plików z katalogu.
-# nazwy_plikow = [f'{nazwa_pliku}' for nazwa_pliku in lista_nazwy_plikow_katalogu]
-# print(lista_nazwy_plikow_katalogu)
-# print(nazwy_plikow)
-#
-# sciezka_plikow = [f'{dict[nazwa_pliku] = }' for nazwa_pliku in lista_nazwy_plikow_katalogu]
-#
-# with open('data/plik_z_pythona.txt', 'a', encoding='utf-8') as file:
-#     file.write('Jeszcze jedna linijka\n') # Dodaje jeszcze jedną linię tekstu w pliku.
 
 
 
