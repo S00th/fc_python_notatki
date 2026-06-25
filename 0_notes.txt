@@ -130,3 +130,75 @@ MODUŁU będące częścią biblioteki standardowej języka Python.
         FUNKCJE:
         - os.getcwd – Zwróci aktualną ŚCIEŻKĘ ROBOCZĄ katalogu (Get current working directory)
         – os.listdir – Zwróci LISTĘ NAZW plików z katalogu. Jako argument przyjmuje NAZWĘ katalogu.
+
+
+Tworzenie i aktywacja ŚRODOWISKA WIRTUALNEGO w Pythonie
+
+– Otwieramy wiersz poleceń:
+    – Wchodzimy to interesującego nas katalogi i tworzymy w nim folder
+        mkdir proj_data_science
+        mkdir proj_cv
+    – Wchodzę do każdego z tych folderów i tworzę dla nich środowisko wirtualne
+        1. Utworzenie środowiska (wywołaj polecenia:)
+            python -m venv my_env_cv # Gdzie my_env to [własna_nazwa_srodowiska].
+            Wyodrębniamy z globalnego Pythona "małego" Pythona
+        2. W katalogu roboczym projektu powinien utworzyć się folder z nazwą środowiska, a w nim Scripts lub bin...
+        3. AKTYWACJA środowiska (uruchomienie pliku activate)
+            my_env\scripts\activate # dla Windows
+            source my_env_cv/bin/activate # dla Linux / MacOS
+            Środowisko jest aktywne, gdy na początku promptu w terminalu widoczna jets jego nazwa w nawiasie.
+        4. Kiedy mam już aktywne środowisko mogę sprawdzić, w którym Pythonie pracuje.
+            import sys
+            sys.executable
+        5. Dezaktywacja środowiska
+            deactivate
+
+Zarządzanie środowiskiem wirtualnym
+Będziemy nim zarządzać przy pomocy wbudowanego managera PIP – wbudowanego w Pythonie.
+
+    –> PAMIĘTAJ, aby mieć aktywne środowisko wirtualne, wykonując wszystkie poniższe polecenia.
+
+    –> WYLISTOWANIE zainstalowanych pakietów (zainstalowane środowisko będzie puste – pomijając pip)
+        pip list
+
+    –> INSTALACJA pakietów (z pypi.org) – Przez polecenie
+        Sprawdź, czy masz aktualną wersję pip i zrob ewentualny ubgrade.
+        python.exe -m pil install --upgrade pip
+
+        pip install [nazwa_pakietu]
+            np.:
+            pip install numpy (polecenie znajduje się na stronie z danym pakietem)
+
+        Przykład użycia zainstalowanej funkcji
+        import numpy as np
+        np.array([1,2,3,4]) * 10
+        quit # Wychodzę z funkcji
+        WAŻNE! Jeżeli dezaktywuje numpy, to nie będzie on zainstalowany dla Pythona globalnego
+
+    -> Instalowanie konkretnej WERSJI pakietu
+        pip install [nazwa_pakietu]==wersja # np. pip install numpy==2.5.0
+        Jeżeli chciałbym zainstalować mog ęto zrobić.
+        W danym środowisku wirtualnym można znajdować się tylko jedna wersja pakietu.
+        Jeżeli zainstalujemy inną wersję, to stara zostanie usunięta i zainstalowana nowa (nadpisana).
+
+    -> Instalowanie wielu bibliotek jednocześnie ()
+        pip install [pakiet_1] [pakiet_2] [pakiet_3] # np. pip install numpy scipy fastapi
+        WAŻNE! Niektóre pakiety będą wymagały instalacji innych pakietów.
+        pip list # aby sprawdzić, co się zainstalowało
+
+    -> Odinstalowywanie pakietu
+        pip uninstall [nazwa_pakietu] # np. pip uninstall numpy
+
+    -> Tworzenie środowiska wirtualnego NA BAZIE innego środowiska
+        python -m venv my_venv
+
+    Django narzuca strukturę projektu. Dobrze jest od niego zacząć, kiedy myślimy o BackEnd!
+
+UWAGA! Cały folder ze środowiskiem zawsze go ignorujemy jeśli chodzi o GitHub (nie będziemy go trackować)
+    Generowanie i zapis zależności ze środowiska wraz z ich wersjami (jeżeli chcę udostępnić komuś moje środowisko).
+    pip freez > requirements.txt
+    1. Tworzę kopię swojego projektu: cd project_1 copy.
+    2. Tworzę środowisko wirtualne (w oparciu o tego samego Pythona).
+    3. Zamiast instalować wszystkie pakiety, kopiuje do katalogu utworzone wcześniej requirements.txt
+    4. Akgtywuje środowisko my_venv\scripts\activate
+    5. Instaluję komplet elementów z pliku requirements.txt: pip install -r requirements.txt # Flaga "-r" -> READ
