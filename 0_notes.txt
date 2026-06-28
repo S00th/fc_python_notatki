@@ -132,73 +132,75 @@ MODUŁU będące częścią biblioteki standardowej języka Python.
         – os.listdir – Zwróci LISTĘ NAZW plików z katalogu. Jako argument przyjmuje NAZWĘ katalogu.
 
 
+
 Tworzenie i aktywacja ŚRODOWISKA WIRTUALNEGO w Pythonie
 
-– Otwieramy wiersz poleceń:
-    – Wchodzimy to interesującego nas katalogi i tworzymy w nim folder
-        mkdir proj_data_science
-        mkdir proj_cv
-    – Wchodzę do każdego z tych folderów i tworzę dla nich środowisko wirtualne
-        1. Utworzenie środowiska (wywołaj polecenia:)
-            python -m venv my_env_cv # Gdzie my_env to [własna_nazwa_srodowiska].
-            Wyodrębniamy z globalnego Pythona "małego" Pythona
-        2. W katalogu roboczym projektu powinien utworzyć się folder z nazwą środowiska, a w nim Scripts lub bin...
-        3. AKTYWACJA środowiska (uruchomienie pliku activate)
-            my_env\scripts\activate # dla Windows
-            source my_env_cv/bin/activate # dla Linux / MacOS
-            Środowisko jest aktywne, gdy na początku promptu w terminalu widoczna jets jego nazwa w nawiasie.
-        4. Kiedy mam już aktywne środowisko mogę sprawdzić, w którym Pythonie pracuje.
-            import sys
-            sys.executable
-        5. Dezaktywacja środowiska
+– Otwieramy wiersz poleceń.
+    – Wchodzimy to odpowiedniego katalogu i tworzymy w nim folder.
+        mkdir projest_1
+        mkdir projest_2
+    – Wchodzę do każdego z tych folderów i tworzę dla nich środowisko wirtualne.
+        1. TWORZENIE środowiska wirtualnego.
+            W folderze z danym projektem wywołaj polecenie.
+                python -m venv my_venv1 # Gdzie my_env1 to [własna_nazwa_srodowiska].
+        2. W katalogu roboczym projektu powinien utworzyć się FOLDER z nazwą środowiska, a w nim FOLDER Scripts lub bin.
+            W FOLDERZE Scripts znajduje się wyodrębniony "python" (python.exe) oraz plik "activate".
+        3. AKTYWACJA środowiska, czyli uruchomienie pliku "activate".
+            my_venv2\scripts\activate # dla Windows
+            source my_venv2/bin/activate # dla Linux / MacOS
+            Środowisko jest aktywne, gdy na początku promptu w terminalu widoczna jest jego nazwa w nawiasie.
+                (my_venv2) Y:\Py\projekt2>
+        4. Kiedy środowisko wirtualne jest aktywne, możesz sprawdzić, w którym Pythonie aktualnie pracujesz.
+            python
+            >>> import sys
+            >>> sys.executable
+        5. Dezaktywacja środowiska, poleceniem:
             deactivate
 
-Zarządzanie środowiskiem wirtualnym
-Będziemy nim zarządzać przy pomocy wbudowanego managera PIP – wbudowanego w Pythonie.
-
-    –> PAMIĘTAJ, aby mieć aktywne środowisko wirtualne, wykonując wszystkie poniższe polecenia.
+ZARZĄDZANIE środowiskiem wirtualnym.
+Środowiskiem wirtualnym zarządzamy przy pomocy wbudowanego w Pythonie managera PIP (są też inne managery).
+WAŻNE aby mieć AKTYWNE środowisko wirtualne, wykonując wszystkie poniższe polecenia.
 
     –> WYLISTOWANIE zainstalowanych pakietów (zainstalowane środowisko będzie puste – pomijając pip)
         pip list
-
-    –> INSTALACJA pakietów (z pypi.org) – Przez polecenie
-        Sprawdź, czy masz aktualną wersję pip i zrob ewentualny ubgrade.
+        WAŻNE. Sprawdź, czy masz aktualną wersję pip i zrob ewentualny ubgrade.
         python.exe -m pil install --upgrade pip
 
+    –> INSTALACJA pakietów (info o pakietach na pypi.org)
         pip install [nazwa_pakietu]
-            np.:
-            pip install numpy (polecenie znajduje się na stronie z danym pakietem)
-
-        Przykład użycia zainstalowanej funkcji
-        import numpy as np
-        np.array([1,2,3,4]) * 10
-        quit # Wychodzę z funkcji
-        WAŻNE! Jeżeli dezaktywuje numpy, to nie będzie on zainstalowany dla Pythona globalnego
+            np. pip install numpy (polecenie znajduje się na stronie z danym pakietem)
+        WAŻNE! Jeżeli dezaktywuje środowisko wirtualne, to numpy nie będzie on zainstalowany dla Pythona globalnego
 
     -> Instalowanie konkretnej WERSJI pakietu
         pip install [nazwa_pakietu]==wersja # np. pip install numpy==2.5.0
-        Jeżeli chciałbym zainstalować mog ęto zrobić.
-        W danym środowisku wirtualnym można znajdować się tylko jedna wersja pakietu.
-        Jeżeli zainstalujemy inną wersję, to stara zostanie usunięta i zainstalowana nowa (nadpisana).
+        WAŻNE. W danym środowisku wirtualnym można znajdować się TYLKO JEDNA WERSJA danego pakietu
+        Jeżeli zainstalujesz inną wersję pakietu, to stara zostanie usunięta i zainstalowana nową (nadpisana)
 
-    -> Instalowanie wielu bibliotek jednocześnie ()
-        pip install [pakiet_1] [pakiet_2] [pakiet_3] # np. pip install numpy scipy fastapi
+    -> Instalowanie WIELU bibliotek jednocześnie
+        pip install [pakiet_1] [pakiet_2] [pakiet_3] # np. pip install numpy scipy scikit-learn
         WAŻNE! Niektóre pakiety będą wymagały instalacji innych pakietów.
-        pip list # aby sprawdzić, co się zainstalowało
+        Np. scikit-learn wymaga zainstalowania kilku innych bibliotek i razem z nim zainstalują się wymagane pakiety
+            pip list # aby sprawdzić, co się zainstalowało
 
-    -> Odinstalowywanie pakietu
+    -> ODINSTALOWANIE pakietu
         pip uninstall [nazwa_pakietu] # np. pip uninstall numpy
 
-    -> Tworzenie środowiska wirtualnego NA BAZIE innego środowiska
-        python -m venv my_venv
+    -> Tworzenie środowiska wirtualnego NA BAZIE innego środowiska wirtualnego
+        python -m venv my_venv1
+        lub na bazie Pythona globalnego
+        C:Users\rprog\AppData\Local\Programs\Python\python.exe -m venv my_ds_env
 
-    Django narzuca strukturę projektu. Dobrze jest od niego zacząć, kiedy myślimy o BackEnd!
+WAŻNE! Nigdy nie trackujemy Gitem (ignorujemy) całego folderu ze środowiskiem wirtualnym danego projektu
 
-UWAGA! Cały folder ze środowiskiem zawsze go ignorujemy jeśli chodzi o GitHub (nie będziemy go trackować)
-    Generowanie i zapis zależności ze środowiska wraz z ich wersjami (jeżeli chcę udostępnić komuś moje środowisko).
-    pip freez > requirements.txt
-    1. Tworzę kopię swojego projektu: cd project_1 copy.
-    2. Tworzę środowisko wirtualne (w oparciu o tego samego Pythona).
-    3. Zamiast instalować wszystkie pakiety, kopiuje do katalogu utworzone wcześniej requirements.txt
-    4. Akgtywuje środowisko my_venv\scripts\activate
-    5. Instaluję komplet elementów z pliku requirements.txt: pip install -r requirements.txt # Flaga "-r" -> READ
+    Zapis ZALEŻNOŚCI ze środowiska wraz z ich wersjami do pliku .txt (jeżeli chcę udostępnić środowisko wirtualne)
+    WAŻNE! Środowisko wirtualne musi być aktywowane
+        pip freez > requirements.txt # Plik zawiera informacje o pakietach i wersjach użytych w środowisku wirtualnym
+
+    ODTWARZANIE środowiska wirtualnego w innym miejscu (instalacja zależności z pliku tekstowego)
+    1. Tworzę kopię swojego projektu (folderu): cd project_1 copy
+    2. Tworzę środowisko wirtualne (w oparciu, o tego samego Pythona)
+    3. Zamiast instalować wszystkie pakiety, kopiuje do nowego folderu utworzone wcześniej "requirements.txt"
+    4. Aktywuje środowisko:
+        my_venv1\scripts\activate
+    5. Instaluję komplet elementów z pliku requirements.txt (flaga "-r" -> READ):
+        pip install -r requirements.txt
