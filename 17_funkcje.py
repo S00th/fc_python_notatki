@@ -403,7 +403,18 @@ print(string.punctuation) # Zwróci wszystkie znaki specjalne: !"#$%&'()*+,-./:;
 # Otypuj argumenty, wartości zwracane. Dokonaj niezbędnej walidacji wejścia.
 
 
+import string # Definiujemy zestawy znaków globalnie (raz na początku)
+import random
 
+def generate_random_pass(pass_len: int, spec_char: bool) -> str:
+    chars_pool = string.ascii_letters + string.digits
+    if spec_char:
+        chars_pool += string.punctuation
+    random_pass = random.choices(chars_pool, k=pass_len)
+    random.shuffle(random_pass)
+    return ''.join(random_pass)
+
+print(generate_random_pass(30, True))
 
 
 
