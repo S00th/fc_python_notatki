@@ -40,8 +40,8 @@ print(type(dict)) # Sprawdź TYP DANYCH elementu -> <class 'list'>
 print(dict) # Wyświetl zawartość słownika.
 print(dict.keys()) # Wyświetl klucze.
 print(dict.values()) # Wyświetl wartości
-print(dict.items()) # Wyświetli się lista TUPLI: dict_items([('name', 'Adam'), ('s_name', 'Kowalski'), ('age', 12), ('class', '1e')])
-print(dict.get('name')) # Wyświetl konkretny ELEMENT słownika – BEZPIECZNIEJSZY SPOSÓB
+print(dict.items()) # Wyświetli się lista TUPLI: dict_items([('name', 'Adam'), ('s_name', 'Kowalski'), ('age', 12), ('class', '1e')])  (gdy nie ma klucza zwróci None)
+print(dict.get('name')) # Wyświetl konkretny ELEMENT słownika – BEZPIECZNIEJSZY SPOSÓB (gdy nie ma klucza zwróci błąd)
 # print(dict['name']) # Wyświetl konkretny ELEMENT słownika (nie używamy tego sposobu) -> print(dic['KLUCZ'])
 # print(dic['rozmiar_buta']) # Jeżeli wskażesz element spoza słownika, wyświetli się BŁĄD
 

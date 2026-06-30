@@ -30,3 +30,49 @@ python
 
 # Środowisko wirtualne będzie za nas robił PyCharm, ale nie będziemy do końca świadomi, co się dzieje.
 # Pozostał w informacje o tym, ja tworzyć środowisko wirtualne w pliku: 0_notes.txt
+
+####### ZADANIE
+#
+# Przejdź do katalogu projektu.
+# – Utwórz środowisko wirtualne o nazwie
+# – Aktywuj środowisko.
+# Sprawdź:
+# – wersję Pythona
+# – lokalizację interpretera za pomocą programu
+# – Utwórz plik main.py
+# – W pliku main wypisz wersje biblioteki oraz wyświetl w konsoli informacje "to jest projekt A"
+# – Uruchom program
+# Aby wyświetlić wersję biblioteki (requests) wpisz:
+
+import requests
+print(requests.__version__)
+print('To jest projekt 1.')
+
+
+# Utwórz nowy katalog projekt2 Utwórz w nim nowe środowisko:
+# – Aktywuj środowisko.
+# – Sprawdź wersje pythona i lokalizację środowiska
+# – Zainstaluj pakiet scikit-learn
+# – Utwórz plik main.py
+# – W pliku main wypisz wersje biblioteki oraz wyświetl w konsoli informacje "to jest projekt A"
+# – Uruchom program
+# Aby wyświetlić wersję biblioteki (requests) wpisz:
+
+import requests
+print(requests.__version__)
+print('To jest projekt 2.')
+
+# Importowanie z biblioteki sci-kit z modulu metrics funkcjonalnosc accuracy_score
+from sklearn.metrics import accuracy_score
+
+y_true = [0, 1, 0, 0, 1]
+y_pred = [0, 0, 0, 1, 1]
+print(accuracy_score(y_true, y_pred))
+print(sklearn.__version__)
+print('To jest projekt 2.')
+
+# Etykiety prawdziwe
+# Etykiety
+
+# Jeżeli będe chciał uruchomić program znajdujący się w katalogu projekt1, mając aktywne środowisko projekt2,
+# to pojawi się błąd.

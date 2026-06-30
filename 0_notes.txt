@@ -1,14 +1,14 @@
 Python jest językiem TYPOWANYM DYNAMICZNIE.
 Oznacza to, że podczas przypisywania WARTOŚCI do ZMIENNEJ nie musimy deklarować TYPU DANYCH (Python sam zarządzi miejscem w pamięci).
-Pod jedną zmienną możemy podstawiać różne typy danych.
+Pod jedną zmienną możemy podstawiać różne typy danych
 
 liczba = 4
 liczba = 'cztery'
 
 FUNKCJE WBUDOWANE:
-    -> print() – Wyświetl zawartości w konsoli. WARTOŚCI zostaną wyświetlone w jednym wierszu, jeśli zostaną oddzielone przecinkami.
+    -> print() – Wyświetl zawartości w konsoli. WARTOŚCI zostaną wyświetlone w jednym wierszu, jeśli zostaną oddzielone przecinkami
 
-    -> type() – Sprawdź typ zmiennej.
+    -> type() – Sprawdź typ zmiennej
     -> isinstance(value, class) - Sprawdza czy dana WARTOŚĆ jest danego typu (klasy), np. insinstance(number, int) -> zwraca bool (True lub False)
 
     -> open(filepath, mode, encoding) – łuży do zapisu / odczytu pliku
@@ -21,14 +21,14 @@ FUNKCJE WBUDOWANE:
             content = file.read()
             print (content)
 
-    -> input() – Pobierz WARTOŚĆ od użytkownika z konsoli. Zawsze zwraca STRING, dlatego czasem trzeba dokonać konwersji na "int" lub "float".
-            To co wpisze użytkownik jako "input", zostanie przypisane do WARTOŚCI, a następnie np. może zostać wyświetlone za pomocą funkcji "print".
-            Docelowo nie będziemy używali tej funkcji. Dane będziemy pobierali z innych źródeł, np. źródłem może być interface.
-    -> len(iterable) – Zwraca długość obiektu ITEROWALNEGO (czyli takiego, z których da się wyodrębnić konkretny element lub kilka elementów).
-            Obiektami iterowalnymi są: STRINGI, LISTY, TUPLE, ZBIORY i SŁOWNIKI.
-    -> round(number) – Zaokrągla domyślnie do jedności, ale też pozwala zaokrąglić do X miejsc o przecinku.
+    -> input() – Pobierz WARTOŚĆ od użytkownika z konsoli. Zawsze zwraca STRING, dlatego czasem trzeba dokonać konwersji na "int" lub "float"
+            To co wpisze użytkownik jako "input", zostanie przypisane do WARTOŚCI, a następnie np. może zostać wyświetlone za pomocą funkcji "print"
+            Docelowo nie będziemy używali tej funkcji. Dane będziemy pobierali z innych źródeł, np. źródłem może być interface
+    -> len(iterable) – Zwraca długość obiektu ITEROWALNEGO (czyli takiego, z których da się wyodrębnić konkretny element lub kilka elementów)
+            Obiektami iterowalnymi są: STRINGI, LISTY, TUPLE, ZBIORY i SŁOWNIKI
+    -> round(number) – Zaokrągla domyślnie do jedności, ale też pozwala zaokrąglić do X miejsc o przecinku
             round(number, precision) – Zaokrąglenie number (liczby zmiennoprzeciwkowej) do precision (dokładność) liczby po przecinku
-            -> number – Argument pozycyjny. Potrzebny, aby podana funkcja zadziałała.
+            -> number – Argument pozycyjny. Potrzebny, aby podana funkcja zadziałała
             -> precision – Argument opcjonalny. Ma wartość domyślną, można, ale nie trzeba go podawać, np: round(number, 2) – zaokrągli do 2 miejsc o przecinku.
 
     -> sorted(collection) -> sortuje obiekt KOLEKCJI -> zawsze zwraca LISTĘ (w kolejności wg. ASCI)
@@ -48,19 +48,19 @@ FUNKCJE WBUDOWANE:
             np. ze str = '123.12' można przejść na int za pośrednictwem float – Konwersja: str -> float -> int
     -> bool() – Konwersja danych na TYP LOGICZNY
 
-    -> id() – Zwraca unikalny, całkowitoliczbowy identyfikator obiektu. W praktyce jest to adres tego obiektu w pamięci komputera.
-            Każdy obiekt ma przypisane własne id w momencie jego tworzenia (id jest swego rodzaju "pseudo" liczbą/pozycją).
-            w praktyce, używamy jej jedynie do sprawdzenia, czy coś jest HASHOWALNE.
+    -> id() – Zwraca unikalny, całkowitoliczbowy identyfikator obiektu. W praktyce jest to adres tego obiektu w pamięci komputera
+            Każdy obiekt ma przypisane własne id w momencie jego tworzenia (id jest swego rodzaju "pseudo" liczbą/pozycją)
+            w praktyce, używamy jej jedynie do sprawdzenia, czy coś jest HASHOWALNE
 
-    -> pow(a, b) – Potęgowanie a do potęgi b – NIE UŻYWAMY, ponieważ mamy operator **.
+    -> pow(a, b) – Potęgowanie a do potęgi b – NIE UŻYWAMY, ponieważ mamy operator **
 
 TYPY DANYCH W PYTHONIE:
     -> Numeryczne (typy proste)
-        -> Integers (int): LICZBA całkowita, np. 2 lub -2. Liczby całkowite mogą być dowolnie duże (lub małe) i mogą przyjmować wartości ujemne.
-        -> Floats (float): LICZBA zmiennoprzecinkowa (z ułamkiem), np. 2.5.
+        -> Integers (int): LICZBA całkowita, np. 2 lub -2. Liczby całkowite mogą być dowolnie duże (lub małe) i mogą przyjmować wartości ujemne
+        -> Floats (float): LICZBA zmiennoprzecinkowa (z ułamkiem), np. 2.5
 
     -> Teksty (typ prosty)
-        - Strings (str): TEKST, zawsze zapisywane w cudzysłowie (pojedynczym lub podwójnym), np. "Dwa" lub '2.5'.
+        - Strings (str): TEKST, zawsze zapisywane w cudzysłowie (pojedynczym lub podwójnym), np. "Dwa" lub '2.5'
         Każda treść umieszczona w cudzysłowie jest traktowana jako TEKST/STRING.
 
             -> METODY stringów (nie mylić z FUNKCJAMI numerycznymi) – metoda jest wywoływana na konkretnym obiekcie/instancji
@@ -99,19 +99,19 @@ SŁOWA KLUCZOWE
     – raise – Podnosimy BŁĄD. Można użyć w FUNKCJI np. raise TypeError('Liczba musi być całkowita.')
 
 
-MODUŁU będące częścią biblioteki standardowej języka Python.
-        MODUŁY to zbiory gotowych funkcji i zmiennych (stałych).
+MODUŁU będące częścią biblioteki standardowej języka Python
+        MODUŁY to zbiory gotowych funkcji i zmiennych (stałych)
         Pozwalają unikać pisania wszystkiego od zera i ułatwiają organizację kodu
 
-    -> import random – MODUŁ umożliwia losowanie ZNAKÓW z danego przedziału.
+    -> import random – MODUŁ umożliwia losowanie ZNAKÓW z danego przedziału
         – random.randint(a, b) # Losuje jedną (pseudo)losową liczbę całkowitą (a i b to początek i koniec zakresu)
-            – random.seed(<wartość>) # Ziarno losowe dla powtórzenia wyników losowania (powtórzenie wyniku losowania).
-                                     Wartością musi być dowolny INTEGER.
+            – random.seed(<wartość>) # Ziarno losowe dla powtórzenia wyników losowania (powtórzenie wyniku losowania)
+                                     Wartością musi być dowolny INTEGER
         – random.shuffle(x) / sample(x, k=len(x))
         – random.choices(<wartość>, k=30) # Losuje powtarzające się znaki
         – random.sample(<wartość>, k=30) # Losuje NIE powtarzające się znaki
 
-    -> import string – MODUŁ, który zwraca wszystkie ZMIENNE/ZNAKI określonego typu.
+    -> import string – MODUŁ, który zwraca wszystkie ZMIENNE/ZNAKI określonego typu
         – print(string.ascii_letters) # Zwróci wszystkie litery: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
         – print(string.ascii_lowercase) # Zwróci wszystkie małę litery: abcdefghijklmnopqrstuvwxyz
         – print(string.ascii_uppercase) # Zwróci wszystkie DUŻE litery: ABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -128,42 +128,42 @@ MODUŁU będące częścią biblioteki standardowej języka Python.
 
     -> import os – MODUŁ,
         FUNKCJE:
-        - os.getcwd – Zwróci aktualną ŚCIEŻKĘ ROBOCZĄ katalogu (Get current working directory)
-        – os.listdir – Zwróci LISTĘ NAZW plików z katalogu. Jako argument przyjmuje NAZWĘ katalogu.
+        - os.getcwd – Zwróć aktualną ŚCIEŻKĘ ROBOCZĄ katalogu (Get current working directory)
+        – os.listdir – Zwróć LISTĘ NAZW plików z katalogu. Jako argument przyjmuje NAZWĘ katalogu,
 
 
 
 Tworzenie i aktywacja ŚRODOWISKA WIRTUALNEGO w Pythonie
 
-– Otwieramy wiersz poleceń.
-    – Wchodzimy to odpowiedniego katalogu i tworzymy w nim folder.
+– Otwieramy wiersz poleceń
+    – Wchodzimy to odpowiedniego katalogu i tworzymy w nim folder
         mkdir projest_1
         mkdir projest_2
-    – Wchodzę do każdego z tych folderów i tworzę dla nich środowisko wirtualne.
-        1. TWORZENIE środowiska wirtualnego.
-            W folderze z danym projektem wywołaj polecenie.
-                python -m venv my_venv1 # Gdzie my_env1 to [własna_nazwa_srodowiska].
-        2. W katalogu roboczym projektu powinien utworzyć się FOLDER z nazwą środowiska, a w nim FOLDER Scripts lub bin.
-            W FOLDERZE Scripts znajduje się wyodrębniony "python" (python.exe) oraz plik "activate".
-        3. AKTYWACJA środowiska, czyli uruchomienie pliku "activate".
+    – Wchodzę do każdego z tych folderów i tworzę dla nich środowisko wirtualne
+        1. TWORZENIE środowiska wirtualnego
+            W folderze z danym projektem wywołaj polecenie
+                python -m venv my_venv1 # Gdzie my_env1 to [własna_nazwa_srodowiska]
+        2. W katalogu roboczym projektu powinien utworzyć się FOLDER z nazwą środowiska, a w nim FOLDER Scripts lub bin
+            W FOLDERZE Scripts znajduje się wyodrębniony "python" (python.exe) oraz plik "activate"
+        3. AKTYWACJA środowiska, czyli uruchomienie pliku "activate"
             my_venv2\scripts\activate # dla Windows
-            source my_venv2/bin/activate # dla Linux / MacOS
-            Środowisko jest aktywne, gdy na początku promptu w terminalu widoczna jest jego nazwa w nawiasie.
+            source my_venv2\bin\activate # dla Linux \ MacOS
+            Środowisko jest aktywne, gdy na początku promptu w terminalu widoczna jest jego nazwa w nawiasie
                 (my_venv2) Y:\Py\projekt2>
-        4. Kiedy środowisko wirtualne jest aktywne, możesz sprawdzić, w którym Pythonie aktualnie pracujesz.
+        4. Kiedy środowisko wirtualne jest aktywne, możesz sprawdzić, w którym Pythonie aktualnie pracujesz
             python
             >>> import sys
             >>> sys.executable
-        5. Dezaktywacja środowiska, poleceniem:
+        5. Dezaktywacja środowiska, poleceniem
             deactivate
 
-ZARZĄDZANIE środowiskiem wirtualnym.
-Środowiskiem wirtualnym zarządzamy przy pomocy wbudowanego w Pythonie managera PIP (są też inne managery).
-WAŻNE aby mieć AKTYWNE środowisko wirtualne, wykonując wszystkie poniższe polecenia.
+ZARZĄDZANIE środowiskiem wirtualnym
+Środowiskiem wirtualnym zarządzamy przy pomocy wbudowanego w Pythonie managera PIP (są też inne managery)
+WAŻNE! Żeby zainstalować pakiet w danym środowisku, najpierw AKTYWUJ to środowisko
 
     –> WYLISTOWANIE zainstalowanych pakietów (zainstalowane środowisko będzie puste – pomijając pip)
         pip list
-        WAŻNE. Sprawdź, czy masz aktualną wersję pip i zrob ewentualny ubgrade.
+        WAŻNE. Sprawdź, czy masz aktualną wersję pip i zrob ewentualny ubgrade
         python.exe -m pil install --upgrade pip
 
     –> INSTALACJA pakietów (info o pakietach na pypi.org)
@@ -176,9 +176,14 @@ WAŻNE aby mieć AKTYWNE środowisko wirtualne, wykonując wszystkie poniższe p
         WAŻNE. W danym środowisku wirtualnym można znajdować się TYLKO JEDNA WERSJA danego pakietu
         Jeżeli zainstalujesz inną wersję pakietu, to stara zostanie usunięta i zainstalowana nową (nadpisana)
 
+        Aby uruchomić zainstalowany moduł wpisujemy
+        python
+        >>> import [nazwa_pakietu]
+        >>> [fynkcjonalność]
+
     -> Instalowanie WIELU bibliotek jednocześnie
         pip install [pakiet_1] [pakiet_2] [pakiet_3] # np. pip install numpy scipy scikit-learn
-        WAŻNE! Niektóre pakiety będą wymagały instalacji innych pakietów.
+        WAŻNE! Niektóre pakiety będą wymagały instalacji innych pakietów
         Np. scikit-learn wymaga zainstalowania kilku innych bibliotek i razem z nim zainstalują się wymagane pakiety
             pip list # aby sprawdzić, co się zainstalowało
 

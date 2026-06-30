@@ -264,3 +264,110 @@ for index in range(len(lista_nazwy_plikow_w_katalogu)): # Iteruj się po wszystk
         moj_slownik[nazwa] = plik.read()
 
 print(moj_slownik)
+
+
+
+####### Praca z plikami CSV
+#
+# Plik tekstowy txt jest przykładem danych nieustrukturyzowanych (ktoś wpisze imie, nazwisko, wiek róznej kolejności)
+# W pythonie, w analizie danych często będziemy się spotykali z plikami, które będa ustrukturyzowane
+# Dane ustrukuryzowane znacyz w formie tabelarycznej
+# Zawartość takiego pliku może wyglądać jak niżej
+#
+# Imię;nazwisko;wiek
+# Ewa:Kowalczyk;40
+# Jan:Mazur;50
+#
+# do obsługi CSV mamy w pythonie moduł CSV (jest częścią biblioteki standardowej)
+# CSV -> Coma Separated Values
+import csv
+
+# ZCZYTANIE / OTWIERANIE plik
+with open('data/scv_files/dane.csv', encoding='utf-8') as file:
+    content = f.read
+
+print(content)
+
+import csv
+
+with open('data/data.csv', encoding='utf-8') as file:
+    content = file.read()
+
+print(content)
+
+# Otwieranie takiego pliku
+# Lista list gdzie każda osoba jets osobną listą
+
+with open('data/data.csv', encoding='utf-8') as file:
+    reader = csv.reader(file, delimiter=';') # gdzie delimiter to separator
+
+    for row in reader:
+        print(row) # Zaczytanie CSV jako LISTY
+
+print(reader) # Zaczytanie CSV jako SŁOWNIK
+
+########
+
+with open('data/data.csv', encoding='utf-8') as file:
+    reader = csv.DictReader(file, delimiter=';') # gdzie delimiter to separator
+
+    for row in reader: # Iterujemy się po słownikach (każdy wiersz to SŁOWNIK)
+        print(row['imie'], row['nazwisko'], row['wiek']) # z każdego słownika wyciągamy wartość po kluczu...
+
+print(reader) # Zaczytanie CSV jako SŁOWNIK
+
+
+
+####### TWORZENIE pliku CSV
+
+#  CSV writer
+
+import csv
+
+dane = [
+    ['imie', 'nazwisko']
+    ['Anna', 'Nowak']
+    ['Piotr', 'Kowalski']
+]
+
+# METODA 1
+
+with open('plik_csv/new_scv.scv', mode='w', encoding='utf-8', newline='') as file:
+    writer = csv.writer(file)
+
+    for row in dane:
+        writer.writerow(row) # Wpisz pojedynczy wiersz
+
+# W plikach csv zaznaczamy znak nowej linii "newline" (jak w tekstowym \n)
+
+# METODA 2 – Można też robić to bez pętli
+# writerows – zapisz wszystkie wiersze
+writer.writerows(dane)
+
+
+# To było pisanie LISTY LIST, obie metody musimy znać
+
+##### LISTA SŁOWNIKÓW
+# Dane wejściowe możemy mieć w różnych formatach
+
+dane = [
+    {'imie': 'Anna', 'nazwisko': 'Nowak'}
+    {'imie': 'Piotr', 'nazwisko': 'Kowalski'}
+]
+
+with open('plik_csv/new_scv.scv', mode='w', encoding='utf-8', newline='') as file:
+    fieldnames = {'imie', 'nazwisko'}
+    writer.DictWriter(file, fieldnames=fieldnames)
+
+    writee.writeheader() # Kiedy pracujemy na słownikach najpier tworzymy HEADER
+    writer.writerows(dane) # a dopiero możemy wpisać dane
+
+# Gdzie nazwy pól to KLUCZE ze SŁOWNIKA
+# writee.writeheader będzie idealny, gdy dane wejściowe są SŁOWNIKAMI
+# xxxx będzie idealny, gdy dane wejściowe są LISTA 2DD (każdy wiersz to osobna lista – pierwsza lista top HEADER)
+
+### PRZYKŁADY
+# Filtrowanie osób powyżej 18 roku życia
+# 1. Zaczytuję dane z pliku osoby.csv
+# 2. Zapisuje do pliku pełnoletni.csv tylko te wpisy, gdzie osoba ma powyżej 18 lat
+# 3.
