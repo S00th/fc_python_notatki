@@ -269,9 +269,9 @@ print(moj_slownik)
 
 ####### Praca z plikami CSV
 #
-# Plik tekstowy txt jest przykładem danych nieustrukturyzowanych (ktoś wpisze imie, nazwisko, wiek róznej kolejności)
-# W pythonie, w analizie danych często będziemy się spotykali z plikami, które będa ustrukturyzowane
-# Dane ustrukuryzowane znacyz w formie tabelarycznej
+# Plik tekstowy txt jest przykładem danych nieustrukturyzowanych (ktoś wpisze imie, nazwisko, wiek różnej kolejności)
+# W pythonie, w analizie danych często będziemy się spotykali z plikami, które będa ustrukturyzowane (też obraz albo video)
+# Dane USTRUKTURYZOWANE znaczy w formie tabelarycznej
 # Zawartość takiego pliku może wyglądać jak niżej
 #
 # Imię;nazwisko;wiek
@@ -400,3 +400,149 @@ with open('data/adults.csv', mode='w', encoding='utf-8', newline='') as outfile:
     writer = csv.DictWriter(outfile, fieldnames=['imie', 'nazwisko', 'wiek'])
     writer.writeheader()
     writer.writerows(adults)
+
+
+
+# Plik CVS jest plikiem PŁASKIM
+#
+
+data1 = ['Danusia', 'Kowalska', 35, 'HR']
+data2 = ['Grzegorz', 'Nowak', 23, 'IT'] # Lista list jest zbiorem danych płaskich (prostych, niezagnieżdżonych).
+
+# Jeżeli do tego typu informacji chciałbym dodać więcej informacji, np.
+# adres: ulica, nr budynku, kod pocztowy, miasto
+# zainteresowania: nazwa, ile h tygodniowo, z kim (imiona osób, z którymi spędza czas przy hobby)
+# partner: imię partnera, wiek partnera, płeć, czy ma samochód
+#
+# W tym momencie odchodzimy od jednowymiarowości danych
+# Będziemy potrzebowali zgnieżdzonej struyktóry danych
+# Chceby przekształcić tego typu dane w słownik
+
+data3 = {
+    'imie': 'Danusia',
+    'nazwisko': 'Kowalska',
+    'wiek': 35,
+    'zawod': 'HR'
+    'adres': {
+        'ulica': 'Czekoladowa',
+        'nr_budynku': '12a',
+        'miasto': 'Wrosław'
+    },
+    'hobby': {
+        'nazwa': 'siatkówka',
+        'ile_h_per_tydzien': 5
+    },
+    'partner': {
+        'Imie': 'tomek',
+        'wiek': 40
+        'Plec': 'M',
+        'wiek': 40
+    }
+    'partner': None
+}
+
+# Json (JavaScript Obiect Notation) – Jakby słownik, ale zapisany w formie tekstu.
+# Systemy przesyłają pomiędzy sobą i muszą w taki sam ujmować dane
+#
+
+import json
+
+# Moduł wbudownay
+
+with open('json_files/person1.json', 'w', encoding='utf-8') as f:
+    json = json.dumps(person1, f, ensure_ascii=False, indent=4) # Indent dodaje informację o wcięciu wielkosci 4 spacji
+# ensure_asci=False # Aby obsługiwane były polskie znaki (warto dodać dla PyCharma, w VSC nie ma problemu)
+# W Pythonie typuy danych BOOL (False, Frue) pisze sie w duzej litery a w innych technologiach z małej
+# typ danych json jest swego rodzaju językiem angielskim w komunikacji między systemami
+#
+# SERILIZACJA – to PROCES konwersji z typu natywnego (np. obiekt python) na json
+# DeSERILIZACJA – to PROCES konwersji z json na typ natywny (np. obiekt python)
+# Funkcja "json.dump" SERIALIZUJE obiekt pythonowy i zapisuje do pliku (i przerabia na słownik)
+# Funkcja "json.load" ZACZYTUJE dane z pliku i DeSERIALIZUJE je na obiekt pythonowy (i zapisuje do pliku)
+
+with open('json_files/person1', encoding='utf-8') as f:
+    loaded_person1 = json.load(f)
+
+print(loaded_person1) # Wyświetli w jednym wierszu
+
+
+from pprint import pprint #
+
+with open('json_files/person1', encoding='utf-8') as f:
+    loaded_person1 = json.load(f)
+
+
+
+# WIELE obiektów
+
+persons = [person1, person2]
+
+with open('json_files/persons.json', 'w', encoding='utf-8') as f:
+    json = json.dumps(persons, f, ensure_ascii=False, indent=4)
+
+# Pojedynczy słownik to OBIEKT
+# Lista słowników to TABLICA (kolekcja obiektów)
+
+with open('json_files/persons', encoding='utf-8') as f:
+    loaded_persons = json.load(f)
+
+print(type(loaded_persons)) # Wyświetli <class 'list'>
+print(len(loaded_persons))
+pprint(loaded_persons[0])
+pprint(loaded_persons[1])
+pprint(loaded_persons[0]['hobby']['zespol'][0])
+
+
+
+### ZADANIE – JSON bez DeSERIALIZACJI
+#
+
+with open('json_files/persons', encoding='utf-8') as f:
+    data = f.read()
+
+print(type(data))
+
+# Jeśli dostaniemy dane np. z sieci, trzeba będzie z nimi coś zrobić (deserialisować)
+# Z uwagi na to, że "data" to czysty json, czyli technicznie rzeczy biorąc napis, muszę go zdeserializować,
+# żeby zamienić na typ danych pyhonowy, aby móc na nim pracować.
+
+deserialized_data = json.loads(data) # DESERIALISUJE "data"
+print(type(deserialized_data))
+print(deserialized_data[0]['nazwisko'])
+
+# funkcja "load" to 2 funkcjonalności: odczyt jsona z pliku i deserializacja
+# funkcja "loads" to 1 funkcjonalność: tylko deserializacja strungu czystego jsona
+
+json_data = '''
+    {
+    uzupełnić
+    }
+'''
+
+print(type(json_data))
+from_json = json.loads(json_data)
+print(type(from_json))
+
+# Nie ważne, że będziemy mieli to w kodzie czy w pliku, deserializacja odbędzie się...
+
+
+# json MUSI posiadać poprawne FORMATOWANIE
+# Jets podobry do słownika pyhonowego, ale nie zawsze tak będzie.
+# Jednak json nie wszystko przyjmie.
+# np. po ostatnie parze klucz-wartość nie może być przecinka (wyświetli błąd)
+# klucz czy wartość w apostrofach też jest niedozwolona.
+# Dlatego istnieje coś takeigo jak https://jsonlint.com/ (jets to formater / validator)
+# Dodajemy tu coś, co chcemy zdeserializować i sprawdzamy (validate)
+
+
+
+# Mam słownik, który chcę zserializować, ale nie zapisywać do pliku (czysta serializacja)
+#
+
+json_data = json.dumps(person1, ensure_asci=False)
+print(json_data)
+print(type(json_data))
+
+# funkcja "dump" to 2 funkcjonalności: serializacja i zapis jsona do pliku
+# funkcja "dumps" to 1 funkcjonalność: tylko deserializacja obieku pythonowego na json
+
