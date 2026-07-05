@@ -1,11 +1,11 @@
 ####### PLIKI i przechowywanie danych
 #
 # Cykl życia zmiennych w Pythonie kończy się w momencie, kiedy program kończy się wykonywać,
-# ZMIENNA jest usuwana z pamięci (pamięć RAM jest czyszczona).
+# ZMIENNA jest wtedy usuwana z pamięci (pamięć RAM jest czyszczona).
 # Dlatego będziemy potrzebowali zewnętrznych pomocy, które będą przechowywały dane.
 # PLIKI to takie obiekty, w którym będziemy ZAPISYWAĆ, ZACZYTYWAĆ dane i używać ich później.
 # Dane będziemy mogli zaczytywać nie tylko z PLIKÓW, ale też z BAZ DANYCH czy API.
-#
+
 ### ZACZYTYWANIE DANYCH
 # open(filepath, mode, encoding) -> FUNKCJA "open" służy do ZAPISU / ODCZYTU pliku
 # Tryby...
@@ -251,16 +251,16 @@ print(files_content)
 
 import os
 
-katalog = 'data'
+katalog = "data"
 lista_nazwy_plikow_w_katalogu = os.listdir(katalog) # Lista nazw plików
-lista_sciezek_plikow = [f'{katalog}/{nazwa_pliku}' for nazwa_pliku in lista_nazwy_plikow_w_katalogu] # Lista ścieżek
+lista_sciezek_plikow = [f"{katalog}/{nazwa_pliku}" for nazwa_pliku in lista_nazwy_plikow_w_katalogu] # Lista ścieżek
 moj_slownik = {}
 
 for index in range(len(lista_nazwy_plikow_w_katalogu)): # Iteruj się po wszystkich plikach (indeksach) w katalogu (w LIŚCIE)
     # len sprawdza, ile plików jest w katalogu, a pętla "for" działa tyle razy, ile jest plików w katalogu.
     sciezka = lista_sciezek_plikow[index] # Zwróć ŚCIEŻKĘ pliku
     nazwa = lista_nazwy_plikow_w_katalogu[index] # Zwróć NAZWĘ pliku
-    with open(sciezka, encoding='utf-8') as plik: # Otwórz i zazzytaj zawartość plików
+    with open(sciezka, encoding="utf-8") as plik: # Otwórz i zazzytaj zawartość plików
         moj_slownik[nazwa] = plik.read()
 
 print(moj_slownik)
@@ -269,137 +269,205 @@ print(moj_slownik)
 
 ####### Praca z plikami CSV
 #
-# Plik tekstowy txt jest przykładem danych nieustrukturyzowanych (ktoś wpisze imie, nazwisko, wiek różnej kolejności)
-# W pythonie, w analizie danych często będziemy się spotykali z plikami, które będa ustrukturyzowane (też obraz albo video)
-# Dane USTRUKTURYZOWANE znaczy w formie tabelarycznej
-# Zawartość takiego pliku może wyglądać jak niżej
+# Plik tekstowy jest przykładem danych nieustrukturyzowanych (plik zawiera: imiona, nazwiska, wiek w różnej kolejności)
+# W Pythonie (w analizie danych) często będziemy spotykali pliki, które będa USTRUKTURYZOWANE (też obraz albo video)
+# Dane USTRUKTURYZOWANE (w ujęciu analizy danych) to dane zapisane w FORMIE TABELARYCZNEJ.
+# Zawartość takiego pliku może wyglądać jak niżej.
 #
-# Imię;nazwisko;wiek
-# Ewa:Kowalczyk;40
-# Jan:Mazur;50
+# Imię;nazwisko;wiek # Header
+# Ewa;Kowalczyk;40 # Wiersze i kolumny. Inaczej zapisana tabela z exela.
+# Jan;Mazur;50
 #
-# do obsługi CSV mamy w pythonie moduł CSV (jest częścią biblioteki standardowej)
-# CSV -> Coma Separated Values
-import csv
+# Ważne! Wyświetlając w PyCharm plik CSV możemy przełączyć widok (na dole okna) na "Data" (tabelkę) lub "Text".
 
-# ZCZYTANIE / OTWIERANIE plik
-with open('data/scv_files/dane.csv', encoding='utf-8') as file:
-    content = f.read
+# Przykładem plików ustrukturyzowanych są pliki CSV (Coma Separated Values).
+# Oczywiście wbrew na nazwie mamy dostępne także inne separatory (np. jak w przykładzie średnik).
+# W Pythonie do obsługi plików CSV służy moduł CSV (jest częścią biblioteki standardowej).
 
-print(content)
 
 import csv
 
-with open('data/data.csv', encoding='utf-8') as file:
+# ZACZYTANIE / OTWIERANIE plik
+with open("data/csv_files/csv.csv", encoding="utf-8") as file:
     content = file.read()
 
 print(content)
 
-# Otwieranie takiego pliku
-# Lista list gdzie każda osoba jets osobną listą
 
-with open('data/data.csv', encoding='utf-8') as file:
-    reader = csv.reader(file, delimiter=';') # gdzie delimiter to separator
+
+# Otwieranie pliku CSV jako LISTY LIST, gdzie każdy wiersz (OSOBA) jest osobną LISTĄ.
+
+with open("data/data.csv", encoding="utf-8") as file:
+    reader = csv.reader(file, delimiter=";") # Użyj modułu csv. Jako argument przyjmie "file", gdzie separatorem jest ;
 
     for row in reader:
         print(row) # Zaczytanie CSV jako LISTY
 
-print(reader) # Zaczytanie CSV jako SŁOWNIK
+print(reader) # import csv
 
-########
+# ZACZYTANIE / OTWIERANIE plik
+with open("data/csv_files/csv.csv", encoding="utf-8") as file:
+    content = file.read()
+
+print(content)
+
+
+
+# Otwieranie pliku CSV jako LISTY LIST, gdzie każdy wiersz (OSOBA) jest osobną LISTĄ.
 
 with open('data/data.csv', encoding='utf-8') as file:
-    reader = csv.DictReader(file, delimiter=';') # gdzie delimiter to separator
+    reader = csv.reader(file, delimiter=';') # Użyj modułu csv. Jako argument przyjmie "file", gdzie separatorem jest ;
 
-    for row in reader: # Iterujemy się po słownikach (każdy wiersz to SŁOWNIK)
-        print(row['imie'], row['nazwisko'], row['wiek']) # z każdego słownika wyciągamy wartość po kluczu...
+    for row in reader:
+        print(row) # Zaczytanie CSV jako LISTY
 
-print(reader) # Zaczytanie CSV jako SŁOWNIK
+print(reader) # import csv
+
+# ZACZYTANIE / OTWIERANIE plik
+with open("data/csv_files/csv.csv", encoding="utf-8") as file:
+    content = file.read()
+
+print(content)
+
+
+
+# OTWIERANIE pliku CSV jako oddzielonej średnikami LISTY, gdzie każdy wiersz (OSOBA) jest osobną LISTĄ.
+
+with open("data/csv_files/csv.csv", encoding="utf-8") as file:
+    reader = csv.reader(file, delimiter=";") # Jest to iterator. Użyj modułu csv.
+    # Jako argument przyjmie "file", gdzie separatorem jest ";" (czyli separator użyty w pliku csv).
+
+    for row in reader: # Przeiteruj się po iteratorze.
+        print(row) # Zaczytanie CSV jako LISTY, każdy to listą. Wyświetli: ['imie', 'nazwisko', 'wiek']
+
+print(reader) # Wyświetli: <_csv.reader object at 0x00000205D0A84F40>. Jest to jakiś plik w pamięci.
+
+
+
+# ZACZYTANIE pliku CSV jako oddzielonego średnikami SŁOWNIKA (gdzie każdy wiersz jest osobnym słownikiem)
+
+with open("data/csv_files/csv.csv", encoding="utf-8") as file:
+    reader = csv.DictReader(file, delimiter=';') # Gdzie separatorem jest ";" (separator użyty w pliku csv).
+    # print(list(reader))
+    for row in reader: # Iterujemy się po SŁOWNIKACH, gdzie każdy wiersz to SŁOWNIK
+        print(row) # Wyświetli: {"imie": "Jan", "nazwisko": "Mazur", "wiek": "50"}
+        print(row["imie"], row["nazwisko"], row["wiek"]) # Z każdego słownika wyciągamy wartości po kluczu: Jan Mazur 50
+                                                         # Nazwa klucza to HEADER (imie;nazwisko;wiek)
+
+    print(list(reader)) # Reader to iterator więc możemy go zamienić na listę, ale po przeiterowaniu się jest on pusty.
+                        # Dlatego trzeba go wyświetlić zaraz po wywołaniu (wiersz 351)
 
 
 
 ####### TWORZENIE pliku CSV
-
-#  CSV writer
+# CSV writer
 
 import csv
 
+# Mamy następujące dane (LISTA LIST) i chcemy je zapisać do pliku
 dane = [
-    ['imie', 'nazwisko']
-    ['Anna', 'Nowak']
-    ['Piotr', 'Kowalski']
+    ["imie", "nazwisko"], # Nagłówek
+    ["Anna", "Nowak"], # Wiersze
+    ["Piotr", "Kowalski"]
 ]
 
-# METODA 1
 
-with open('plik_csv/new_scv.scv', mode='w', encoding='utf-8', newline='') as file:
-    writer = csv.writer(file)
+### METODA "writerow" (wpisz pojedynczy wiersz)
+# Musimy mieć przygotowane wcześniej dane w jakiejś strukturze (jak wyżej), przeiterować się po nich i każdy element zapisać.
 
-    for row in dane:
+with open("data/csv_files/csv3.csv", mode="w", encoding="utf-8", newline="") as file:
+    # Argument "newline" ustawiamy na pusty string, aby nowa linia była pusta, a nowa zawartość wpisana od nowej linii.
+    # Nie trzeba go stosować w plikach tekstowych (bo używamy w nich \n),
+    # natomiast w plikach csv, mamy nowy wiersz dodawany przy każdej iteracji.
+    writer = csv.writer(file) # Instancja writera, który przyjmie jako argument "file"
+
+    for row in dane: # Iterujemy się po danych
         writer.writerow(row) # Wpisz pojedynczy wiersz
 
-# W plikach csv zaznaczamy znak nowej linii "newline" (jak w tekstowym \n)
-
-# METODA 2 – Można też robić to bez pętli
-# writerows – zapisz wszystkie wiersze
-writer.writerows(dane)
+# W plikach csv zaznaczamy znak nowej linii, używając argumentu "newline" (w plikach tekstowych \n).
 
 
-# To było pisanie LISTY LIST, obie metody musimy znać
+### METODA "writerows" (zapisz wszystkie wiersze).
+# Bez potrzeby użycia pętli.
 
+with open("data/csv_files/csv3.csv", mode="w", encoding="utf-8", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerows(dane)
+
+# WAŻNE! Trzeba znać obie metody.
+# Było to pisanie LISTY LIST.
+
+
+
+# Co zrobić, kiedy mamy mieli do czynienia z danymi przygotowanymi w inny sposób?
 ##### LISTA SŁOWNIKÓW
-# Dane wejściowe możemy mieć w różnych formatach
 
-dane = [
-    {'imie': 'Anna', 'nazwisko': 'Nowak'}
-    {'imie': 'Piotr', 'nazwisko': 'Kowalski'}
+dane2 = [
+    {"imie": "Anna", "nazwisko": "Nowak"},
+    {"imie": "Piotr", "nazwisko": "Kowalski"}
 ]
 
-with open('plik_csv/new_scv.scv', mode='w', encoding='utf-8', newline='') as file:
-    fieldnames = {'imie', 'nazwisko'}
-    writer.DictWriter(file, fieldnames=fieldnames)
+# Kształt danych, jakie mamy na dzień dobry, będzie determinował czy skorzystamy z "writer", czy "DictWriter".
 
-    writee.writeheader() # Kiedy pracujemy na słownikach najpier tworzymy HEADER
-    writer.writerows(dane) # a dopiero możemy wpisać dane
+### METODA "DictWriter"
+# Będzie idealna, gdy dane wejściowe są SŁOWNIKAMI (np. z API lub baz danych).
+# Gdzie nazwy pól, to KLUCZE ze SŁOWNIKA.
 
-# Gdzie nazwy pól to KLUCZE ze SŁOWNIKA
-# writee.writeheader będzie idealny, gdy dane wejściowe są SŁOWNIKAMI
-# xxxx będzie idealny, gdy dane wejściowe są LISTA 2DD (każdy wiersz to osobna lista – pierwsza lista top HEADER)
+### Metoda "writerows"
+# Będzie idealna, gdy dane wejściowe są LISTAMI 2D.
+# Gdzie każdy wiersz, to osobna lista, a pierwsza LISTA to HEADER.
 
-### PRZYKŁADY
+with open("data/csv_files/csv4.csv", mode="w", encoding="utf-8", newline='') as file:
+    fieldnames = {"imie", "nazwisko"} # Wymagany jest parametr nazwy pól, którymi będą klucze ze słownika
+    writer = csv.DictWriter(file, fieldnames=fieldnames) # Tworzymy instancję "writera" robimy z "DictWriter"
+                                                         # Jednak NAGŁÓWEK nie zostanie zapisany.
+    writer.writeheader() # Dlatego, kiedy pracujemy na SŁOWNIKACH najpierw tworzymy HEADER
+    writer.writerows(dane2) #  i dopiero teraz możemy wpisać dane.
+
+
+
+### PRZYKŁAD
+#
 # Filtrowanie osób powyżej 18 roku życia
-# 1. Zaczytuję dane z pliku osoby.csv
-# 2. Zapisuje do pliku pełnoletni.csv tylko te wpisy, gdzie osoba ma powyżej 18 lat
+# 1. Zaczytaj dane z pliku osoby.csv
+# 2. Zapisz do pliku pełnoletni.csv tylko te wpisy, gdzie osoba ma powyżej 18 lat.
 # 3.
-
-
 
 import csv
 
-with open('data/osoby.csv', encoding='utf-8') as infile:
-    # reader = csv.DictReader(infile,)
-    # print(list(reader))
+# Zaczytanie do pliku osoby.csv
+with open("data/csv_files/osoby.csv", encoding="utf-8") as plik_wejsciowy:
+    reader = csv.DictReader(plik_wejsciowy)
+    # print(list(reader)) # Wyświetlamy LISTĘ
 
-    adults = []
-    for osoba in reader:
-        if int(osoba['wiek']) >= 18:
-            print(osoba)
-            adults.append(osoba)
-        print(adults)
+    pelnoletni = [] # Utwórz pustą LISTĘ
+    for osoba in reader: # Zmienna osoba jest SŁOWNIKIEM
+        if int(osoba["wiek"]) >= 18: # Iteruj się po KLUCZU "wiek" w każdym SŁOWNIKU (osoba) i jeśli...
+            print(osoba) # Powstaje LISTA.
+            pelnoletni.append(osoba) # Dodajemy do LISTY.
+        print(pelnoletni)
 
-with open('data/adults.csv', mode='w', encoding='utf-8', newline='') as outfile:
-    writer = csv.DictWriter(outfile, fieldnames=['imie', 'nazwisko', 'wiek'])
+# print(osoba["osoba"]) # Metoda getitem. Gdy nie ma klucza, podnosi błąd.
+# print(osoba.get["wiek"]) # Metoda get. Gdy nie ma klucza, nie podnosi błędu i zwraca "None".
+
+# Zapisywanie do pliku pełnoletni.csv
+with open("data/csv_files/pełnoletni.csv", mode="w", encoding="utf-8", newline="") as plik_wyjsciowy:
+    writer = csv.DictWriter(plik_wyjsciowy, fieldnames=["imie", "nazwisko", "wiek"])
     writer.writeheader()
-    writer.writerows(adults)
+    writer.writerows(pelnoletni)
 
-# Zapis w jednej linijce
 
-    adults = [osoba for osoba in reader if int(osoba['wiek']) >= 18]
+# Zapis w jednej linii
 
-with open('data/adults.csv', mode='w', encoding='utf-8', newline='') as outfile:
-    writer = csv.DictWriter(outfile, fieldnames=['imie', 'nazwisko', 'wiek'])
-    writer.writeheader()
-    writer.writerows(adults)
+    with open("data/csv_files/osoby.csv", encoding="utf-8") as plik_wejsciowy:
+        reader = csv.DictReader(plik_wejsciowy)
+
+        pelnoletni = [osoba for osoba in reader if int(osoba["wiek"]) >= 18] # List comprehension automatycznie tworzy listę.
+
+    with open("data/csv_files/pełnoletni.csv", mode="w", encoding="utf-8", newline="") as plik_wyjsciowy:
+        writer = csv.DictWriter(plik_wyjsciowy, fieldnames=["imie", "nazwisko", "wiek"])
+        writer.writeheader()
+        writer.writerows(pelnoletni)
 
 
 

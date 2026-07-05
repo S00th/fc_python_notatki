@@ -1,26 +1,11 @@
 import csv
 
-with open('data/osoby.csv', encoding='utf-8') as infile:
-    # reader = csv.DictReader(infile,)
-    # print(list(reader))
+with open("data/csv_files/osoby.csv", encoding="utf-8") as plik_wejsciowy:
+    reader = csv.DictReader(plik_wejsciowy)
 
-    adults = []
-    for osoba in reader:
-        if int(osoba['wiek']) >= 18:
-            print(osoba)
-            adults.append(osoba)
-        print(adults)
+    pelnoletni = [osoba for osoba in reader if int(osoba["wiek"]) >= 18] # List comprehension automatycznie tworzy listę.
 
-with open('data/adults.csv', mode='w', encoding='utf-8', newline='') as outfile:
-    writer = csv.DictWriter(outfile, fieldnames=['imie', 'nazwisko', 'wiek'])
+with open("data/csv_files/pełnoletni.csv", mode="w", encoding="utf-8", newline="") as plik_wyjsciowy:
+    writer = csv.DictWriter(plik_wyjsciowy, fieldnames=["imie", "nazwisko", "wiek"])
     writer.writeheader()
-    writer.writerows(adults)
-
-# Zapis w jednej linijce
-
-    adults = [osoba for osoba in reader if int(osoba['wiek']) >= 18]
-
-with open('data/adults.csv', mode='w', encoding='utf-8', newline='') as outfile:
-    writer = csv.DictWriter(outfile, fieldnames=['imie', 'nazwisko', 'wiek'])
-    writer.writeheader()
-    writer.writerows(adults)
+    writer.writerows(pelnoletni)

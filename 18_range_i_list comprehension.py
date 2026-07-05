@@ -52,7 +52,23 @@ print(my_range) # Wyświetli [0, 2, 4, 6, 8]
 # W List Comprehension można też dodać WARUNEK.
 # Jest to bardzo popularne i używane np. do filtrowania sekwencji liczb.
 #
-# FILTROWANIE z zakresu liczb – filtru tylko liczby podzielne przez 3.
+
+### Czy liczbą jest parzysta?
+
+liczba = 4
+
+# Przy pomocy pętli "if"
+if liczba % 2 == 0:
+    print("Liczba jest parzysta.")
+else:
+    print("Liczba jest nieparzysta.")
+
+# Przy pomocy List Comprehension
+print("Liczba jest parzysta." if liczba % 2 == 0 else "Liczba jest nieparzysta.")
+
+
+
+### FILTROWANIE z zakresu liczb – filtru tylko liczby podzielne przez 3.
 
 numbers = []
 

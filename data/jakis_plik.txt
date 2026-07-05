@@ -1,4 +1,3 @@
-linia tekstu 1
-linia tekstu 2
-linia tekstu 3
-żółć
+Pierwsza dodana linia tekstu
+Druga dodana linia tekstu
+Kolejna dodana linia tekstu

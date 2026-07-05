@@ -17,6 +17,7 @@ python
 # lub
 # C:\\Users\\szymo\\AppData\\Local\\Programs\\Python\\Python314\\python.exe # dla Global ENV
 
+# Pakiet to zbiór skryptów, modułów, które zawierają kod i definicję funkcji.
 # Pakiety (biblioteki) różnią się wersjami.
 # np. dla:
 # – project_1,.venv1 – mamy: pandas 2.3, numpy 2.1. requests 2.22
@@ -30,6 +31,8 @@ python
 
 # Środowisko wirtualne będzie za nas robił PyCharm, ale nie będziemy do końca świadomi, co się dzieje.
 # Pozostał w informacje o tym, ja tworzyć środowisko wirtualne w pliku: 0_notes.txt
+
+
 
 ####### ZADANIE
 #
