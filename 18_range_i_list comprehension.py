@@ -68,6 +68,7 @@ print("Liczba jest parzysta." if liczba % 2 == 0 else "Liczba jest nieparzysta."
 
 
 
+
 ### FILTROWANIE z zakresu liczb – filtru tylko liczby podzielne przez 3.
 
 numbers = []

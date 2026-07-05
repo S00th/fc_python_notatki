@@ -99,3 +99,4 @@ print(type(to_datetime)) # Wyświetli: <class 'datetime.datetime'>
 from datetime import timedelta
 
 print(dzisiaj + timedelta(days=1)) # Wyświetli: 2026-06-17 – jutrzejszy dzień
+

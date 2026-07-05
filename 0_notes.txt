@@ -209,3 +209,4 @@ WAŻNE! Nigdy nie trackujemy Gitem (ignorujemy) całego folderu ze środowiskiem
         my_venv1\scripts\activate
     5. Instaluję komplet elementów z pliku requirements.txt (flaga "-r" -> READ):
         pip install -r requirements.txt
+
