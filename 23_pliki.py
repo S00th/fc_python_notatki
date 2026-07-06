@@ -269,9 +269,11 @@ print(moj_slownik)
 
 ####### Praca z plikami CSV
 #
-# Plik tekstowy jest przykładem danych nieustrukturyzowanych (plik zawiera: imiona, nazwiska, wiek w różnej kolejności)
-# W Pythonie (w analizie danych) często będziemy spotykali pliki, które będa USTRUKTURYZOWANE (też obraz albo video)
-# Dane USTRUKTURYZOWANE (w ujęciu analizy danych) to dane zapisane w FORMIE TABELARYCZNEJ.
+# Plik tekstowy, POBRAZ i VIDEO są przykładem danych NIEUSTRUKTURYZOWANYCH. Plik zawiera: imiona, nazwiska, wiek,
+# ale są one podane w różnej kolejności i nie wiemy, czy informacja jest kompletna.
+# W Pythonie (w analizie danych) często będziemy spotykali pliki, które będa USTRUKTURYZOWANE.
+# Dane USTRUKTURYZOWANE (w ujęciu analizy danych) to dane zapisane w FORMIE TABELARYCZNEJ,
+# wiemy, gdzie się spodziewać danej informacji. Może jej brakować, może być błędna, ale wiemy, gdzie szukać informacji.
 # Zawartość takiego pliku może wyglądać jak niżej.
 #
 # Imię;nazwisko;wiek # Header
@@ -431,7 +433,6 @@ with open("data/csv_files/csv4.csv", mode="w", encoding="utf-8", newline='') as 
 # Filtrowanie osób powyżej 18 roku życia
 # 1. Zaczytaj dane z pliku osoby.csv
 # 2. Zapisz do pliku pełnoletni.csv tylko te wpisy, gdzie osoba ma powyżej 18 lat.
-# 3.
 
 import csv
 
@@ -471,146 +472,248 @@ with open("data/csv_files/pełnoletni.csv", mode="w", encoding="utf-8", newline=
 
 
 
-# Plik CVS jest plikiem PŁASKIM
-#
+# Plik CVS jest plikiem PŁASKIM (jest to szereg informacji)
 
-data1 = ['Danusia', 'Kowalska', 35, 'HR']
-data2 = ['Grzegorz', 'Nowak', 23, 'IT'] # Lista list jest zbiorem danych płaskich (prostych, niezagnieżdżonych).
+# imię, nazwysko, wiek branża
+data1 = ["Danusia", "Kowalska", 35, "HR"]
+data2 = ["Grzegorz", "Nowak", 23, "IT"] # LISTA LIST jest zbiorem danych płaskich (prostych, niezagnieżdżonych).
 
 # Jeżeli do tego typu informacji chciałbym dodać więcej informacji, np.
 # adres: ulica, nr budynku, kod pocztowy, miasto
 # zainteresowania: nazwa, ile h tygodniowo, z kim (imiona osób, z którymi spędza czas przy hobby)
 # partner: imię partnera, wiek partnera, płeć, czy ma samochód
 #
-# W tym momencie odchodzimy od jednowymiarowości danych
-# Będziemy potrzebowali zgnieżdzonej struyktóry danych
-# Chceby przekształcić tego typu dane w słownik
+# W tym momencie odchodzimy od jednowymiarowości danych.
+# Będziemy potrzebowali ZAGNIEŻDŻONEJ STRUKTURY danych.
+# Chcemy przekształcić tego typu dane w SŁOWNIK.
 
-data3 = {
-    'imie': 'Danusia',
-    'nazwisko': 'Kowalska',
-    'wiek': 35,
-    'zawod': 'HR'
-    'adres': {
-        'ulica': 'Czekoladowa',
-        'nr_budynku': '12a',
-        'miasto': 'Wrosław'
+person1 = {
+    "imie": "Danusia",
+    "nazwisko": "Kowalska",
+    "wiek": 35,
+    "zawod": "HR",
+    "adres": {
+        "ulica": "Czekoladowa",
+        "nr_budynku": "12a",
+        "kod_pocztowy": "50-500",
+        "miasto": "Wrocław"
     },
-    'hobby': {
-        'nazwa': 'siatkówka',
-        'ile_h_per_tydzien': 5
+    "hobby": {
+        "nazwa": "Siatkówka",
+        "ile_h_per_tydzien": 5,
+        "zespol": ["Kamila", "Dawin", "Kasia"]
     },
-    'partner': {
-        'Imie': 'tomek',
-        'wiek': 40
-        'Plec': 'M',
-        'wiek': 40
-    }
-    'partner': None
+    "partner": {
+        "imie": "Tomek",
+        "wiek": 40,
+        "Płeć": "M",
+        "czy_ma_auto": False
+    },
 }
 
-# Json (JavaScript Obiect Notation) – Jakby słownik, ale zapisany w formie tekstu.
-# Systemy przesyłają pomiędzy sobą i muszą w taki sam ujmować dane
+person2 = {
+    "imie": "Ania",
+    "nazwisko": "Nowak",
+    "wiek": 25,
+    "zawod": "Edukacja",
+    "adres": {"ulica": "Boczna", "nr_budynku": "4/5", "kod_pocztowy": "12-123", "miasto": "Szczecin"},
+    "hobby": {"nazwa": "Czytanie_książek", "ile_h_per_tydzien": 15, "zespol": []},
+    "partner": None
+}
+
+
+# Jednym z ATRYBUTÓW opisujących daną osobę jest np. ADRES (który będzie SŁOWNIKIEM).
+# Pod kluczem ADRES mieszczą się ATRYBUTY adresu.
+# ATRYBUTY to cechy opisujące dane (w tym przypadku opisujące osobę).
+# ATRYBUT może posiadać kolejne ATRYBUTY i w taki sposób będą powstawały i pogłębiały się kolejne ZAGNIEŻDŻENIA.
+# Dlatego mówimy, że są to dane USTRUKTURYZOWANYMI, ale NIE płaskie.
 #
+# Dane tego typu trzeba zapisać w innej formie niż forma tabularyczna,
+# która jest użytecznym narzędziem, ale nie zawsze jest wystarczająca.
+# W tym przypadku mamy dosyć skomplikowaną strukturę z zagnieżdżeniami.
+# Co prawda uczymy się Pythona, ale istnieją inne technologie i muszą się one pomiędzy sobą komunikować.
+# W Pythonie posługujemy się SŁOWNIKAMI, ale np. w JavaScript nie ma takiej struktury danych.
+# Różne systemy muszą rozumieć dane, które pomiędzy sobą przesyłają.
+# Najpopularniejszym FORMATEM DANYCH (sposobem ujęcia/zapisu danych) do komunikacji sieciowej jest "json" [dżejson].
+# Typ danych "json" jest swego rodzaju językiem angielskim w komunikacji między systemami.
+# Poza tym, że format json służy do komunikacji sieciowej, pozwala on też zapisywać dane do pliku.
+# Dane jak wyżej zapisujemy w pliku Json (Jakby słownik, ale zapisany w formacie tekstu).
+# Róznice: między zapisem w Pythonie, a w json:
+# – Pythonie typy danych BOOL (True, False) pisze się w dużej litery, ale w innych technologiach z małej (true, false).
+# – Pythonie pusty typ danych "None", to w json "null".
+# – W kontekście innych technologii np. o pojedynczej LIŚCIE czy SŁOWNIKU powiemy, że jest to OBIEKT.
+#   Natomiast lista słowników, to TABLICA (kolekcja obiektów).
+
+
+# JSON (JavaScript Object Notation) to uniwersalny FORMAT TEKSTOWY służący do przechowywania i wymiany danych między aplikacjami
+# Ze względu na swoją czytelność dla człowieka i łatwość przetwarzania przez maszyny, stał się on STANDARDEM
+# w nowoczesnym programowaniu, szczególnie w komunikacji z usługami internetowymi (RESTful API)# .
+#
+# W ekosystemie Pythona format JSON odgrywa kluczową rolę w następujących obszarach:
+# – KONFIGURACJA PROGRAMÓW: Wiele narzędzi przechowuje swoje ustawienia właśnie w tym formacie,
+#   czego przykładem jest plik "pymanager.json" służący do konfiguracji menedżera instalacji Pythona na systemie Windows.
+# – POBIERANIE DANYCH Z SIECI: Jest to podstawowy sposób, w jaki programy otrzymują informacje z zewnętrznych serwisów,
+#   np. przy pobieraniu aktualnej pogody przez aplikację korzystającą z zewnętrznego API.
+# – PRZECHOWYWANIE LOKALNE: JSON jest używany jako lekka forma "bazy danych" w prostych projektach
+#   (np. w aplikacji typu "To-Do List"), pozwalając na trwały zapis informacji na dysku.
+#   Istnieją nawet dedykowane biblioteki, takie jak "TinyDB", które opierają swoje działanie całkowicie na plikach JSON.
+# – ZARZĄDZANIE INSTALACJAMI: Format ten jest wykorzystywany do tworzenia indeksów przy instalacjach Pythona
+#   w trybie offline (index.json) oraz do wyświetlania list zainstalowanych wersji języka w terminalu
+
+
+### MODUŁ wbudowany json
+# Składa się on z 4 podstawowych funkcji.
 
 import json
 
-# Moduł wbudownay
+### ZAPISYWANIE i ZACZYTYWANIE (jednego obiektu) – funkcje "json.dump(obj, f)" / "json.load(obj)"
+# W kontekście innych technologii np. o pojedynczej LIŚCIE czy SŁOWNIKU powiemy, że jest to OBIEKT.
 
-with open('json_files/person1.json', 'w', encoding='utf-8') as f:
-    json = json.dumps(person1, f, ensure_ascii=False, indent=4) # Indent dodaje informację o wcięciu wielkosci 4 spacji
-# ensure_asci=False # Aby obsługiwane były polskie znaki (warto dodać dla PyCharma, w VSC nie ma problemu)
-# W Pythonie typuy danych BOOL (False, Frue) pisze sie w duzej litery a w innych technologiach z małej
-# typ danych json jest swego rodzaju językiem angielskim w komunikacji między systemami
+with open("data/json_files/person1.json", "w", encoding="utf-8") as f:
+    json.dump(person1, f, ensure_ascii=False, indent=4)
+    # "ensure_asci=False" aby obsługiwane były polskie znaki (warto dodać dla PyCharm. W VSC nie ma problemu)
+    # "indent=4" dodaje informację o wcięciu = 4 spacje
+    # W Pythonie typy danych BOOL (True, False) pisze się w dużej litery, ale w innych technologiach z małej
+
+# SERILIZACJA – to PROCES konwersji z typu natywnego (np. obiektu pythonowego – słownika lub listy) na standard JSON.
+# Funkcja "json.dump(obj, f)" SERIALIZUJE obiekt pythonowy i ZAPISUJE do pliku (i przerabia na słownik).
 #
-# SERILIZACJA – to PROCES konwersji z typu natywnego (np. obiekt python) na json
-# DeSERILIZACJA – to PROCES konwersji z json na typ natywny (np. obiekt python)
-# Funkcja "json.dump" SERIALIZUJE obiekt pythonowy i zapisuje do pliku (i przerabia na słownik)
-# Funkcja "json.load" ZACZYTUJE dane z pliku i DeSERIALIZUJE je na obiekt pythonowy (i zapisuje do pliku)
+# DeSERILIZACJA – to PROCES konwersji z JSON na typ natywny (np. obiekt python).
+# Funkcja "json.load(obj)" ZACZYTUJE dane z pliku i DeSERIALIZUJE je na obiekt pythonowy (słownik) i ZAPISUJE do pliku.
 
-with open('json_files/person1', encoding='utf-8') as f:
+with open("data/json_files/person1_ok.json", encoding="utf-8") as f:
     loaded_person1 = json.load(f)
 
-print(loaded_person1) # Wyświetli w jednym wierszu
+print(loaded_person1) # Wyświetli w jednym wierszu,
+# dlatego korzystamy z funkcji wbudowanej "pprint" (wyświetlanie wraz z formatowaniem) – przydatnej np. do deBugowania.
 
+from pprint import pprint
 
-from pprint import pprint #
-
-with open('json_files/person1', encoding='utf-8') as f:
+with open("data/json_files/person1_ok.json", encoding="utf-8") as f:
     loaded_person1 = json.load(f)
 
+pprint(loaded_person1) # UWAGA! Trzeba użyć "pprint", a nie "print"
 
 
-# WIELE obiektów
+
+### ZAPISYWANIE i ZACZYTYWANIE (wielu obiektów json) – funkcje "json.dump(obj, f)" / "json.load(obj)"
+# W kontekście innych technologii np. o liście słowników powiemy, że jest to TABLICA (kolekcja obiektów).
 
 persons = [person1, person2]
 
-with open('json_files/persons.json', 'w', encoding='utf-8') as f:
-    json = json.dumps(persons, f, ensure_ascii=False, indent=4)
+with open("data/json_files/persons_2_in_1.json", "w", encoding="utf-8") as f:
+    json.dump(persons, f, ensure_ascii=False, indent=4)
 
-# Pojedynczy słownik to OBIEKT
-# Lista słowników to TABLICA (kolekcja obiektów)
+# Otrzymamy listę słowników – to TABLICA OBIEKTÓW (kolekcja obiektów).
 
 with open('json_files/persons', encoding='utf-8') as f:
     loaded_persons = json.load(f)
 
-print(type(loaded_persons)) # Wyświetli <class 'list'>
-print(len(loaded_persons))
-pprint(loaded_persons[0])
-pprint(loaded_persons[1])
-pprint(loaded_persons[0]['hobby']['zespol'][0])
+print(type(loaded_persons)) # Wyświetli: <class 'list'>, więc możemy działać jak na obiekcie pythonowym
+print(len(loaded_persons)) # Możemy policzyć długość listy
+pprint(loaded_persons[0]) # Możemy wyświetlić pierwszy element (czyli pierwszą listę)
+pprint(loaded_persons[0]["adres"]["ulica"]) # Możemy wyświetlić informacje o "ulicy"
 
 
 
-### ZADANIE – JSON bez DeSERIALIZACJI
+### ZADANIE pliku JSON jako strint (bez DeSERIALIZACJI)
 #
+# Funkcja "load" to dwie funkcjonalności: ODCZYT "jsona" z pliku i deserializacja.
+# Funkcja "loads" to jedna funkcjonalność: tylko deserializacja stringu (czystego "jsona").
 
-with open('json_files/persons', encoding='utf-8') as f:
+with open("data/json_files/persons_2_in_1.json", encoding="utf-8") as f:
     data = f.read()
 
-print(type(data))
+print(type(data)) # Wyświetli: <class 'str'>
+print(data[18:30]) # Jest to fragment stringa (czystego "jsona"), Wyświetli: mie": "Danus
+print(data[0]["imie"]) # Wyświetli błąd, ponieważ jest to czysty string.
+# WAŻNE! NIE pracujemy w taki sposób!
 
-# Jeśli dostaniemy dane np. z sieci, trzeba będzie z nimi coś zrobić (deserialisować)
-# Z uwagi na to, że "data" to czysty json, czyli technicznie rzeczy biorąc napis, muszę go zdeserializować,
-# żeby zamienić na typ danych pyhonowy, aby móc na nim pracować.
 
-deserialized_data = json.loads(data) # DESERIALISUJE "data"
+# Jeśli dostaniemy dane np. z sieci, trzeba będzie z nimi coś zrobić (deserialisować).
+# Z uwagi na to, że "data" to czysty "json", czyli technicznie rzeczy biorąc napis, muszę go zdeserializować,
+# żeby zamienić go na typ danych pyhonowy, aby móc na nim pracować.
+
+with open("data/json_files/persons_2_in_1.json", encoding="utf-8") as f:
+    data = f.read()
+
+deserialized_data = json.loads(data) # DeSERIALISUJE "data"
 print(type(deserialized_data))
 print(deserialized_data[0]['nazwisko'])
 
-# funkcja "load" to 2 funkcjonalności: odczyt jsona z pliku i deserializacja
-# funkcja "loads" to 1 funkcjonalność: tylko deserializacja strungu czystego jsona
+
+
+### SERIALIZACJA
+
+# Funkcja "dump" to dwie funkcjonalności: SERIALIZACJA i ZAPIS JSONa do pliku
+# Funkcja "dumps" to jedna funkcjonalność: tylko SERIALIZACJA obiektu pythonowego na JASON
 
 json_data = '''
     {
-    uzupełnić
+        "imie": "Ania",
+        "nazwisko": "Nowak",
+        "wiek": 25,
+        "zawod": "Edukacja",
+        "adres": {
+            "ulica": "Boczna", 
+            "nr_budynku": "4/5", 
+            "kod_pocztowy": "12-123", 
+            "miasto": "Szczecin"},
+        "hobby": {
+            "nazwa": "Czytanie_książek", 
+            "ile_h_per_tydzien": 15, 
+            "zespol": []
+            },
+        "partner": null
     }
 '''
 
-print(type(json_data))
+print(type(json_data)) # Wyświetli: <class 'str'>
 from_json = json.loads(json_data)
-print(type(from_json))
+print(type(from_json)) # Wyświetli: <class 'dict'>
 
 # Nie ważne, że będziemy mieli to w kodzie czy w pliku, deserializacja odbędzie się...
 
-
-# json MUSI posiadać poprawne FORMATOWANIE
-# Jets podobry do słownika pyhonowego, ale nie zawsze tak będzie.
-# Jednak json nie wszystko przyjmie.
+# JSON musi posiadać poprawne FORMATOWANIE.
+# Jest podobny do słownika pyhonowego, ale nie zawsze tak będzie,
+# jednak JSON nie wszystko przyjmie.
 # np. po ostatnie parze klucz-wartość nie może być przecinka (wyświetli błąd)
-# klucz czy wartość w apostrofach też jest niedozwolona.
-# Dlatego istnieje coś takeigo jak https://jsonlint.com/ (jets to formater / validator)
-# Dodajemy tu coś, co chcemy zdeserializować i sprawdzamy (validate)
+#     Nie może występować "None", tylko "null".
+#     Niedozwolone są 'klucze' czy wartość w 'apostrofach'.
+# Dlatego istnieje coś takiego jak https://jsonlint.com/ – czyli JSON formater/validator.
+# Dodajemy tu coś, co chcemy zdeserializować i sprawdzamy (validate).
 
 
-
+### DESERIALIZACJA
 # Mam słownik, który chcę zserializować, ale nie zapisywać do pliku (czysta serializacja)
-#
 
-json_data = json.dumps(person1, ensure_asci=False)
+import json
+
+person1 = {
+    "imie": "Danusia",
+    "nazwisko": "Kowalska",
+    "wiek": 35,
+    "zawod": "HR",
+    "adres": {
+        "ulica": "Czekoladowa",
+        "nr_budynku": "12a",
+        "kod_pocztowy": "50-500",
+        "miasto": "Wrocław"
+    },
+    "hobby": {
+        "nazwa": "Siatkówka",
+        "ile_h_per_tydzien": 5,
+        "zespol": ["Kamila", "Dawin", "Kasia"]
+    },
+    "partner": {
+        "imie": "Tomek",
+        "wiek": 40,
+        "Płeć": "M",
+        "czy_ma_auto": False
+    },
+}
+
+json_data = json.dumps(person1)
 print(json_data)
 print(type(json_data))
-
-# funkcja "dump" to 2 funkcjonalności: serializacja i zapis jsona do pliku
-# funkcja "dumps" to 1 funkcjonalność: tylko deserializacja obieku pythonowego na json
 
