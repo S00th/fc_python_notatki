@@ -34,6 +34,10 @@ taxRate = 0.23 # KLASY nazywaj w konwencji CamelCase, a konkretnie lowerCamelCas
 TaxRate = 0.23 # KLASY nazywaj w konwencji CamelCase, a konkretnie UpperCamelCase (nazywanej też Pascal Case)
 TAX_RATE = 0.23 # STAŁE nazywaj w tej konwencja (chociaż dla Pythona STAŁE i ZMIENNE to, to samo)
 
+# UWAGA! Różnica między PascalCase, a camelCase polega wyłącznie na zapisie pierwszej litery słowa.
+# PascalCase zaczyna się od wielkiej litery, a camelCase zawsze od małej.
+# Obie konwencje łączą kilka słów w jeden ciąg bez spacji i zaczynają każde kolejne słowo wielką literą.
+
 EARTH_RADIUS_KM = 6397 # STAŁA (specjalny przypadek zmiennej)
 PI = 3.14 # STAŁA (specjalny przypadek zmiennej)
 
