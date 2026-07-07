@@ -123,6 +123,7 @@ MODUŁU będące częścią biblioteki standardowej języka Python
     -> import datetime – MODUŁ,
         now_str = datetime.now().strftime('%Y.%m.%d %H:%M:%S')
             file.write(f'Aktualna data: {now_str}')
+            Aby wyciągnać tylko rok: print(date.today().year)
 
     -> import date – MODUŁ,
 
