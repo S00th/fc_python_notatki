@@ -44,7 +44,7 @@ class Person:
         # Przypisujemy argumenty z KONSTRUKTORA do ATRYBUTÓW instancji
         self.name = name
         self.age = age
-        self.age = age
+        self.sex = sex
         # Przypisujemy po to, aby później mieć dostęp do przypisanych ATRYBUTÓW.
 
     # Wcześniej konstruktor "__init__" zadziałał w domyślny sposób, ponieważ utworzył się konstruktor plasy "person",
@@ -129,7 +129,7 @@ class Person:
         print(f'Zarobiłeś {amount} zł, twój aktualny stan konta to: {self.bank_balance}')
 
     # Funkcjonalności tego typu powinny być napisane jako WŁAŚCIWOŚCI (dekorator)
-    # WŁAŚCIWOŚĆ to taka specjalna METODA, która nie potrzebuje informacji z zewnątrz, zatem nie będzie potrzebowała ARUMENU
+    # WŁAŚCIWOŚĆ (@property) to taka specjalna METODA, która nie potrzebuje informacji z zewnątrz, zatem nie będzie potrzebowała ARUMENU
     # Działa jedynie na danych z wewnątrz INSTANCJI.
     # Wywołuje się ją jak ATRYBUT (jak tu: imię, wiek, płeć).
     @property
@@ -371,12 +371,12 @@ print(calc1 == calc2)
 ### ZADANIE
 #
 # ĆWICZENIE
-# uprość kod zastępując 4 metody do obliczeń artymetycznych jedną, dodaj dodatkowy argument,
-# dzięki któremu będzie wiadomo jaka operacja ma zostać wykonana
-# dokonaj niezbędnych walidacji
-# zachowaj oryginalną funkcjonalność kalkulatora (zdolnośc wykonywania operacji arytmetycznych,
+# Uprość kod zastępując cztery metody do obliczeń arytmetycznych jedną.
+# Dodaj dodatkowy argument, dzięki któremu będzie wiadomo, jaka operacja ma zostać wykonana.
+# Dokonaj niezbędnych walidacji.
+# Zachowaj oryginalną funkcjonalność kalkulatora (zdolność wykonywania operacji arytmetycznych,
 # aktualizacja poziomu baterii i licznika użyć)
-# nową metodę nazwij calculate
+# Nową metodę nazwij calculate
 
 
 class Calculator:
@@ -453,7 +453,7 @@ operacja = {
 operacja = {
     'sum': lambda x :{__add__}, y: x + y,
     'sub': lambda x :{__sub__}, y: x - y,
-    'mul': lambda x :{__mul__}, y: x * y
+    'mul': lambda x :{__mul__}, y: x * y,
     'div': lambda x :{__ne__}, x / y if y !=0 else None
 }
 
@@ -524,6 +524,155 @@ p1 = Point(1, 2)
 p2 = Point(3, 4)
 print(p1.distance(p2))
 
+
+### Kod Daniela
+
+# import math
+#
+# class Point:
+#     # __init__ to konstruktor
+#     def __init__(self, x:int | float, y: int | float):
+#         self.x = x
+#         self.y = y
+#
+#
+#     # za pomocą @property i metody setter mogę wykonać walidacje wejścia
+#
+#     @property # (getter) pobieramy dane
+#     def x(self): # x przekierowujemy do _x, od teraz x i _x są ze sobą połączone, _x
+#         return self._x # _x to pusta przestrzeń, do której zostanie przypisana wartość, jeśli setter ją sprawdzi i wszystko będzie ok
+#     # (setter) modifikujemy / filtrujemy dane
+#     @x.setter # wywołuje metodę setter, czyli "bramkarza" który sprawdza x z property, jeśli spełnia wymagania to przypisuje wartość do _x, jeśli nie to podnosi błąd.
+#     def x(self, value):
+#         if not isinstance(value, (int,float)): # sprawdzamy value X
+#             raise TypeError("Współrzędna x musi być typu int lub float!")
+#         self._x = value # jeśli wszystko jest ok, to do _x zostaje przypisana wartość wejścia usera
+#
+#     @property
+#     def y(self):
+#         return self._y
+#
+#     @y.setter
+#     def y(self, value):
+#         if not isinstance(value, (int,float)):
+#             raise TypeError("Współrzędna y musi być typu int lub float!")
+#         self._y = value
+#
+#     def __repr__(self):
+#         # _x i x są połączone, ale wedle zasad, nie wywołujemy rzeczy z podkreślikiem
+#         return f'POINT ({self.x}, {self.y})'
+#
+#     def distance(self, pt):
+#             return float(math.dist((self.x, self.y), (pt.x, pt.y)))
+
+###
+
+
 ### ZADANIE
 # Do aktualnej implementacji klasy point dopisz niezbędne walidacje wejścia
 # Napisz metodę klasy from_iterable - która utworzy instancję klasy Point z obiektu iterowalnego 1D (z tupli, listy)
+
+#######
+
+import math
+
+class Point:
+    # __init__ to konstruktor
+    def __init__(self, x:int | float, y: int | float):
+        self.validate_xy_coords(x, y) # Walidacja w konstruktorze przed...
+        self.x = x
+        self.y = y
+
+    def __repr__(self, pt: {dist, x, y}) -> float:
+        return math.distance((self.x, self.y), (pt.x, pt.y))
+
+    def __add__(self, other :(x, y)):
+        if not isinstance(other, Point):
+            reise TypeError('Object has not type of Point')
+        return Point(self.x + other.x, self.y + other.y)
+
+    def distance(self, pt):
+        return float(math.dist((self.x, self.y), (pt.x, pt.y)))
+
+    def validate_is_point(self, pt):
+    if not isinstance(pt, Point):
+        return TypeError('Object has not type of Point')
+
+        # Metoda statyczna wprawdzie jest zdefiniowana z KLASIE,
+    # ale konwencjonalnie, koncepcyjnie i logicznie nie jest ściśle związana z klasą,
+    # mogłaby być równie dobrze odrębną FUNKCJĄ.
+    # Nie ma SELF.
+
+    @staticmethod
+    def validate_xy_cords(x, y) -> None:
+
+        if not isinstance(x, (float, int)) or not isinstance(y, (float, int)):
+            raise TypeError('Both x and y has to be of numeric type')
+
+    # ???
+    @classmethod
+    def from_iterable(cls, iterable):
+        if len(iterable) != 2:
+            raise TypeError('Iterable must be of lenght equals ro 2')
+        x, y = iterable # rozpakowujemy obiekt iterowalny
+        return cls(x, y)
+
+    @property
+    def as_tuple(self):
+        return self.x, self.y
+
+    @property
+    def as_list(self):
+        return[self.x, self.y]
+
+    @property
+    def distance_from_origin(self):
+        return math.dist((0, 0), self.as_tuple)
+
+    # Enkapsulacja ograniczanie dostępu.
+    # Wskazówka, żeby nei wywoływać ten metody na zewnątrz, tylko wewnątrz klasy.
+    # W pododny sposób możemy ograniczyć dostęp do atrybutów.
+    def _protested(self):
+        return 'Chroniona'
+
+    def _private(self):
+        return 'private'
+
+
+p1 = Point(1, 2)
+p2 = Point(3, 4.5)
+
+my_tuple = (10, 23)
+#           x   y
+
+p3 = Point(my_tuple[0], my_tuple[1])
+p4 = Point.from_iterable(my_tuple)
+p5 = Point.from_iterable([4, 9]) # tutaj LISTA, ale nie ważne czy lista, czy coś innego.
+
+print('p3', p3)
+print('p4', p4)
+print('p5', p5)
+
+print(p1.as_tuple)
+
+
+### GEOMETRIA ANALITYCZNA – nie moja bajka :)
+#
+
+
+
+####### Metody magiczne
+
+
+# Enkapsulacja ograniczanie dostępu (do obiektów).
+# Wskazówka, żeby nei wywoływać ten metody na zewnątrz, tylko wewnątrz klasy.
+# W podobny sposób możemy ograniczyć dostęp do atrybutów.
+# Nie wszystko powinno byćdostępne na zewnątrz
+def _protested(self):
+    return 'Chroniona'
+
+# Nie da się jej wywołaćna zewnątrz
+def _private(self):
+    return 'private'
+
+print()
