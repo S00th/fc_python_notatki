@@ -1,5 +1,7 @@
 ######## ATRYBUT PRYWATNY
 
+# eNkapsulacja – aby ograniczać dostęp do atrybutów obiektu albo jego metod
+
 class BankAccount:
 
     def __init__(self, name, balance):
@@ -71,3 +73,4 @@ print(dog.age)
 
 
 #######
+# eNkapsulacja – aby ograniczać dostęp do atrybutów obiektu albo jego metod
