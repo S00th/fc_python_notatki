@@ -247,3 +247,135 @@ person1.save_to_json('data/json_files/person1.json')
 # Do istniejącej implementacji klasy Human dopisz metodę serialize, która zamienić obiekt klasy Person na jsona.
 
 person1_as_json = json.dumps(person1_as_dict, ensure_asci=True, encoding='utf-8')
+
+####### ZADANIE
+#
+# Zaimplementuj rozwiązanie oparte o poniższe 3 klasy.
+# Wszystkie poniższe 3 klasy beda komponowały klasę Person w poniższy sposób.
+# 1. Utwórz klasę Person z atrybutami wiek, imię i przypisz je do atrybutów instancji.
+# 2. Utwórz dwie instancje klasy person.
+# 3. Przeciąż metodę odpowiedzialną za wyświetlanie instancji w postaci Ania, 25 lat.
+# 4. Dodaj walidację danych wejściowych: name: str, age: int
+# 5. Przetestuj działanie walidacji
+# Person("", 20)
+# Person("Ania", -5)
+# Person("Ania", "25")
+# Person(123, 20)
+
+# Person
+# ├── name: str
+# ├── age: int
+# ├── address: Address
+# ├── job: Job | None
+# └── friends: list[Person]
+#
+# Address
+# ├── postcode: str
+# ├── city: str
+# ├── street: str
+# └── house_number: str
+#
+# Job
+# ├── company: str
+# ├── position: str
+# └── salary: float
+
+class Person:
+
+    def init(self, name: str, age: int, address: Address) -> None:
+
+# if isinstance(name, str) and len(name) >= 1 and age > 0: # Niezalecany sposób robienia walidacji, nie ma komunikatu
+    if not isinstance(name, str) or not name.strip():
+        raise TypeError('Name must be a string')
+    if not isinstance(age, int) or age < 0:
+        raise TypeError('Age must be a positive integer')
+
+    self.name = name
+    self.age = age
+    self.address = address
+    self.job = job
+    self.friends = friends
+
+    def repr(self) -> str:
+        return f'Mam na imię {self.name} i mam {self.age} lat.'
+
+p1 = Person('Aga', 20)
+p2 = Person('Aga', 20)
+print(p1)
+
+
+
+####### ETAP 2
+# 1. Stwórz klasę address z atrybutami: post_code, city, street, house_number
+# 2. Przeciąż metodę repr w klasie, żeby wyświetlać adres w takiej formie: Floriańska 10, 31-001 Kraków
+# 3. Dodaj walidacje: wszystkie pola są napisami i nie są pustymi napisami.
+# 4. Do klasy Person dopisz atrybut: address, który przyjmie instancje klasy Address (dokonaj walidacji)
+
+from utils.validators import validate_single_string_imnput
+
+class Address:
+
+    def __init__(self, postal_code: str, street_name: str, city: str, house_number: str) -> None:
+
+        validate_non_empty_strings(
+            postal_code=postal_code,
+            city=city,
+            street_name=street_name,
+            house_number=house_number
+        )
+
+        self.postal_code = postal_code
+        self.city = city
+        self.street_name = street_name
+        self.house_number = house_number
+
+# ** kwargs - keyword arguments – podajemy argumenty po nazwie
+    # Wciąż podaję nieograniczoną liczbęarguiumentów
+    def validate_non_empty_string(**values) -> None:
+        for name, age in value.itams():
+            if not isinstance(value, str) or not value.strip():
+                raise TypeError(f'Value {name} must be a non-empty string.')
+
+    def validate_single_string_input(value: str) -> None:
+        if not isinstance(value, str) or not value.strip():
+            raise TypeError('Value must be a non-empty string')
+
+    def __repr__(self) -> str:
+        return f"{self.street} {self.house_number}, {self.postcode} {self.city}"
+
+        self.postal_code = postal_code
+        self.street_name = street_name
+        self.city = city
+        self.house_number = house_number
+
+adr1 = ('31-001', 'Kraków', 'Floriańska', '10')
+
+class Person:
+
+    def init(self, name: str, age: int, address: Address) -> None:
+
+        validate_single_string_input(name)
+
+        # if isinstance(name, str) and len(name) >= 1 and age > 0: # Niezalecany sposób robienia walidacji, nie ma komunikatu
+        if not isinstance(name, str) or name == "":
+            raise TypeError('Name must be a string')
+        if not isinstance(age, int) or age < 0:
+            raise TypeError('Age must be a positive integer')
+
+        self.name = name
+        self.age = age
+        self.address = address
+
+    def repr(self) -> str:
+        return f"Cześć, mam na imię {self.name}, mam {self.age} lat."
+
+print(p1.address.city)
+
+
+####### NIE DOKOŃCZONE i wyżej też jest sporu nieład.
+
+def give_rise(self, raise_amount):
+    if isinstance(raise_amount, float):
+        self.salary += raise_amount
+    else:
+        raise ValueError('Wpisano błędną wartość, podwyżka musi być liczbą')
