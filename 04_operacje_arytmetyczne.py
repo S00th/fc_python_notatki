@@ -22,6 +22,8 @@ print('dzielenie całkowite: ', a // b) # Dzielenie CAŁKOWITE – Zwraca tylko 
 print(10 // 3) # Wyświetli wynik 3, ponieważ w 10 mieszczą się trzy 3 i reszta 1, ale reszta zostaje "ucięta".
 
 print('dzielenie modulo: ', a % b) # Dzielenie MODULO – Zwraca WYŁĄCZNIE RESZTĘ, która została po wykonaniu dzielenia całkowitego – zawsze typ int.
+# W praktyce zwraca informację o reszcie, a nie dokłądą wartość reszty.
+# Jeżeli wynikiem dzielenia MODULO będzie liczbą bez reszty – wyświetli 0. Jeżeli liczba z resztą – wyświetli 1.
 print(10 % 2) # Wyświetli 0, ponieważ 2 jest podzielna przez 2 (NIE MA wartości po przecinku).
 print(10 % 3) # Wyświetli 1, ponieważ 3 nie jest podzielna przez 2 (MA wartość po przecinku).
 print(10 % 2 == 0) # Wyświetli True
@@ -41,10 +43,9 @@ print(10 % 3) # Wyświetli 1
 
 
 
-print('####### ####### ####### ĆWICZENIE – Czy liczba jest parzysta? ####### ####### #######')
-print()
-
-# Sprawdź, czy podana przez użytkownika liczba jest parzysta?
+####### ZADANIE – Czy liczba jest parzysta? #######
+#
+# Sprawdź, czy podana przez użytkownika liczba jest PARZYSTA?
 
 number = int(input('Podaj liczbę: '))
 

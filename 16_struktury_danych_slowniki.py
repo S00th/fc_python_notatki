@@ -1,6 +1,8 @@
 ####### STRUKTURY DANYCH – SŁOWNIKI {dict}
 
-# – Słowniki {dict}: Przechowują UPORZĄDKOWANE kolekcje w PARACH KLUCZ-WARTOŚĆ. KLUCZ określa, czym jest dany ELEMENT w słowniku.
+# – Słowniki {dict}: Przechowują UPORZĄDKOWANE kolekcje w PARACH KLUCZ-WARTOŚĆ.
+#   KLUCZ musi być UNIKATOWY (występuje tylko jeden raz).
+#   KLUCZ określa, czym jest dany ELEMENT w słowniku.
 #   MOŻEMY MODYFIKOWAĆ zawartość LISTY – możemy dodawać, zmieniać lub usuwać ELEMENTY (pamiętając o unikalności wartości).
 #   Pozwalają na bardzo szybkie odnajdywanie informacji na podstawie unikalnego klucza. Są czymś w rodzaju pęku kluczy.
 #   Są strukturami INDEKSOWALNEMI, ale w specyficzny sposób.
@@ -114,16 +116,53 @@ print(dict)
 print(new_dict)
 
 
+####### ZADANIE
+# Dany jest słownik.
+# Przygotuj quiz polegający na tym, że użytkownik jest pytany o stolicę losowego państwa ze słownika
 
-####### ĆWICZENIE – Jak miał na imię elf z LotR?
+from random import choice
 
-# hero = {'Czarodziej': 'Gandalf', 'Elf': 'Legolas', 'Krasnolud': 'Gimli'}
-#
-# question = input('Jaka jest stolica Polski? ')
-# if hero['Polska'] == question:
-#     print('Brawo.')
-# else:
-#     print(f'Niestety nie jest to {question}. Chodziło o {hero['Czarodziej']}.')
+stolice = {
+    'Polska': 'Warszawa',
+    'Czechy': 'Praga',
+    'Niemcy': 'Berlin',
+    'Anglia': 'Londyn'
+}
+
+# print(choice(list(stolice.keys()))) # Wyświetl losowe państwo (losowy KLUCZ ze SŁOWNIKA zamienionego na LISTĘ)
+losowy_kraj = (choice(list(stolice.keys()))) # Pobiera losowy KLUCZ ze słownika, a WARTOŚCIĄ jest "stolice[losowy_kraj]"
+
+pytanie = input(f'Jak nazywa się stolica {losowy_kraj}? ')
+
+if stolice[losowy_kraj] == pytanie:
+    print(f'Bardzo dobrze. Stolicą {losowy_kraj} jest {stolice[losowy_kraj]}' )
+else:
+    print(f'Zła odpowiedź. Stolicą {losowy_kraj} jest {stolice[losowy_kraj]}')
+
+
+
+####### ĆWICZENIE
+# Dany jest słownik.
+# Jakiej razy był bohater Władcy Pierścieni?
+
+from random import choice
+
+bohater = {
+    'Gandalf': 'Człowiek',
+    'Boromir': 'Człowiek',
+    'Legolas': 'Elf',
+    'Frodo': 'Niziołek',
+    'Gimli': 'Krasnolud'
+}
+
+losowy_bohater = choice(list(bohater.keys()))
+
+pytanie = input(f'Jakies rasy był {losowy_bohater}? ')
+
+if bohater[losowy_bohater] == pytanie:
+    print(f'Bardzo dobrze. {losowy_bohater} to {bohater[losowy_bohater]}')
+else:
+    print(f'Niestety nie. {losowy_bohater} to {bohater[losowy_bohater]}')
 
 
 

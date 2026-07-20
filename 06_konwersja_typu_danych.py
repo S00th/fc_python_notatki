@@ -45,3 +45,39 @@ print(from_invalid_str, type(from_invalid_str))
 float_like_str = '123.12' # Jeśli chcesz zamienić TEKST na float, to musi się on składać wyłącznie z CYFR i nie może zawierać KROPKI.
 from_float_like = int(float_like_str)
 print(from_float_like, type(from_float_like))
+
+
+
+### ZADANIE
+# Popraw poniższy kod
+
+age = input('Ile masz lat? ')
+
+if age >= 18:
+    print('Możesz starać się o prawo jazdy.')
+else:
+    print('Nie możesz jeszcze starać się o prawo jazdy.')
+
+
+# FUNKCJA "input" zawsze zwraca STRING, dlatego trzeba dokonać konwersji na "int" lub "float" (w tym przypadku "int").
+# Możesz to zrobić w dwóch miejscach.
+
+# Rozwiązanie 1
+
+age = input('Ile masz lat? ')
+
+if int(age) >= 18: # Konwersja na "int"
+    print('Możesz starać się o prawo jazdy.')
+else:
+    print('Nie możesz jeszcze starać się o prawo jazdy.')
+
+# Rozwiązanie 2
+
+age = int(input('Ile masz lat? ')) # Konwersja na "int"
+
+if age >= 18:
+    print('Możesz starać się o prawo jazdy.')
+else:
+    print('Nie możesz jeszcze starać się o prawo jazdy.')
+
+

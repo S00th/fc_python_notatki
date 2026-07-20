@@ -136,13 +136,13 @@ print(random_list)
 
 ### Zwróć NAJMNIEJSZĄ wartość z KOLEKCJI – funkcja .min()
 
-przykladowa_lista = [1,2,3,15,74,24,54,1,86]
+przykladowa_lista = [1, 2, 3, 15, 74, 24, 54, 1, 86]
 print(min(przykladowa_lista)) # Wyświetli 1
 
 
-### Zwróć NAJMNIEJSZĄ wartość z KOLEKCJI – funkcja .min()
+### Zwróć NAJWIĘKSZĄ wartość z KOLEKCJI – funkcja .max()
 
-przykladowa_lista = [1,2,3,15,74,24,54,1,86]
+przykladowa_lista = [1, 2, 3, 15, 74, 24, 54, 1, 86]
 print(max(przykladowa_lista)) # Wyświetli 86
 
 
