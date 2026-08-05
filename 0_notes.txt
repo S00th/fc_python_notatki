@@ -77,6 +77,8 @@ TYPY DANYCH W PYTHONIE:
     -> Wartości logiczne
         – Booleans (bool): Wartości logiczne, czyli prawda (True) lub fałsz (False). Muszą zaczynać się wielką literą
 
+
+
 - TYPY ZŁOŻONE i ich METODY
 Zawsze, kiedy po nazwie zmiennej znajduje się kropka, a następnie jakaś inna funkcja, będziemy mówili o METODACH
 Element znajdujący się po kropce, to właśnie METODA funkcji
@@ -84,23 +86,27 @@ METODA odnosi się do funkcji, na której została wywołana
 
     -> Struktury Danych
         – LISTY [list]:
-            - TWORZENIE listy: lista_miast = ['Warszawa', 'Zamość', 'Kraków', 'Kielce']
-            – ODCZYTYWANIE z listy: lista_miast[0] / lista_miast[0:3]
-            – Pokaż INDEX konkretnego ELEMENTU listy: lista_miast.index('Kielce')
-            – DODAWANIE elementu do listy NA KOŃCU listy: lista_miast.append('Katowice')
-            – DODAWANIE elementu do listy JAKO KONKRETNY INDEX: lista_miast.insert(0, 'Wroclaw')
-            – ZMIANA wartości na ELEMENCIE z listy na inną: lista_miast.[0] = 'Poznań' # Listy są MUTOWALNE
-            – USUWANIE elementu z listy: lista_miast.remove('Warszawa')
-            – SORTOWANIE listy w kolejności alfabetycznej (wg. ASCII): lista_miast.sort()
-            – Zwróć NAJMNIEJSZĄ wartość listy (wartość lub w kolejności alfabetycznej): print(min(lista_miast))
-            – Zwróć NAJWIĘKSZĄ wartość listy: print(max(lista_miast))
+            - TWORZENIE listy:
+                lista_miast = ['Warszawa', 'Zamość', 'Kraków', 'Kielce']
+            – lista_miast[0] / lista_miast[0:3] # ODCZYT z listy: pojedynczego elemenu / zakresu elementów
+            – lista_miast.index('Kielce') # ODCZYT INDEXU konkretnego ELEMENTU listy
+            – lista_miast.append('Katowice') # DODAWANIE elementu do listy NA KOŃCU listy
+            – lista_miast.insert(0, 'Wroclaw') # DODAWANIE elementu do listy JAKO KONKRETNY INDEX
+            – lista_miast.[0] = 'Poznań' # ZAMIANA wartości na ELEMENCIE z listy na inną (Listy są MUTOWALNE)
+            – lista_miast.remove('Warszawa') # USUWANIE elementu z listy
+            – lista_miast.sort() # SORTOWANIE listy w kolejności alfabetycznej (wg. ASCII)
+            – print(min(lista_miast)) # Zwróć NAJMNIEJSZĄ wartość listy (wartość lub w kolejności alfabetycznej)
+            – print(max(lista_miast)) # Zwróć NAJWIĘKSZĄ wartość listy
+
             – ITEROWANIE się przez listę:
                 for miasta in lista_miast:
                     print(miasta)
+
             – Zwróć losowe liczby z przedziału:
                 import random # Moduł umożliwia losowanie liczb z danego przedziału
                 random_num = random.randint(0, 30) # Liczby będą losowane z przedziałi od 0 do 30
                 print(random_num)
+
 
         – SŁOWNIKI [dict]:
             – TWORZENIE słownika:
@@ -134,17 +140,17 @@ METODA odnosi się do funkcji, na której została wywołana
                     aby można było coś zrobić z wylosowaną wartością, trzeba ją przypisać do zmiennej
                     losowy_kraj = choice(list(slownik_stolic.keys())))
 
-
             – ITEROWANIE się przez SŁOWNIK:
                 – ITEROWANIE po KLUCZACH:
-                    for key in dict.keys():
+                    for key in slownik_stolic.keys():
                         print(key)
                 – ITEROWANIE po WARTOŚCIACH:
-                    for value in dict.values()
+                    for value in slownik_stolic.values()
                         print(value)
                 – ITEROWANIE po ELEMENTACH:
-                    for key, value in dict.items():
+                    for key, value in slownik_stolic.items():
                         print(f' Klucz: {key} + Wartość: {value}'))
+
 
         – TUPLE / KROTKI (tuple):
              TWORZENIE tupli: tupla_miast = ('Warszawa', 'Zamość', 'Kraków', 'Kielce')
@@ -153,6 +159,7 @@ METODA odnosi się do funkcji, na której została wywołana
             – ITEROWANIE się przez tuple:
                 for miasta in tupla_miast:
                     print(miasta)
+
 
         – ZBIORY {set}: np. set = {'Warszawa', 'Kraków', 'Kielce'}
             set.add('Aga')

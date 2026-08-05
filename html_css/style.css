@@ -1,0 +1,30 @@
+h2{
+   color: red;
+}
+
+/* Ogólne - dotyczą każdego tagu */
+p{
+    color: blue;
+    font-family: "Arial, sans-serif";
+}
+
+/* Id - unikalne*/
+#change-color-to-white{
+    color: white
+}
+
+/* Class - nie unikalne */
+.custom-color{
+    color:#315e3d;
+}
+
+#div1{
+    border: 1px solid black;
+    background-color: yellow;
+    margin: 10px;
+}
+
+body{
+   margin: 10px auto;
+   padding: 15px;
+}

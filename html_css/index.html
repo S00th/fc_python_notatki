@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moja strona</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+</head>
+
+<body style="background-color: #27b3b3">
+Future collars
+
+<h1 style="color: yellow">Header 1</h1>
+<h2>Header 2</h2>
+<h3 id="change-color-to-white">Header 3</h3>
+<h4 class="custom-color">Header 4</h4>
+<h5 class="custom-color">Header 5</h5>
+<h6>Header 6</h6>
+
+<p style="color: green">Paragraph</p> <!-- styl wewnątrz tagu ma najwyższy priorytet -->
+<p>Paragraph 1</p>
+<p>Paragraph 2</p>
+<p>Paragraph 3</p>
+<p class="custom-color">Paragraph 3</p>
+<p class="custom-color">Paragraph 3</p>
+<p>Paragraph 3</p>
+<p>Paragraph 3</p>
+
+<img src="assets/futurecollars_logo.png" width="400" height="300"> <!-- Wyjątek <img> bez zamknięcia -->
+
+
+<div id="div1">
+    DIV
+</div>
+
+<br> <!-- bez zamknięcia -->
+<br>
+<br>
+
+<form class="form-group" method="GET" action="address-backend"> <!-- metody GET/POST - sposób przesłania do backendu, action - adres -->
+    <label class="form-label" for="text_field">Text: </label>
+    <input class="form-input" type="text" id="text_field"> <!-- znacznik bez zamknięcia -->
+    <br>
+    <label class="form-label" for="number_field">Number: </label>
+    <input class="form-input" type="number" id="number_field">
+    <br>
+    <label class="form-label" for="password_field">Password: </label>
+    <input class="form-input" type="password" id="password_field">
+    <br>
+    <label class="form-label" for="checkbox_field">Checkbox: </label>
+    <input type="checkbox" id="checkbox_field">
+    <br>
+    <label class="form-label" for="color_field">Color: </label>
+    <input class="form-input" type="color" id="color_field">
+    <br>
+    <input type="submit" value="Wyślij">
+</form>
+
+
+<div class="columns col-gapes">
+    <div class="column col-4">aaaa</div>
+    <div class="column col-4">bbbb</div>
+    <div class="column col-4">cccc</div>
+</div>
+
+</body>
+</html>
+
+<!--<style>-->
+<!--    -->
+<!--</style>-->
